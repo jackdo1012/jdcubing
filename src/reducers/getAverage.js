@@ -29,7 +29,7 @@ export const averageReducer = (state = "0:00", action) => {
       } else if (action.times.length === 0) {
         return "0:00"
       }
-      return state
+      return "0:00"
     }
     default: {
       return state

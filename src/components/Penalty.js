@@ -3,14 +3,29 @@ import { useDispatch, useSelector } from "react-redux"
 import { getAo, getMo } from "../actions/getMiniStats"
 import { getSolvesStats } from "../actions/getNumberOfSolves"
 
-function Penalty() {
+function Penalty(props) {
+  const firstType = props.firstType
+  const secondType = props.secondType
+  const firstLength = props.firstLength
+  const secondLength = props.secondLength
   const dispatch = useDispatch()
   const renderCount = useRef(1)
   const [plusTwo, setPlusTwo] = useState("")
   const [dnf, setDnf] = useState("")
   const [runAvailable, setRunAvailable] = useState(true)
   const run = useSelector((state) => state.startOrStop)
-  const solves = useSelector((state) => state.submit)
+  const resetMiniStats = () => {
+    if (firstType === "ao") {
+      dispatch(getAo(localStorage.getItem("times").split(","), firstLength))
+    } else if (firstType === "mo") {
+      dispatch(getMo(localStorage.getItem("times").split(","), firstLength))
+    }
+    if (secondType === "ao") {
+      dispatch(getAo(localStorage.getItem("times").split(","), secondLength))
+    } else if (secondType === "mo") {
+      dispatch(getMo(localStorage.getItem("times").split(","), secondLength))
+    }
+  }
   useEffect(() => {
     setRunAvailable(true)
     if (renderCount.current < 4) {
@@ -34,16 +49,14 @@ function Penalty() {
     const newList = [newTime, ...solves]
     localStorage.setItem("times", newList)
     setRunAvailable(false)
-    dispatch(getAo(localStorage.getItem("times").split(","), 5))
-    dispatch(getMo(localStorage.getItem("times").split(","), 5))
+    resetMiniStats()
   }
   const handleDnf = () => {
     const solves = localStorage.getItem("times").split(",")
     solves.shift()
     localStorage.setItem("times", ["DNF", ...solves])
     setRunAvailable(false)
-    dispatch(getAo(localStorage.getItem("times").split(","), 5))
-    dispatch(getMo(localStorage.getItem("times").split(","), 5))
+    resetMiniStats()
     dispatch(getSolvesStats(localStorage.getItem("times").split(",")))
   }
 

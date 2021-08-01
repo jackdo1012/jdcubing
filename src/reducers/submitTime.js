@@ -1,3 +1,6 @@
+if (!localStorage.getItem("times")) {
+  localStorage.setItem("times", [])
+}
 var solvesArray = localStorage.getItem("times").split(",")
 
 export const submitTimeReducer = (state = solvesArray, action) => {
