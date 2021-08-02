@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react"
 import { useDispatch, useSelector } from "react-redux"
+import { getBest } from "../actions/getStats/getBest"
+import { getWorst } from "../actions/getStats/getWorst"
 import { submitTime } from "../actions/submitTime"
-import { getAo, getMo } from "../actions/getMiniStats"
 
 const reformatTime = (input) => {
   if (input < 10) {
@@ -13,8 +14,8 @@ const reformatTime = (input) => {
 const useTimer = () => {
   const [time, setTime] = useState("0.00")
   const run = useSelector((state) => state.startOrStop)
-  const dispatch = useDispatch()
   const solves = useSelector((state) => state.submit)
+  const dispatch = useDispatch()
 
   useEffect(() => {
     var totalSecond = 0
@@ -44,12 +45,12 @@ const useTimer = () => {
       clearInterval(interval)
     }
   }, [run])
+
   useEffect(() => {
-    if (!run) {
-      dispatch(getAo(solves, 5))
-      dispatch(getMo(solves, 5))
-    }
+    dispatch(getBest(solves))
+    dispatch(getWorst(solves))
   }, [solves])
+
   return time
 }
 export default useTimer

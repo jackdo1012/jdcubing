@@ -1,20 +1,54 @@
 import React, { useEffect } from "react"
 import { useDispatch, useSelector } from "react-redux"
-import { getAo, getMo } from "../actions/getMiniStats"
-import { getSolvesStats } from "../actions/getNumberOfSolves"
+import {
+  getFirstAo,
+  getFirstMo,
+} from "../actions/getMiniStats/getFirstMiniStats"
+import {
+  getSecondAo,
+  getSecondMo,
+} from "../actions/getMiniStats/getSecondMiniStats"
+import { getBest } from "../actions/getStats/getBest"
+import { getSolvesStats } from "../actions/getStats/getNumberOfSolves"
+import { getWorst } from "../actions/getStats/getWorst"
 
-function Stats() {
+function Stats(props) {
+  const firstType = props.firstType
+  const secondType = props.secondType
+  const firstLength = props.firstLength
+  const secondLength = props.secondLength
+  const formatTime = props.formatTime
   const dispatch = useDispatch()
   const solves = useSelector((state) => state.submit)
   const solvesStats = useSelector((state) => state.getSolvesStats)
+  const best = useSelector((state) => state.getBest)
+  const worst = useSelector((state) => state.getWorst)
   useEffect(() => {
     dispatch(getSolvesStats(solves))
   }, [solves])
   const handleResetSolves = () => {
     localStorage.setItem("times", [])
     dispatch(getSolvesStats([]))
-    dispatch(getAo([], 5))
-    dispatch(getMo([], 5))
+    dispatch(getBest([0]))
+    dispatch(getWorst([0]))
+    if (firstType === "ao") {
+      dispatch(
+        getFirstAo(localStorage.getItem("times").split(","), firstLength)
+      )
+    } else if (firstType === "mo") {
+      dispatch(
+        getFirstMo(localStorage.getItem("times").split(","), firstLength)
+      )
+    }
+    if (secondType === "ao") {
+      dispatch(
+        getSecondAo(localStorage.getItem("times").split(","), secondLength)
+      )
+    } else if (secondType === "mo") {
+      dispatch(
+        getSecondMo(localStorage.getItem("times").split(","), secondLength)
+      )
+    }
   }
   return (
     <>
@@ -31,11 +65,11 @@ function Stats() {
           </tr>
           <tr>
             <td>Best: </td>
-            <td>0:00</td>
+            <td>{formatTime(best)}</td>
           </tr>
           <tr>
             <td>Worst: </td>
-            <td>0:00</td>
+            <td>{formatTime(worst)}</td>
           </tr>
           <tr>
             <td>Reset: </td>

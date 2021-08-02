@@ -8,6 +8,7 @@ function Timer() {
   const dispatch = useDispatch()
   const timer = useTimer()
   const running = useSelector((state) => state.startOrStop)
+
   useEffect(() => {
     document.addEventListener("keyup", (e) => {
       if (e.code === "Space") {

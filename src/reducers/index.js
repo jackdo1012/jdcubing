@@ -1,21 +1,29 @@
 import { combineReducers } from "redux"
-import { averageReducer } from "./getAverage"
-import { meanReducer } from "./getMean"
-import { getSolvesReducer } from "./getNumberOfSolves"
+import {
+  firstAverageReducer,
+  secondAverageReducer,
+} from "./getMiniStats/getAverage"
+import { firstMeanReducer, secondMeanReducer } from "./getMiniStats/getMean"
+import { getSolvesReducer } from "./getStats/getNumberOfSolves"
 import { startStopTimer } from "./startStopTimer"
 import { submitTimeReducer } from "./submitTime"
 import {
   updateFirstMiniReducer,
   updateSecondMiniReducer,
-} from "./updateMiniStats"
+} from "./updateMiniStats/updateMiniStats"
+import { getBestReducer, getWorstReducer } from "./getStats/getBestAndWorst"
 
 const rootReducer = combineReducers({
-  ao: averageReducer,
-  mo: meanReducer,
+  firstAverage: firstAverageReducer,
+  firstMean: firstMeanReducer,
+  secondAverage: secondAverageReducer,
+  secondMean: secondMeanReducer,
   startOrStop: startStopTimer,
   submit: submitTimeReducer,
   getSolvesStats: getSolvesReducer,
   updateFirstStat: updateFirstMiniReducer,
   updateSecondStat: updateSecondMiniReducer,
+  getBest: getBestReducer,
+  getWorst: getWorstReducer,
 })
 export default rootReducer

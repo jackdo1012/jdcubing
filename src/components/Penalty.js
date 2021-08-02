@@ -1,7 +1,16 @@
 import React, { useEffect, useRef, useState } from "react"
 import { useDispatch, useSelector } from "react-redux"
-import { getAo, getMo } from "../actions/getMiniStats"
-import { getSolvesStats } from "../actions/getNumberOfSolves"
+import {
+  getFirstAo,
+  getFirstMo,
+} from "../actions/getMiniStats/getFirstMiniStats"
+import {
+  getSecondAo,
+  getSecondMo,
+} from "../actions/getMiniStats/getSecondMiniStats"
+import { getBest } from "../actions/getStats/getBest"
+import { getSolvesStats } from "../actions/getStats/getNumberOfSolves"
+import { getWorst } from "../actions/getStats/getWorst"
 
 function Penalty(props) {
   const firstType = props.firstType
@@ -16,14 +25,22 @@ function Penalty(props) {
   const run = useSelector((state) => state.startOrStop)
   const resetMiniStats = () => {
     if (firstType === "ao") {
-      dispatch(getAo(localStorage.getItem("times").split(","), firstLength))
+      dispatch(
+        getFirstAo(localStorage.getItem("times").split(","), firstLength)
+      )
     } else if (firstType === "mo") {
-      dispatch(getMo(localStorage.getItem("times").split(","), firstLength))
+      dispatch(
+        getFirstMo(localStorage.getItem("times").split(","), firstLength)
+      )
     }
     if (secondType === "ao") {
-      dispatch(getAo(localStorage.getItem("times").split(","), secondLength))
+      dispatch(
+        getSecondAo(localStorage.getItem("times").split(","), secondLength)
+      )
     } else if (secondType === "mo") {
-      dispatch(getMo(localStorage.getItem("times").split(","), secondLength))
+      dispatch(
+        getSecondMo(localStorage.getItem("times").split(","), secondLength)
+      )
     }
   }
   useEffect(() => {
@@ -50,6 +67,8 @@ function Penalty(props) {
     localStorage.setItem("times", newList)
     setRunAvailable(false)
     resetMiniStats()
+    dispatch(getBest(newList))
+    dispatch(getWorst(newList))
   }
   const handleDnf = () => {
     const solves = localStorage.getItem("times").split(",")
@@ -58,6 +77,8 @@ function Penalty(props) {
     setRunAvailable(false)
     resetMiniStats()
     dispatch(getSolvesStats(localStorage.getItem("times").split(",")))
+    dispatch(getBest(localStorage.getItem("times").split(",")))
+    dispatch(getWorst(localStorage.getItem("times").split(",")))
   }
 
   return (

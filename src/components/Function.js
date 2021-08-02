@@ -1,11 +1,18 @@
 import React, { useEffect, useState } from "react"
 import { useDispatch, useSelector } from "react-redux"
-import { getAo, getMo } from "../actions/getMiniStats"
+import {
+  getFirstAo,
+  getFirstMo,
+} from "../actions/getMiniStats/getFirstMiniStats"
+import {
+  getSecondAo,
+  getSecondMo,
+} from "../actions/getMiniStats/getSecondMiniStats"
 import { updateFirstMiniStat } from "../actions/updateMiniStat/updateFirstMiniStat"
 import { updateSecondMiniStat } from "../actions/updateMiniStat/updateSecondMiniStat"
 
 function Function() {
-  useEffect(() => {
+  if (localStorage.getItem("function") === null) {
     localStorage.setItem(
       "function",
       JSON.stringify({
@@ -16,7 +23,7 @@ function Function() {
         secondLength: 5,
       })
     )
-  }, [])
+  }
 
   const dispatch = useDispatch()
   const run = useSelector((state) => state.startOrStop)
@@ -31,16 +38,24 @@ function Function() {
     dispatch(updateFirstMiniStat(firstType, firstLength))
     dispatch(updateSecondMiniStat(secondType, secondLength))
     if (firstType === "ao") {
-      dispatch(getAo(localStorage.getItem("times").split(","), firstLength))
+      dispatch(
+        getFirstAo(localStorage.getItem("times").split(","), firstLength)
+      )
     } else if (firstType === "mo") {
-      dispatch(getMo(localStorage.getItem("times").split(","), firstLength))
+      dispatch(
+        getFirstMo(localStorage.getItem("times").split(","), firstLength)
+      )
     }
     if (secondType === "ao") {
-      dispatch(getAo(localStorage.getItem("times").split(","), secondLength))
+      dispatch(
+        getSecondAo(localStorage.getItem("times").split(","), secondLength)
+      )
     } else if (secondType === "mo") {
-      dispatch(getMo(localStorage.getItem("times").split(","), secondLength))
+      dispatch(
+        getSecondMo(localStorage.getItem("times").split(","), secondLength)
+      )
     }
-  }, [firstType, secondType, firstLength, secondLength, font])
+  }, [firstType, secondType, firstLength, secondLength, font, run])
   const handleFunctionClick = () => {
     setFunctionOn(!functionOn)
   }
