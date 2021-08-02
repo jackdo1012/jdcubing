@@ -11,6 +11,8 @@ import {
 import { getBest } from "../actions/getStats/getBest"
 import { getSolvesStats } from "../actions/getStats/getNumberOfSolves"
 import { getWorst } from "../actions/getStats/getWorst"
+import { getPlusTwo } from "../actions/penalty/plusTwo"
+import { getDnf } from "../actions/penalty/dnf"
 
 function Penalty(props) {
   const firstType = props.firstType
@@ -57,23 +59,14 @@ function Penalty(props) {
     }
   }, [run])
   const handlePlusTwo = () => {
-    const solves = localStorage.getItem("times").split(",")
-    var newTime = [
-      Number(solves[0].split(".")[0]) + 2,
-      solves[0].split(".")[1],
-    ].join(".")
-    solves.shift()
-    const newList = [newTime, ...solves]
-    localStorage.setItem("times", newList)
+    dispatch(getPlusTwo())
     setRunAvailable(false)
     resetMiniStats()
-    dispatch(getBest(newList))
-    dispatch(getWorst(newList))
+    dispatch(getBest(localStorage.getItem("times").split(",")))
+    dispatch(getWorst(localStorage.getItem("times").split(",")))
   }
   const handleDnf = () => {
-    const solves = localStorage.getItem("times").split(",")
-    solves.shift()
-    localStorage.setItem("times", ["DNF", ...solves])
+    dispatch(getDnf())
     setRunAvailable(false)
     resetMiniStats()
     dispatch(getSolvesStats(localStorage.getItem("times").split(",")))

@@ -56,6 +56,9 @@ function Function() {
       )
     }
   }, [firstType, secondType, firstLength, secondLength, font, run])
+  useEffect(() => {
+    setFunctionOn(false)
+  }, [run])
   const handleFunctionClick = () => {
     setFunctionOn(!functionOn)
   }
@@ -78,7 +81,7 @@ function Function() {
           </svg>
         </button>
       )}
-      {!run && functionOn && (
+      {functionOn && (
         <table>
           <thead>
             <tr>

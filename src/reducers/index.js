@@ -12,6 +12,8 @@ import {
   updateSecondMiniReducer,
 } from "./updateMiniStats/updateMiniStats"
 import { getBestReducer, getWorstReducer } from "./getStats/getBestAndWorst"
+import { dnfReducer } from "./penalty/dnf"
+import { plusTwoReducer } from "./penalty/plusTwo"
 
 const rootReducer = combineReducers({
   firstAverage: firstAverageReducer,
@@ -25,5 +27,7 @@ const rootReducer = combineReducers({
   updateSecondStat: updateSecondMiniReducer,
   getBest: getBestReducer,
   getWorst: getWorstReducer,
+  dnf: dnfReducer,
+  plusTwo: plusTwoReducer,
 })
 export default rootReducer
