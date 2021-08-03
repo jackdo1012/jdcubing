@@ -21,6 +21,7 @@ function Stats(props) {
   const dispatch = useDispatch()
   const solves = useSelector((state) => state.submit)
   const solvesStats = useSelector((state) => state.getSolvesStats)
+  const run = useSelector((state) => state.startOrStop)
   const best = useSelector((state) => state.getBest)
   const worst = useSelector((state) => state.getWorst)
   useEffect(() => {
@@ -71,12 +72,14 @@ function Stats(props) {
             <td>Worst: </td>
             <td>{formatTime(worst)}</td>
           </tr>
-          <tr>
-            <td>Reset: </td>
-            <td>
-              <button onClick={handleResetSolves}>Reset solves</button>
-            </td>
-          </tr>
+          {!run && (
+            <tr>
+              <td>Reset: </td>
+              <td>
+                <button onClick={handleResetSolves}>Reset solves</button>
+              </td>
+            </tr>
+          )}
         </tbody>
       </table>
     </>

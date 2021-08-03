@@ -121,7 +121,7 @@ function Function() {
                   type="number"
                   value={firstLength}
                   onChange={(e) => setFirstLength(e.target.value)}
-                  min="1"
+                  min="3"
                   max="100"
                 />
               </td>
@@ -145,7 +145,7 @@ function Function() {
                   type="number"
                   value={secondLength}
                   onChange={(e) => setSecondLength(e.target.value)}
-                  min="1"
+                  min="3"
                   max="100"
                 />
               </td>

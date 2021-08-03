@@ -1,6 +1,7 @@
 import { useSelector } from "react-redux"
 
 import "./App.scss"
+import AllSolves from "./components/AllSolves"
 import Function from "./components/Function"
 import MiniStats from "./components/MiniStats"
 import Penalty from "./components/Penalty"
@@ -59,6 +60,7 @@ function App() {
         secondLength={secondLength}
         formatTime={formatTime}
       />
+      <AllSolves />
     </div>
   )
 }
