@@ -29,6 +29,7 @@ function Function() {
   const run = useSelector((state) => state.startOrStop)
   const functionStorage = JSON.parse(localStorage.getItem("function"))
   const [font, setFont] = useState(functionStorage.font)
+  const session = useSelector((state) => state.session)
   const [firstType, setFirstType] = useState(functionStorage.firstType)
   const [secondType, setSecondType] = useState(functionStorage.secondType)
   const [firstLength, setFirstLength] = useState(functionStorage.firstLength)
@@ -39,23 +40,35 @@ function Function() {
     dispatch(updateSecondMiniStat(secondType, secondLength))
     if (firstType === "ao") {
       dispatch(
-        getFirstAo(localStorage.getItem("times").split(","), firstLength)
+        getFirstAo(
+          localStorage.getItem(`times${session}`).split(","),
+          firstLength
+        )
       )
     } else if (firstType === "mo") {
       dispatch(
-        getFirstMo(localStorage.getItem("times").split(","), firstLength)
+        getFirstMo(
+          localStorage.getItem(`times${session}`).split(","),
+          firstLength
+        )
       )
     }
     if (secondType === "ao") {
       dispatch(
-        getSecondAo(localStorage.getItem("times").split(","), secondLength)
+        getSecondAo(
+          localStorage.getItem(`times${session}`).split(","),
+          secondLength
+        )
       )
     } else if (secondType === "mo") {
       dispatch(
-        getSecondMo(localStorage.getItem("times").split(","), secondLength)
+        getSecondMo(
+          localStorage.getItem(`times${session}`).split(","),
+          secondLength
+        )
       )
     }
-  }, [firstType, secondType, firstLength, secondLength, font, run])
+  }, [firstType, secondType, firstLength, secondLength, font, run, session])
   useEffect(() => {
     setFunctionOn(false)
   }, [run])

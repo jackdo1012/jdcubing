@@ -25,23 +25,36 @@ function Penalty(props) {
   const [dnf, setDnf] = useState("")
   const [runAvailable, setRunAvailable] = useState(true)
   const run = useSelector((state) => state.startOrStop)
+  const session = useSelector((state) => state.session)
   const resetMiniStats = () => {
     if (firstType === "ao") {
       dispatch(
-        getFirstAo(localStorage.getItem("times").split(","), firstLength)
+        getFirstAo(
+          localStorage.getItem(`times${session}`).split(","),
+          firstLength
+        )
       )
     } else if (firstType === "mo") {
       dispatch(
-        getFirstMo(localStorage.getItem("times").split(","), firstLength)
+        getFirstMo(
+          localStorage.getItem(`times${session}`).split(","),
+          firstLength
+        )
       )
     }
     if (secondType === "ao") {
       dispatch(
-        getSecondAo(localStorage.getItem("times").split(","), secondLength)
+        getSecondAo(
+          localStorage.getItem(`times${session}`).split(","),
+          secondLength
+        )
       )
     } else if (secondType === "mo") {
       dispatch(
-        getSecondMo(localStorage.getItem("times").split(","), secondLength)
+        getSecondMo(
+          localStorage.getItem(`times${session}`).split(","),
+          secondLength
+        )
       )
     }
   }
@@ -62,16 +75,16 @@ function Penalty(props) {
     dispatch(getPlusTwo())
     setRunAvailable(false)
     resetMiniStats()
-    dispatch(getBest(localStorage.getItem("times").split(",")))
-    dispatch(getWorst(localStorage.getItem("times").split(",")))
+    dispatch(getBest(localStorage.getItem(`times${session}`).split(",")))
+    dispatch(getWorst(localStorage.getItem(`times${session}`).split(",")))
   }
   const handleDnf = () => {
     dispatch(getDnf())
     setRunAvailable(false)
     resetMiniStats()
-    dispatch(getSolvesStats(localStorage.getItem("times").split(",")))
-    dispatch(getBest(localStorage.getItem("times").split(",")))
-    dispatch(getWorst(localStorage.getItem("times").split(",")))
+    dispatch(getSolvesStats(localStorage.getItem(`times${session}`).split(",")))
+    dispatch(getBest(localStorage.getItem(`times${session}`).split(",")))
+    dispatch(getWorst(localStorage.getItem(`times${session}`).split(",")))
   }
 
   return (

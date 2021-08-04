@@ -14,6 +14,7 @@ import {
 import { getBestReducer, getWorstReducer } from "./getStats/getBestAndWorst"
 import { dnfReducer } from "./penalty/dnf"
 import { plusTwoReducer } from "./penalty/plusTwo"
+import { changeSessionReducer } from "./changeSession"
 
 const rootReducer = combineReducers({
   firstAverage: firstAverageReducer,
@@ -29,5 +30,6 @@ const rootReducer = combineReducers({
   getWorst: getWorstReducer,
   dnf: dnfReducer,
   plusTwo: plusTwoReducer,
+  session: changeSessionReducer,
 })
 export default rootReducer

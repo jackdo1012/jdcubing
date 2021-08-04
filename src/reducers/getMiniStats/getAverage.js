@@ -28,9 +28,9 @@ export const firstAverageReducer = (state = "0.00", action) => {
           return "DNF"
         }
       } else if (solves.length === 0) {
-        return "0:00"
+        return "0.00"
       }
-      return "0:00"
+      return "0.00"
     }
     default: {
       return state
@@ -67,9 +67,9 @@ export const secondAverageReducer = (state = "0.00", action) => {
           return "DNF"
         }
       } else if (solves.length === 0) {
-        return "0:00"
+        return "0.00"
       }
-      return "0:00"
+      return "0.00"
     }
     default: {
       return state

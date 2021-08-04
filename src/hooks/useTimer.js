@@ -17,6 +17,7 @@ const useTimer = () => {
   const solves = useSelector((state) => state.submit)
   const DNF = useSelector((state) => state.dnf)
   const plusTwo = useSelector((state) => state.plusTwo)
+  const session = useSelector((state) => state.session)
   const dispatch = useDispatch()
 
   useEffect(() => {
@@ -40,7 +41,7 @@ const useTimer = () => {
       }, 10)
     }
     if (!run) {
-      dispatch(submitTime(time))
+      dispatch(submitTime(time, session))
       clearInterval(interval)
     }
     return () => {
@@ -49,8 +50,8 @@ const useTimer = () => {
   }, [run])
 
   useEffect(() => {
-    dispatch(getBest(solves))
-    dispatch(getWorst(solves))
+    dispatch(getBest(localStorage.getItem(`times${session}`).split(",")))
+    dispatch(getWorst(localStorage.getItem(`times${session}`).split(",")))
   }, [solves])
 
   useEffect(() => {

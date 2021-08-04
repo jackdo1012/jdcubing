@@ -1,11 +1,10 @@
-if (!localStorage.getItem("times")) {
-  localStorage.setItem("times", [])
-}
-var solvesArray = localStorage.getItem("times").split(",")
-
-export const submitTimeReducer = (state = solvesArray, action) => {
+export const submitTimeReducer = (state = [], action) => {
   switch (action.type) {
     case "SUBMIT": {
+      var solvesArray = localStorage
+        .getItem(`times${action.session}`)
+        .split(",")
+
       var time = action.time
       if (action.time === "0.00") {
         return state
@@ -16,10 +15,10 @@ export const submitTimeReducer = (state = solvesArray, action) => {
         ).toString()
         console.log(time)
       }
-      solvesArray = localStorage.getItem("times")
+      solvesArray = localStorage.getItem(`times${action.session}`)
       solvesArray = solvesArray ? solvesArray.split(",") : []
       solvesArray.unshift(time.toString())
-      localStorage.setItem("times", solvesArray.toString())
+      localStorage.setItem(`times${action.session}`, solvesArray.toString())
       return solvesArray
     }
     default: {

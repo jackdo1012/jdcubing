@@ -13,6 +13,11 @@ function App() {
   const secondType = useSelector((state) => state.updateSecondStat)[0]
   const firstLength = useSelector((state) => state.updateFirstStat)[1]
   const secondLength = useSelector((state) => state.updateSecondStat)[1]
+  const session = useSelector((state) => state.session)
+
+  if (!localStorage.getItem(`times${session}`)) {
+    localStorage.setItem(`times${session}`, [])
+  }
 
   const formatToTwoDigit = (time) => {
     if (time.length === 1) {

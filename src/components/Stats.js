@@ -24,64 +24,79 @@ function Stats(props) {
   const run = useSelector((state) => state.startOrStop)
   const best = useSelector((state) => state.getBest)
   const worst = useSelector((state) => state.getWorst)
+  const session = useSelector((state) => state.session)
   useEffect(() => {
-    dispatch(getSolvesStats(solves))
-  }, [solves])
+    dispatch(getSolvesStats(localStorage.getItem(`times${session}`).split(",")))
+    dispatch(getBest(localStorage.getItem(`times${session}`).split(",")))
+    dispatch(getWorst(localStorage.getItem(`times${session}`).split(",")))
+  }, [solves, session])
   const handleResetSolves = () => {
-    localStorage.setItem("times", [])
+    localStorage.setItem(`times${session}`, [])
     dispatch(getSolvesStats([]))
     dispatch(getBest([0]))
     dispatch(getWorst([0]))
     if (firstType === "ao") {
       dispatch(
-        getFirstAo(localStorage.getItem("times").split(","), firstLength)
+        getFirstAo(
+          localStorage.getItem(`times${session}`).split(","),
+          firstLength
+        )
       )
     } else if (firstType === "mo") {
       dispatch(
-        getFirstMo(localStorage.getItem("times").split(","), firstLength)
+        getFirstMo(
+          localStorage.getItem(`times${session}`).split(","),
+          firstLength
+        )
       )
     }
     if (secondType === "ao") {
       dispatch(
-        getSecondAo(localStorage.getItem("times").split(","), secondLength)
+        getSecondAo(
+          localStorage.getItem(`times${session}`).split(","),
+          secondLength
+        )
       )
     } else if (secondType === "mo") {
       dispatch(
-        getSecondMo(localStorage.getItem("times").split(","), secondLength)
+        getSecondMo(
+          localStorage.getItem(`times${session}`).split(","),
+          secondLength
+        )
       )
     }
   }
   return (
     <>
-      <table>
-        <thead>
-          <tr>
-            <th colSpan="2">Stats</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Solves: </td>
-            <td>{solvesStats}</td>
-          </tr>
-          <tr>
-            <td>Best: </td>
-            <td>{formatTime(best)}</td>
-          </tr>
-          <tr>
-            <td>Worst: </td>
-            <td>{formatTime(worst)}</td>
-          </tr>
-          {!run && (
+      {!run && (
+        <table>
+          <thead>
+            <tr>
+              <th colSpan="2">Stats</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Solves: </td>
+              <td>{solvesStats}</td>
+            </tr>
+            <tr>
+              <td>Best: </td>
+              <td>{formatTime(best)}</td>
+            </tr>
+            <tr>
+              <td>Worst: </td>
+              <td>{formatTime(worst)}</td>
+            </tr>
             <tr>
               <td>Reset: </td>
               <td>
                 <button onClick={handleResetSolves}>Reset solves</button>
               </td>
             </tr>
-          )}
-        </tbody>
-      </table>
+          </tbody>
+        </table>
+      )}
     </>
   )
 }
