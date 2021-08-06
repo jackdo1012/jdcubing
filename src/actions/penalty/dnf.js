@@ -1,3 +1,3 @@
-export const getDnf = () => {
-  return { type: "DNF" }
+export const getDnf = (session) => {
+  return { type: "DNF", session }
 }

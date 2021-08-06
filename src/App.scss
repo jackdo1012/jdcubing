@@ -1,0 +1,190 @@
+@use "scss/colors";
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+html,
+body {
+	overflow: hidden;
+	-moz-user-select: none;
+	-khtml-user-select: none;
+	-webkit-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+.App {
+	background-color: colors.$light-background;
+	height: 95vh;
+	width: 100vw;
+}
+
+.mobile-navbar {
+	position: fixed;
+	top: 0;
+	right: 0;
+	left: 0;
+
+	width: 100%;
+	height: 5vh;
+	background-color: #adcdeb;
+	display: grid;
+
+	grid-template-columns: repeat(12, 7.875vw);
+	grid-column-gap: 0.5vw;
+
+	h1 {
+		grid-column: 1/7;
+		justify-self: left;
+		align-self: center;
+		margin-left: 5%;
+	}
+
+	.mobile-navbar__setting {
+		position: absolute;
+		height: 80%;
+		width: 4vh;
+		grid-column: 9/11;
+
+		justify-self: center;
+		align-self: center;
+		background-color: transparent;
+		border: none;
+
+		cursor: pointer;
+
+		svg {
+			position: absolute;
+			width: 100%;
+			height: 100%;
+			top: 0;
+
+			left: 0;
+			right: 0;
+			bottom: 0;
+		}
+	}
+
+	label {
+		grid-column: 11/13;
+		justify-self: center;
+		align-self: center;
+	}
+}
+
+#light-dark:checked ~ .App {
+	background-color: colors.$dark-background;
+
+	.mobile-navbar {
+		background-color: #2d3339;
+
+		h1 {
+			color: white;
+		}
+
+		.mobile-navbar__setting {
+			color: white;
+		}
+
+		.light-dark__button {
+			border: 3px solid colors.$light-button;
+
+			.light-dark__button--inside {
+				left: 50%;
+				background-color: colors.$light-button;
+			}
+
+			.bi-moon-fill {
+				visibility: visible;
+			}
+
+			.bi-brightness-high-fill {
+				visibility: hidden;
+			}
+		}
+	}
+
+	.main .setting .setting-table {
+		background-color: colors.$dark-secondary;
+		table {
+			color: white;
+
+			tr:nth-child(even) {
+				background-color: colors.$dark-secondary;
+
+				td:nth-child(2) {
+					input,
+					select {
+						background-color: colors.$dark-primary;
+						color: white;
+					}
+				}
+			}
+
+			tr:nth-child(odd) {
+				background-color: colors.$dark-primary;
+				td:nth-child(2) {
+					input,
+					select {
+						background-color: colors.$dark-secondary;
+						color: white;
+					}
+				}
+			}
+		}
+	}
+}
+
+.light-dark__button {
+	position: relative;
+	width: 10vw;
+	height: 2.5vh;
+	border: 3px solid colors.$dark-button;
+
+	border-radius: 40px;
+	cursor: pointer;
+
+	.light-dark__button--inside {
+		position: absolute;
+		background-color: colors.$dark-button;
+		width: 45%;
+		height: 85%;
+
+		left: 5%;
+		top: 7.5%;
+		bottom: 7.5%;
+		border-radius: 40px;
+
+		transition: all 0.5s ease;
+	}
+
+	.bi {
+		position: absolute;
+		width: auto;
+		height: 80%;
+		top: 10%;
+		bottom: 10%;
+		transition: all 0.2s ease 0.1s;
+	}
+
+	.bi-moon-fill {
+		left: 25%;
+		transform: translateX(-50%);
+		color: colors.$light-button;
+		visibility: hidden;
+	}
+
+	.bi-brightness-high-fill {
+		right: 25%;
+		transform: translateX(50%);
+		color: colors.$dark-button;
+		visibility: visible;
+	}
+}
+
+.main {
+	margin-top: 5vh;
+}

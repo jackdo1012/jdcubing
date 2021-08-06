@@ -1,3 +1,3 @@
-export const getPlusTwo = () => {
-  return { type: "PLUS_TWO" }
+export const getPlusTwo = (session) => {
+  return { type: "PLUS_TWO", session }
 }
