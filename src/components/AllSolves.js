@@ -11,17 +11,17 @@ function AllSolves(props) {
 	const best = useSelector((state) => state.getBest)
 	const worst = useSelector((state) => state.getWorst)
 	const session = useSelector((state) => state.session)
-	const [timeList, setTimeList] = useState([])
-	useEffect(() => {
-		if (!run) {
-			setTimeList(localStorage.getItem(`times${session}`).split(","))
-		}
-	}, [run, plusTwo, dnf, session])
+	const [timeList, setTimeList] = useState(
+		localStorage.getItem(`times${session}`).split(",")
+	)
 	useEffect(() => {
 		if (worst === "0.00" && best === "0.00") {
 			setTimeList([])
 		}
-	}, [best, worst])
+		if (!run) {
+			setTimeList(localStorage.getItem(`times${session}`).split(","))
+		}
+	}, [run, plusTwo, dnf, session, best, worst])
 	const handleSessionChange = (session) => {
 		dispatch(changeSession(Number(session)))
 	}

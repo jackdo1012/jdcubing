@@ -9,28 +9,20 @@ const MiniStats = (props) => {
 	const secondLength = props.secondLength
 	const formatTime = props.formatTime
 	const run = useSelector((state) => state.startOrStop)
-	const firstAo = useSelector((state) => state.firstAverage)
-	const firstMo = useSelector((state) => state.firstMean)
-	const secondAo = useSelector((state) => state.secondAverage)
-	const secondMo = useSelector((state) => state.secondMean)
+	const firstMiniStats = useSelector((state) => state.firstMiniStats)
+	const secondMiniStats = useSelector((state) => state.secondMiniStats)
 	return (
 		<div className={props.className}>
 			{!run && (
 				<p>
 					{firstType}
-					{firstLength}:{" "}
-					{firstType === "ao"
-						? formatTime(firstAo)
-						: formatTime(firstMo)}
+					{firstLength}: {formatTime(firstMiniStats)}
 				</p>
 			)}
 			{!run && (
 				<p>
 					{secondType}
-					{secondLength}:{" "}
-					{secondType === "ao"
-						? formatTime(secondAo)
-						: formatTime(secondMo)}
+					{secondLength}: {formatTime(secondMiniStats)}
 				</p>
 			)}
 		</div>

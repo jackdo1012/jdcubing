@@ -1,12 +1,9 @@
 import { configureStore } from "@reduxjs/toolkit"
-import {
-	firstAverageReducer,
-	secondAverageReducer,
-} from "./getMiniStats/getAverage"
-import { firstMeanReducer, secondMeanReducer } from "./getMiniStats/getMean"
+import getFirstMiniStatReducer from "./getMiniStats/getFirstMiniStat"
+import getSecondMiniStatReducer from "./getMiniStats/getSecondMiniStat"
 import getNumberOfSolvesReducer from "./getStats/getNumberOfSolves"
 import startStopTimer from "./startStopTimer"
-import { submitTimeReducer } from "./submitTime"
+import submitTimeReducer from "./submitTime"
 import updateFirstMiniReducer from "./updateMiniStats/updateFirstMiniStats"
 import updateSecondMiniReducer from "./updateMiniStats/updateSecondMiniStats"
 import getBestReducer from "./getStats/getBest"
@@ -18,15 +15,13 @@ import showHideSettingReducer from "./showHideSetting"
 
 const store = configureStore({
 	reducer: {
-		firstAverage: firstAverageReducer,
-		firstMean: firstMeanReducer,
-		secondAverage: secondAverageReducer,
-		secondMean: secondMeanReducer,
+		firstMiniStats: getFirstMiniStatReducer, // with redux toolkit
+		secondMiniStats: getSecondMiniStatReducer, // with redux toolkit
 		startOrStop: startStopTimer, // with redux toolkit
 		submit: submitTimeReducer,
 		numberOfSolves: getNumberOfSolvesReducer, // with redux toolkit
-		updateFirstMiniStat: updateFirstMiniReducer,
-		updateSecondMiniStat: updateSecondMiniReducer,
+		updateFirstMiniStat: updateFirstMiniReducer, // with redux toolkit
+		updateSecondMiniStat: updateSecondMiniReducer, // with redux toolkit
 		getBest: getBestReducer, // with redux toolkit
 		getWorst: getWorstReducer, // with redux toolkit
 		dnf: dnfReducer, // with redux toolkit

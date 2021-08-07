@@ -2,7 +2,7 @@ import { useEffect, useState } from "react"
 import { useDispatch, useSelector } from "react-redux"
 import { getBest } from "../reducers/getStats/getBest"
 import { getWorst } from "../reducers/getStats/getWorst"
-import { submitTime } from "../actions/submitTime"
+import { submitTime } from "../reducers/submitTime"
 
 const reformatTime = (input) => {
 	if (input < 10) {
@@ -43,7 +43,7 @@ const useTimer = () => {
 			}, 10)
 		}
 		if (!run) {
-			dispatch(submitTime(time, session))
+			dispatch(submitTime({ time, session }))
 			clearInterval(interval)
 		}
 		return () => {

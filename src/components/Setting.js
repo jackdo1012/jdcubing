@@ -1,13 +1,8 @@
 import React, { useEffect, useState } from "react"
 import { useDispatch, useSelector } from "react-redux"
-import {
-	getFirstAo,
-	getFirstMo,
-} from "../actions/getMiniStats/getFirstMiniStats"
-import {
-	getSecondAo,
-	getSecondMo,
-} from "../actions/getMiniStats/getSecondMiniStats"
+import { getFirstMiniStats } from "../reducers/getMiniStats/getFirstMiniStat"
+import { getSecondMiniStats } from "../reducers/getMiniStats/getSecondMiniStat"
+
 import { hideSetting } from "../reducers/showHideSetting"
 import { updateFirstMiniStat } from "../reducers/updateMiniStats/updateFirstMiniStats"
 import { updateSecondMiniStat } from "../reducers/updateMiniStats/updateSecondMiniStats"
@@ -44,36 +39,16 @@ function Setting(props) {
 		dispatch(
 			updateSecondMiniStat({ value: secondType, amount: secondLength })
 		)
-		if (firstType === "ao") {
-			dispatch(
-				getFirstAo(
-					localStorage.getItem(`times${session}`).split(","),
-					firstLength
-				)
+		dispatch(
+			getFirstMiniStats(
+				localStorage.getItem(`times${session}`).split(",")
 			)
-		} else if (firstType === "mo") {
-			dispatch(
-				getFirstMo(
-					localStorage.getItem(`times${session}`).split(","),
-					firstLength
-				)
+		)
+		dispatch(
+			getSecondMiniStats(
+				localStorage.getItem(`times${session}`).split(",")
 			)
-		}
-		if (secondType === "ao") {
-			dispatch(
-				getSecondAo(
-					localStorage.getItem(`times${session}`).split(","),
-					secondLength
-				)
-			)
-		} else if (secondType === "mo") {
-			dispatch(
-				getSecondMo(
-					localStorage.getItem(`times${session}`).split(","),
-					secondLength
-				)
-			)
-		}
+		)
 	}, [firstType, secondType, firstLength, secondLength, font, run, session])
 	return (
 		<div className={props.className}>

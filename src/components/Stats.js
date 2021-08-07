@@ -1,23 +1,13 @@
 import React, { useEffect } from "react"
 import { useDispatch, useSelector } from "react-redux"
-import {
-	getFirstAo,
-	getFirstMo,
-} from "../actions/getMiniStats/getFirstMiniStats"
-import {
-	getSecondAo,
-	getSecondMo,
-} from "../actions/getMiniStats/getSecondMiniStats"
 import { getBest } from "../reducers/getStats/getBest"
 import { getWorst } from "../reducers/getStats/getWorst"
 import { getNumberOfSolves } from "../reducers/getStats/getNumberOfSolves"
 import "./Stats.scss"
+import { getSecondMiniStats } from "../reducers/getMiniStats/getSecondMiniStat"
+import { getFirstMiniStats } from "../reducers/getMiniStats/getFirstMiniStat"
 
 function Stats(props) {
-	const firstType = props.firstType
-	const secondType = props.secondType
-	const firstLength = props.firstLength
-	const secondLength = props.secondLength
 	const formatTime = props.formatTime
 	const dispatch = useDispatch()
 	const solves = useSelector((state) => state.submit)
@@ -42,36 +32,16 @@ function Stats(props) {
 		dispatch(getNumberOfSolves([]))
 		dispatch(getBest([0]))
 		dispatch(getWorst([0]))
-		if (firstType === "ao") {
-			dispatch(
-				getFirstAo(
-					localStorage.getItem(`times${session}`).split(","),
-					firstLength
-				)
+		dispatch(
+			getFirstMiniStats(
+				localStorage.getItem(`times${session}`).split(",")
 			)
-		} else if (firstType === "mo") {
-			dispatch(
-				getFirstMo(
-					localStorage.getItem(`times${session}`).split(","),
-					firstLength
-				)
+		)
+		dispatch(
+			getSecondMiniStats(
+				localStorage.getItem(`times${session}`).split(",")
 			)
-		}
-		if (secondType === "ao") {
-			dispatch(
-				getSecondAo(
-					localStorage.getItem(`times${session}`).split(","),
-					secondLength
-				)
-			)
-		} else if (secondType === "mo") {
-			dispatch(
-				getSecondMo(
-					localStorage.getItem(`times${session}`).split(","),
-					secondLength
-				)
-			)
-		}
+		)
 	}
 	return (
 		<div className={props.className}>
