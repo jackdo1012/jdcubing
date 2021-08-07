@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react"
 import { useDispatch, useSelector } from "react-redux"
-import { getBest } from "../actions/getStats/getBest"
-import { getWorst } from "../actions/getStats/getWorst"
+import { getBest } from "../reducers/getStats/getBest"
+import { getWorst } from "../reducers/getStats/getWorst"
 import { submitTime } from "../actions/submitTime"
 
 const reformatTime = (input) => {
@@ -57,12 +57,12 @@ const useTimer = () => {
 	}, [solves])
 
 	useEffect(() => {
-		if (plusTwo !== "0:00") {
+		if (plusTwo !== "0.00") {
 			setTime(plusTwo)
 		}
 	}, [plusTwo])
 	useEffect(() => {
-		if (DNF !== "0:00") {
+		if (DNF !== "0.00") {
 			setTime("DNF")
 		}
 	}, [DNF])

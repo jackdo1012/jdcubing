@@ -1,13 +1,32 @@
+import { createSlice } from "@reduxjs/toolkit"
 export const dnfReducer = (state = "0:00", action) => {
-  switch (action.type) {
-    case "DNF": {
-      const solves = localStorage.getItem(`times${action.session}`).split(",")
-      solves.shift()
-      localStorage.setItem(`times${action.session}`, ["DNF", ...solves])
-      return "DNF"
-    }
-    default: {
-      return state
-    }
-  }
+	switch (action.type) {
+		case "DNF": {
+			const solves = localStorage
+				.getItem(`times${action.session}`)
+				.split(",")
+			solves.shift()
+			localStorage.setItem(`times${action.session}`, ["DNF", ...solves])
+			return "DNF"
+		}
+		default: {
+			return state
+		}
+	}
 }
+export const dnfSlice = createSlice({
+	name: "dnf",
+	initialState: "0.00",
+	reducers: {
+		getDnf: (_state, action) => {
+			var solves = localStorage
+				.getItem(`times${action.payload}`)
+				.split(",")
+			solves.shift()
+			localStorage.setItem(`times${action.payload}`, ["DNF", ...solves])
+			return "DNF"
+		},
+	},
+})
+export const { getDnf } = dnfSlice.actions
+export default dnfSlice.reducer

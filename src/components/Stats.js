@@ -8,9 +8,9 @@ import {
 	getSecondAo,
 	getSecondMo,
 } from "../actions/getMiniStats/getSecondMiniStats"
-import { getBest } from "../actions/getStats/getBest"
-import { getSolvesStats } from "../actions/getStats/getNumberOfSolves"
-import { getWorst } from "../actions/getStats/getWorst"
+import { getBest } from "../reducers/getStats/getBest"
+import { getWorst } from "../reducers/getStats/getWorst"
+import { getNumberOfSolves } from "../reducers/getStats/getNumberOfSolves"
 import "./Stats.scss"
 
 function Stats(props) {
@@ -21,7 +21,7 @@ function Stats(props) {
 	const formatTime = props.formatTime
 	const dispatch = useDispatch()
 	const solves = useSelector((state) => state.submit)
-	const solvesStats = useSelector((state) => state.getSolvesStats)
+	const solvesStats = useSelector((state) => state.numberOfSolves)
 	const run = useSelector((state) => state.startOrStop)
 	const best = useSelector((state) => state.getBest)
 	const worst = useSelector((state) => state.getWorst)
@@ -30,14 +30,16 @@ function Stats(props) {
 	const dnf = useSelector((state) => state.dnf)
 	useEffect(() => {
 		dispatch(
-			getSolvesStats(localStorage.getItem(`times${session}`).split(","))
+			getNumberOfSolves(
+				localStorage.getItem(`times${session}`).split(",")
+			)
 		)
 		dispatch(getBest(localStorage.getItem(`times${session}`).split(",")))
 		dispatch(getWorst(localStorage.getItem(`times${session}`).split(",")))
 	}, [solves, session, plusTwo, dnf])
 	const handleResetSolves = () => {
 		localStorage.setItem(`times${session}`, [])
-		dispatch(getSolvesStats([]))
+		dispatch(getNumberOfSolves([]))
 		dispatch(getBest([0]))
 		dispatch(getWorst([0]))
 		if (firstType === "ao") {

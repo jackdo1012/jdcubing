@@ -1,6 +1,6 @@
 import React, { useEffect } from "react"
 import { useDispatch, useSelector } from "react-redux"
-import { startTimer, stopTimer } from "../actions/startStopTimer"
+import { startTimer, stopTimer } from "../reducers/startStopTimer"
 import useTimer from "../hooks/useTimer"
 import "./Timer.scss"
 

@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
 import { useDispatch, useSelector } from "react-redux"
-import { hideSetting, showSetting } from "./actions/showHideSetting"
+import { hideSetting, showSetting } from "./reducers/showHideSetting"
 import "./App.scss"
 import AllSolves from "./components/AllSolves"
 import MiniStats from "./components/MiniStats"
@@ -13,12 +13,12 @@ function App() {
 	const dispatch = useDispatch()
 	const [settingOn, setSettingOn] = useState(false)
 	const run = useSelector((state) => state.startOrStop)
-	const firstType = useSelector((state) => state.updateFirstStat)[0]
-	const secondType = useSelector((state) => state.updateSecondStat)[0]
-	const firstLength = useSelector((state) => state.updateFirstStat)[1]
-	const secondLength = useSelector((state) => state.updateSecondStat)[1]
+	const firstType = useSelector((state) => state.updateFirstMiniStat)[0]
+	const secondType = useSelector((state) => state.updateSecondMiniStat)[0]
+	const firstLength = useSelector((state) => state.updateFirstMiniStat)[1]
+	const secondLength = useSelector((state) => state.updateSecondMiniStat)[1]
 	const session = useSelector((state) => state.session)
-	const settingStatus = useSelector((state) => state.settingStatus)
+	const settingStatus = useSelector((state) => state.settingStatus.state)
 
 	useEffect(() => {
 		if (!run) {

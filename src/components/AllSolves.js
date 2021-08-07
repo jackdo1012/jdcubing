@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react"
 import { useDispatch, useSelector } from "react-redux"
-import { changeSession } from "../actions/changeSession"
+import { changeSession } from "../reducers/changeSession"
 import "./AllSolves.scss"
 
 function AllSolves(props) {
@@ -23,7 +23,7 @@ function AllSolves(props) {
 		}
 	}, [best, worst])
 	const handleSessionChange = (session) => {
-		dispatch(changeSession(session))
+		dispatch(changeSession(Number(session)))
 	}
 	const formatTime = (time) => {
 		if (time.split(".")[0].length >= 2 || time.includes(":")) {

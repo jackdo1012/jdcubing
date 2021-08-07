@@ -8,11 +8,11 @@ import {
 	getSecondAo,
 	getSecondMo,
 } from "../actions/getMiniStats/getSecondMiniStats"
-import { getBest } from "../actions/getStats/getBest"
-import { getSolvesStats } from "../actions/getStats/getNumberOfSolves"
-import { getWorst } from "../actions/getStats/getWorst"
-import { getDnf } from "../actions/penalty/dnf"
-import { getPlusTwo } from "../actions/penalty/plusTwo"
+import { getBest } from "../reducers/getStats/getBest"
+import { getNumberOfSolves } from "../reducers/getStats/getNumberOfSolves"
+import { getWorst } from "../reducers/getStats/getWorst"
+import { getDnf } from "../reducers/penalty/dnf"
+import { getPlusTwo } from "../reducers/penalty/plusTwo"
 import "./Penalty.scss"
 
 function Penalty(props) {
@@ -84,7 +84,9 @@ function Penalty(props) {
 		setRunAvailable(false)
 		resetMiniStats()
 		dispatch(
-			getSolvesStats(localStorage.getItem(`times${session}`).split(","))
+			getNumberOfSolves(
+				localStorage.getItem(`times${session}`).split(",")
+			)
 		)
 		dispatch(getBest(localStorage.getItem(`times${session}`).split(",")))
 		dispatch(getWorst(localStorage.getItem(`times${session}`).split(",")))

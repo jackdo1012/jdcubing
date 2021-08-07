@@ -8,9 +8,9 @@ import {
 	getSecondAo,
 	getSecondMo,
 } from "../actions/getMiniStats/getSecondMiniStats"
-import { hideSetting } from "../actions/showHideSetting"
-import { updateFirstMiniStat } from "../actions/updateMiniStat/updateFirstMiniStat"
-import { updateSecondMiniStat } from "../actions/updateMiniStat/updateSecondMiniStat"
+import { hideSetting } from "../reducers/showHideSetting"
+import { updateFirstMiniStat } from "../reducers/updateMiniStats/updateFirstMiniStats"
+import { updateSecondMiniStat } from "../reducers/updateMiniStats/updateSecondMiniStats"
 import "./Setting.scss"
 
 function Setting(props) {
@@ -40,8 +40,10 @@ function Setting(props) {
 		functionStorage.secondLength
 	)
 	useEffect(() => {
-		dispatch(updateFirstMiniStat(firstType, firstLength))
-		dispatch(updateSecondMiniStat(secondType, secondLength))
+		dispatch(updateFirstMiniStat({ value: firstType, amount: firstLength }))
+		dispatch(
+			updateSecondMiniStat({ value: secondType, amount: secondLength })
+		)
 		if (firstType === "ao") {
 			dispatch(
 				getFirstAo(
