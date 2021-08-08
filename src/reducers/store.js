@@ -15,19 +15,19 @@ import showHideSettingReducer from "./showHideSetting"
 
 const store = configureStore({
 	reducer: {
-		firstMiniStats: getFirstMiniStatReducer, // with redux toolkit
-		secondMiniStats: getSecondMiniStatReducer, // with redux toolkit
-		startOrStop: startStopTimer, // with redux toolkit
+		firstMiniStats: getFirstMiniStatReducer,
+		secondMiniStats: getSecondMiniStatReducer,
+		startOrStop: startStopTimer,
 		submit: submitTimeReducer,
-		numberOfSolves: getNumberOfSolvesReducer, // with redux toolkit
-		updateFirstMiniStat: updateFirstMiniReducer, // with redux toolkit
-		updateSecondMiniStat: updateSecondMiniReducer, // with redux toolkit
-		getBest: getBestReducer, // with redux toolkit
-		getWorst: getWorstReducer, // with redux toolkit
-		dnf: dnfReducer, // with redux toolkit
-		plusTwo: plusTwoReducer, // with redux toolkit
-		session: changeSessionReducer, // with redux toolkit
-		settingStatus: showHideSettingReducer, // with redux toolkit
+		numberOfSolves: getNumberOfSolvesReducer,
+		updateFirstMiniStat: updateFirstMiniReducer,
+		updateSecondMiniStat: updateSecondMiniReducer,
+		getBest: getBestReducer,
+		getWorst: getWorstReducer,
+		dnf: dnfReducer,
+		plusTwo: plusTwoReducer,
+		session: changeSessionReducer,
+		settingStatus: showHideSettingReducer,
 	},
 })
 export default store
