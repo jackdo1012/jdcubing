@@ -64,15 +64,22 @@ function Penalty(props) {
 
 	return (
 		<div className={props.className}>
-			{renderCount > 3 && runAvailable && (
-				<button onClick={handlePlusTwo} className="plus-two-btn">
-					{plusTwo}
-				</button>
-			)}
-			{renderCount > 3 && runAvailable && (
-				<button onClick={handleDnf} className="dnf-btn">
-					{dnf}
-				</button>
+			{!run && (
+				<div className="outer-penalty">
+					{renderCount > 3 && runAvailable && (
+						<button
+							onClick={handlePlusTwo}
+							className="plus-two-btn"
+						>
+							{plusTwo}
+						</button>
+					)}
+					{renderCount > 3 && runAvailable && (
+						<button onClick={handleDnf} className="dnf-btn">
+							{dnf}
+						</button>
+					)}
+				</div>
 			)}
 		</div>
 	)

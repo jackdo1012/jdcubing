@@ -13,12 +13,12 @@
 	padding: 0;
 	box-sizing: border-box;
 }
-#light-dark:checked ~ .App .main .penalty button {
+#light-dark:checked ~ .App .main .outer-penalty button {
 	background-color: colors.$dark-navbar;
 	border-color: colors.$light-navbar;
 	color: white;
 }
-.penalty {
+.outer-penalty {
 	position: relative;
 	width: 100%;
 	height: 100%;
@@ -32,7 +32,7 @@
 	}
 }
 @media screen and (min-width: 1024px) and (min-height: 600px) {
-	.penalty {
+	.outer-penalty {
 		.plus-two-btn {
 			width: 46%;
 			margin: 0 2%;

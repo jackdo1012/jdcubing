@@ -46,9 +46,11 @@
 				height: fit-content;
 				tr {
 					cursor: pointer;
+					border-bottom: 1px solid colors.$dark-navbar;
+					border-top: 1px solid colors.$dark-navbar;
 					td {
 						text-align: center;
-						padding-bottom: 5%;
+						padding: 5% 0;
 					}
 				}
 			}
@@ -60,8 +62,12 @@
 		background-color: colors.$dark-navbar;
 		border: 3px solid colors.$light-navbar;
 		table thead tr th select,
-		table tbody tr td {
-			color: white;
+		table tbody tr {
+			border-bottom: 1px solid colors.$light-navbar;
+			border-top: 1px solid colors.$light-navbar;
+			td {
+				color: white;
+			}
 		}
 	}
 }
