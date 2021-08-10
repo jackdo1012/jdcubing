@@ -1,4 +1,27 @@
 * {
 	margin: 0;
 	padding: 0;
+	box-sizing: border-box;
+}
+.mini-stats {
+	justify-self: center;
+	align-self: top;
+	text-align: center;
+}
+.first-mini-stats {
+	font-size: 1.5rem;
+}
+.second-mini-stats {
+	font-size: 1.5rem;
+}
+#light-dark:checked ~ .App .main .mini-stats > .first-mini-stats,
+#light-dark:checked ~ .App .main .mini-stats > .second-mini-stats {
+	color: white;
+}
+
+@media screen and (min-width: 1024px) and (min-height: 600px) {
+	.first-mini-stats,
+	.second-mini-stats {
+		font-size: 2rem;
+	}
 }

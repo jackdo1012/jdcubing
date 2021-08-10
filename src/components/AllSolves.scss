@@ -1,4 +1,67 @@
+@use "../scss/colors";
 * {
 	margin: 0;
 	padding: 0;
+	box-sizing: border-box;
+}
+
+.all-solves {
+	position: relative;
+	width: 100%;
+	.solves-table {
+		background-color: colors.$light-navbar;
+		height: 100%;
+		border: 3px solid colors.$dark-navbar;
+		border-radius: 10px;
+		overflow: scroll;
+		table {
+			width: 100%;
+			height: fit-content;
+			border-collapse: collapse;
+			background-blend-mode: color-burn;
+			thead {
+				tr {
+					background-color: transparent;
+					th {
+						padding: 5% 0;
+						select {
+							-webkit-appearance: none;
+							-moz-appearance: none;
+							cursor: pointer;
+							background-color: transparent;
+							border: none;
+							font-size: 1.25rem;
+							border-radius: 5px;
+							width: fit-content;
+						}
+						select:hover {
+							background-color: rgba(255, 255, 255, 0.5);
+						}
+					}
+				}
+			}
+			tbody {
+				position: relative;
+				top: 0;
+				height: fit-content;
+				tr {
+					cursor: pointer;
+					td {
+						text-align: center;
+						padding-bottom: 5%;
+					}
+				}
+			}
+		}
+	}
+}
+#light-dark:checked ~ .App .main .all-solves {
+	.solves-table {
+		background-color: colors.$dark-navbar;
+		border: 3px solid colors.$light-navbar;
+		table thead tr th select,
+		table tbody tr td {
+			color: white;
+		}
+	}
 }

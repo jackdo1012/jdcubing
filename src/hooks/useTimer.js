@@ -12,7 +12,7 @@ const reformatTime = (input) => {
 }
 
 const useTimer = () => {
-	const [time, setTime] = useState("0.00")
+	const [time, setTime] = useState("00.00")
 	const run = useSelector((state) => state.startOrStop)
 	const solves = useSelector((state) => state.submit)
 	const DNF = useSelector((state) => state.dnf)

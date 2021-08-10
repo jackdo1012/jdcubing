@@ -10,7 +10,7 @@ export const submitTimeSlice = createSlice({
 				.split(",")
 
 			var time = action.payload.time
-			if (time === "0.00") {
+			if (time === "00.00") {
 				return state
 			} else if (time.includes(":")) {
 				time = (

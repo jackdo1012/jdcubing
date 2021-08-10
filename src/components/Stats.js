@@ -6,6 +6,8 @@ import { getNumberOfSolves } from "../reducers/getStats/getNumberOfSolves"
 import "./Stats.scss"
 import { getSecondMiniStats } from "../reducers/getMiniStats/getSecondMiniStat"
 import { getFirstMiniStats } from "../reducers/getMiniStats/getFirstMiniStat"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { faTimes } from "@fortawesome/free-solid-svg-icons"
 
 function Stats(props) {
 	const formatTime = props.formatTime
@@ -29,6 +31,7 @@ function Stats(props) {
 	}, [solves, session, plusTwo, dnf])
 	const handleResetSolves = () => {
 		localStorage.setItem(`times${session}`, [])
+		localStorage.setItem(`scramble`, "")
 		dispatch(getNumberOfSolves([]))
 		dispatch(getBest([0]))
 		dispatch(getWorst([0]))
@@ -46,32 +49,34 @@ function Stats(props) {
 	return (
 		<div className={props.className}>
 			{!run && (
-				<table>
-					<thead>
-						<tr>
-							<th>Stats</th>
-						</tr>
-					</thead>
-					<tbody>
-						<tr>
-							<td>Solves: {solvesStats}</td>
-						</tr>
-						<tr>
-							<td>Best: {formatTime(best)}</td>
-						</tr>
-						<tr>
-							<td>Worst: {formatTime(worst)}</td>
-						</tr>
-						<tr>
-							<td>
-								Reset:{" "}
-								<button onClick={handleResetSolves}>
-									Reset solves
-								</button>
-							</td>
-						</tr>
-					</tbody>
-				</table>
+				<div className="stats-table">
+					<table>
+						<thead>
+							<tr>
+								<th>Stats</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>Solves: {solvesStats}</td>
+							</tr>
+							<tr>
+								<td>Best: {formatTime(best)}</td>
+							</tr>
+							<tr>
+								<td>Worst: {formatTime(worst)}</td>
+							</tr>
+							<tr>
+								<td>
+									Reset solves:{" "}
+									<button onClick={handleResetSolves}>
+										<FontAwesomeIcon icon={faTimes} />
+									</button>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
 			)}
 		</div>
 	)

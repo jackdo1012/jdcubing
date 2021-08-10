@@ -7,6 +7,8 @@ import { hideSetting } from "../reducers/showHideSetting"
 import { updateFirstMiniStat } from "../reducers/updateMiniStats/updateFirstMiniStats"
 import { updateSecondMiniStat } from "../reducers/updateMiniStats/updateSecondMiniStats"
 import "./Setting.scss"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { faTimes } from "@fortawesome/free-solid-svg-icons"
 
 function Setting(props) {
 	if (localStorage.getItem("function") === null) {
@@ -62,98 +64,93 @@ function Setting(props) {
 				<div className="setting-page">
 					<div className="setting-table">
 						<table>
-							<tr>
-								<th colSpan="2" className="title">
-									Setting
-								</th>
-							</tr>
-							<tr>
-								<td>Font:</td>
-								<td>
-									<select
-										value={font}
-										onChange={(e) =>
-											setFont(e.target.value)
-										}
-									>
-										<option value="1">1</option>
-										<option value="2">2</option>
-										<option value="3">3</option>
-										<option value="4">4</option>
-										<option value="5">5</option>
-										<option value="6">6</option>
-									</select>
-								</td>
-							</tr>
-							<tr>
-								<td>Stats 1 type:</td>
-								<td>
-									<select
-										value={firstType}
-										onChange={(e) =>
-											setFirstType(e.target.value)
-										}
-									>
-										<option value="ao">Average</option>
-										<option value="mo">Mean</option>
-									</select>
-								</td>
-							</tr>
-							<tr>
-								<td>Stats 1 length: </td>
-								<td>
-									<input
-										type="number"
-										value={firstLength}
-										onChange={(e) =>
-											setFirstLength(e.target.value)
-										}
-										min="3"
-										max="100"
-									/>
-								</td>
-							</tr>
-							<tr>
-								<td>Stats 2 type: </td>
-								<td>
-									<select
-										value={secondType}
-										onChange={(e) =>
-											setSecondType(e.target.value)
-										}
-									>
-										<option value="ao">Average</option>
-										<option value="mo">Mean</option>
-									</select>
-								</td>
-							</tr>
-							<tr>
-								<td>Stats 2 length: </td>
-								<td>
-									<input
-										type="number"
-										value={secondLength}
-										onChange={(e) =>
-											setSecondLength(e.target.value)
-										}
-										min="3"
-										max="100"
-									/>
-								</td>
-							</tr>
+							<tbody>
+								<tr>
+									<th colSpan="2" className="title">
+										Setting
+									</th>
+								</tr>
+								<tr>
+									<td>Font:</td>
+									<td>
+										<select
+											value={font}
+											onChange={(e) =>
+												setFont(e.target.value)
+											}
+										>
+											<option value="1">1</option>
+											<option value="2">2</option>
+											<option value="3">3</option>
+											<option value="4">4</option>
+											<option value="5">5</option>
+											<option value="6">6</option>
+										</select>
+									</td>
+								</tr>
+								<tr>
+									<td>Stats 1 type:</td>
+									<td>
+										<select
+											value={firstType}
+											onChange={(e) =>
+												setFirstType(e.target.value)
+											}
+										>
+											<option value="ao">Average</option>
+											<option value="mo">Mean</option>
+										</select>
+									</td>
+								</tr>
+								<tr>
+									<td>Stats 1 length: </td>
+									<td>
+										<input
+											type="number"
+											value={firstLength}
+											onChange={(e) =>
+												setFirstLength(e.target.value)
+											}
+											min="3"
+											max="100"
+										/>
+									</td>
+								</tr>
+								<tr>
+									<td>Stats 2 type: </td>
+									<td>
+										<select
+											value={secondType}
+											onChange={(e) =>
+												setSecondType(e.target.value)
+											}
+										>
+											<option value="ao">Average</option>
+											<option value="mo">Mean</option>
+										</select>
+									</td>
+								</tr>
+								<tr>
+									<td>Stats 2 length: </td>
+									<td>
+										<input
+											type="number"
+											value={secondLength}
+											onChange={(e) =>
+												setSecondLength(e.target.value)
+											}
+											min="3"
+											max="100"
+										/>
+									</td>
+								</tr>
+							</tbody>
 						</table>
 						<button
 							className="close-button"
 							onClick={() => dispatch(hideSetting())}
 						>
-							<svg
-								xmlns="http://www.w3.org/2000/svg"
-								fill="currentColor"
-								className="bi bi-x"
-								viewBox="0 0 16 16"
-							>
-								<path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z" />
-							</svg>
+							<FontAwesomeIcon icon={faTimes} />
 						</button>
 					</div>
 				</div>

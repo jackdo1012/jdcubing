@@ -18,36 +18,37 @@ body {
 
 .App {
 	background-color: colors.$light-background;
-	height: 95vh;
+	height: 100vh;
 	width: 100vw;
+	transition: all 0.5s ease;
 }
 
-.mobile-navbar {
+.navbar {
 	position: fixed;
-	top: 0;
+	bottom: 0;
 	right: 0;
 	left: 0;
 
-	width: 100%;
-	height: 5vh;
-	background-color: #adcdeb;
+	height: max(5vh, 40px);
+	background-color: colors.$light-navbar;
 	display: grid;
-
 	grid-template-columns: repeat(12, 7.875vw);
+
 	grid-column-gap: 0.5vw;
+	align-items: center;
 
 	h1 {
-		grid-column: 1/7;
-		justify-self: left;
-		align-self: center;
-		margin-left: 5%;
+		font-size: 2.4rem;
+		grid-column: 4/10;
+		justify-self: center;
+		transition: all 0.5s ease;
 	}
 
-	.mobile-navbar__setting {
+	.navbar__setting {
 		position: absolute;
-		height: 80%;
-		width: 4vh;
-		grid-column: 9/11;
+		height: max(80%, 26px);
+		width: max(4vh, 26px);
+		grid-column: 1/4;
 
 		justify-self: center;
 		align-self: center;
@@ -55,6 +56,7 @@ body {
 		border: none;
 
 		cursor: pointer;
+		transition: all 0.5s ease;
 
 		svg {
 			position: absolute;
@@ -68,116 +70,99 @@ body {
 		}
 	}
 
+	.navbar__setting:hover {
+		transform: rotate(180deg);
+	}
+
 	label {
-		grid-column: 11/13;
+		grid-column: 10/13;
 		justify-self: center;
 		align-self: center;
+		position: absolute;
+
+		width: 20vw;
+		height: max(4vh, 26px);
 	}
 }
 
 #light-dark:checked ~ .App {
 	background-color: colors.$dark-background;
 
-	.mobile-navbar {
-		background-color: #2d3339;
+	.navbar {
+		background-color: colors.$dark-navbar;
 
 		h1 {
 			color: white;
 		}
 
-		.mobile-navbar__setting {
+		.navbar__setting {
 			color: white;
 		}
 
 		.light-dark__button {
 			border: 3px solid colors.$light-button;
-
-			.light-dark__button--inside {
-				left: 50%;
-				background-color: colors.$light-button;
-			}
-
-			.bi-moon-fill {
-				visibility: visible;
-			}
-
-			.bi-brightness-high-fill {
-				visibility: hidden;
-			}
 		}
-	}
 
-	.main .setting .setting-table {
-		background-color: colors.$dark-secondary;
-		table {
-			color: white;
+		.light-dark__button--inside {
+			left: 50%;
+			background-color: colors.$light-button;
+		}
 
-			tr:nth-child(even) {
-				background-color: colors.$dark-secondary;
+		.moon {
+			visibility: visible;
+		}
 
-				td:nth-child(2) {
-					input,
-					select {
-						background-color: colors.$dark-primary;
-						color: white;
-					}
-				}
-			}
-
-			tr:nth-child(odd) {
-				background-color: colors.$dark-primary;
-				td:nth-child(2) {
-					input,
-					select {
-						background-color: colors.$dark-secondary;
-						color: white;
-					}
-				}
-			}
+		.son {
+			visibility: hidden;
 		}
 	}
 }
 
 .light-dark__button {
-	position: relative;
-	width: 10vw;
-	height: 2.5vh;
+	position: absolute;
 	border: 3px solid colors.$dark-button;
+	width: 100%;
+	height: 100%;
 
 	border-radius: 40px;
 	cursor: pointer;
+	max-width: 100px;
+	top: 0;
+
+	left: 50%;
+	transform: translateX(-50%);
+	transition: all 0.5s ease;
 
 	.light-dark__button--inside {
 		position: absolute;
 		background-color: colors.$dark-button;
-		width: 45%;
+		width: min(calc(50% - 0.238vh), calc(50% - 1.95px));
 		height: 85%;
 
-		left: 5%;
+		left: max(0.238vh, 1.95px);
 		top: 7.5%;
 		bottom: 7.5%;
 		border-radius: 40px;
-
 		transition: all 0.5s ease;
 	}
 
-	.bi {
+	.light-dark__icon {
 		position: absolute;
 		width: auto;
 		height: 80%;
 		top: 10%;
+
 		bottom: 10%;
-		transition: all 0.2s ease 0.1s;
 	}
 
-	.bi-moon-fill {
+	.moon {
 		left: 25%;
 		transform: translateX(-50%);
 		color: colors.$light-button;
 		visibility: hidden;
 	}
 
-	.bi-brightness-high-fill {
+	.sun {
 		right: 25%;
 		transform: translateX(50%);
 		color: colors.$dark-button;
@@ -186,5 +171,79 @@ body {
 }
 
 .main {
-	margin-top: 5vh;
+	height: min(95vh, calc(100vh - 40px));
+	display: grid;
+	grid-template-columns: repeat(12, 7.875vw);
+	grid-template-rows: repeat(12, min(7vh, calc((100vh - 40px) / 95 * 7)));
+	grid-column-gap: 0.5vw;
+	grid-row-gap: min(1vh, calc((100vh - 40px) / 95));
+
+	.timer {
+		grid-column: 3/11;
+		grid-row: 5/7;
+	}
+	.mini-stats {
+		grid-column: 5/9;
+		grid-row: 7/9;
+	}
+	.all-solves {
+		grid-column: 1/5;
+		grid-row: 7/11;
+	}
+	.stats {
+		grid-column: 9/13;
+		grid-row: 7/11;
+	}
+	.scramble {
+		grid-column: 1/13;
+		grid-row: 1/3;
+	}
+	.penalty {
+		grid-column: 5/9;
+		grid-row: 9/12;
+	}
+}
+
+@media screen and (min-width: 1024px) {
+	.navbar {
+		top: 0;
+		bottom: none;
+		min-height: fit-content;
+		align-items: center;
+
+		h1 {
+			grid-column: 1/9;
+			margin-left: 1rem;
+			justify-self: left;
+		}
+		.navbar__setting {
+			grid-column: 9/11;
+		}
+		label {
+			grid-column: 11/13;
+			.light-dark__button {
+				width: max(8vh, 80px);
+			}
+		}
+	}
+
+	.main {
+		padding-top: max(5vh, 40px);
+		.all-solves {
+			grid-column: 1/3;
+			grid-row: 1/5;
+		}
+		.stats {
+			grid-column: 11/13;
+			grid-row: 1/5;
+		}
+		.scramble {
+			grid-column: 3/11;
+			grid-row: 1/3;
+		}
+		.penalty {
+			grid-column: 5/9;
+			grid-row: 9/10;
+		}
+	}
 }

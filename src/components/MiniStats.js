@@ -14,13 +14,13 @@ const MiniStats = (props) => {
 	return (
 		<div className={props.className}>
 			{!run && (
-				<p>
+				<p className="first-mini-stats">
 					{firstType}
 					{firstLength}: {formatTime(firstMiniStats)}
 				</p>
 			)}
 			{!run && (
-				<p>
+				<p className="second-mini-stats">
 					{secondType}
 					{secondLength}: {formatTime(secondMiniStats)}
 				</p>

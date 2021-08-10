@@ -11,7 +11,7 @@ import "./Penalty.scss"
 
 function Penalty(props) {
 	const dispatch = useDispatch()
-	const renderCount = useRef(1)
+	const [renderCount, setRenderCount] = useState(1)
 	const [plusTwo, setPlusTwo] = useState("")
 	const [dnf, setDnf] = useState("")
 	const [runAvailable, setRunAvailable] = useState(true)
@@ -31,8 +31,8 @@ function Penalty(props) {
 	}
 	useEffect(() => {
 		setRunAvailable(true)
-		if (renderCount.current < 4) {
-			renderCount.current++
+		if (renderCount < 4) {
+			setRenderCount(renderCount + 1)
 		}
 		if (!run) {
 			setPlusTwo("+2")
@@ -64,11 +64,15 @@ function Penalty(props) {
 
 	return (
 		<div className={props.className}>
-			{renderCount.current > 3 && runAvailable && (
-				<button onClick={handlePlusTwo}>{plusTwo}</button>
+			{renderCount > 3 && runAvailable && (
+				<button onClick={handlePlusTwo} className="plus-two-btn">
+					{plusTwo}
+				</button>
 			)}
-			{renderCount.current > 3 && runAvailable && (
-				<button onClick={handleDnf}>{dnf}</button>
+			{renderCount > 3 && runAvailable && (
+				<button onClick={handleDnf} className="dnf-btn">
+					{dnf}
+				</button>
 			)}
 		</div>
 	)

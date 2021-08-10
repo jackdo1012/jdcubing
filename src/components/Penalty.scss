@@ -1,4 +1,48 @@
+@use "../scss/colors";
+@mixin penalty-btn {
+	position: absolute;
+	background-color: colors.$light-navbar;
+	border: 3px solid colors.$dark-navbar;
+	border-radius: 10px;
+	width: 100%;
+	font-size: 1.25rem;
+	cursor: pointer;
+}
 * {
 	margin: 0;
 	padding: 0;
+	box-sizing: border-box;
+}
+#light-dark:checked ~ .App .main .penalty button {
+	background-color: colors.$dark-navbar;
+	border-color: colors.$light-navbar;
+	color: white;
+}
+.penalty {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	.plus-two-btn {
+		@include penalty-btn;
+		top: 0;
+	}
+	.dnf-btn {
+		@include penalty-btn;
+		top: 50%;
+	}
+}
+@media screen and (min-width: 1024px) and (min-height: 600px) {
+	.penalty {
+		.plus-two-btn {
+			width: 46%;
+			margin: 0 2%;
+			left: 0;
+		}
+		.dnf-btn {
+			width: 46%;
+			margin: 0 2%;
+			top: 0;
+			left: 50%;
+		}
+	}
 }

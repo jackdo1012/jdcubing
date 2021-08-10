@@ -26,6 +26,9 @@ function AllSolves(props) {
 		dispatch(changeSession(Number(session)))
 	}
 	const formatTime = (time) => {
+		if (time.split(".")[1].length < 2) {
+			time = `${time.split(".")[0]}.${time.split(".")[1]}0`
+		}
 		if (time.split(".")[0].length >= 2 || time.includes(":")) {
 			return time
 		} else {
@@ -35,42 +38,76 @@ function AllSolves(props) {
 	return (
 		<div className={props.className}>
 			{!run && (
-				<table>
-					<thead>
-						<tr>
-							<th colSpan="2">
-								<select
-									value={session}
-									onChange={(e) =>
-										handleSessionChange(e.target.value)
-									}
-								>
-									<option value="1">Session 1</option>
-									<option value="2">Session 2</option>
-									<option value="3">Session 3</option>
-									<option value="4">Session 4</option>
-									<option value="5">Session 5</option>
-									<option value="6">Session 6</option>
-									<option value="7">Session 7</option>
-									<option value="8">Session 8</option>
-									<option value="9">Session 9</option>
-									<option value="10">Session 10</option>
-								</select>
-							</th>
-						</tr>
-					</thead>
-					<tbody>
-						{timeList[timeList.length - 1] !== "" &&
-							timeList.map((solve, index) => {
-								return (
-									<tr key={timeList.length - index}>
-										<td>{timeList.length - index}</td>
-										<td>{formatTime(solve)}</td>
-									</tr>
-								)
-							})}
-					</tbody>
-				</table>
+				<div className="solves-table">
+					<table>
+						<thead>
+							<tr>
+								<th colSpan="2">
+									<select
+										value={session}
+										onChange={(e) =>
+											handleSessionChange(e.target.value)
+										}
+										onFocus={() => {
+											if (
+												window.matchMedia(
+													"(min-width: 1024px)"
+												).matches
+											) {
+												document
+													.querySelector("select")
+													.blur()
+											}
+										}}
+									>
+										<option value="1">Session 1</option>
+										<option value="2">Session 2</option>
+										<option value="3">Session 3</option>
+										<option value="4">Session 4</option>
+										<option value="5">Session 5</option>
+										<option value="6">Session 6</option>
+										<option value="7">Session 7</option>
+										<option value="8">Session 8</option>
+										<option value="9">Session 9</option>
+										<option value="10">Session 10</option>
+									</select>
+								</th>
+							</tr>
+						</thead>
+						<tbody>
+							{timeList[timeList.length - 1] !== "" &&
+								timeList.map((solve, index) => {
+									return (
+										<tr
+											key={timeList.length - index}
+											onClick={() =>
+												alert(
+													`Time: ${
+														localStorage
+															.getItem(
+																`times${session}`
+															)
+															.split(",")[index]
+													}\nScramble: ${
+														localStorage
+															.getItem(`scramble`)
+															.split(",")[index]
+													}`
+												)
+											}
+										>
+											<td>{timeList.length - index}</td>
+											<td>
+												{props.formatTime(
+													formatTime(solve)
+												)}
+											</td>
+										</tr>
+									)
+								})}
+						</tbody>
+					</table>
+				</div>
 			)}
 		</div>
 	)
