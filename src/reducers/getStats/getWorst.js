@@ -9,6 +9,9 @@ export const getWorstSlice = createSlice({
 			if (solves.includes("DNF")) {
 				return "DNF"
 			} else {
+				if (Math.max(...solves).toFixed(2) == -Infinity) {
+					return "0.00"
+				}
 				return Math.max(...solves).toFixed(2)
 			}
 		},

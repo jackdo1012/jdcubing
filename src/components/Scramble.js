@@ -24,7 +24,7 @@ function Scramble(props) {
 		<div className={props.className}>
 			{!run && (
 				<div className="outer">
-					<p class="scramble-text">{scramble}</p>
+					<p className="scramble-text">{scramble}</p>
 				</div>
 			)}
 		</div>

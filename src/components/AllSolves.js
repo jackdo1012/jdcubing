@@ -4,6 +4,11 @@ import { changeSession } from "../reducers/changeSession"
 import "./AllSolves.scss"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faTimes } from "@fortawesome/free-solid-svg-icons"
+import { getNumberOfSolves } from "../reducers/getStats/getNumberOfSolves"
+import { getBest } from "../reducers/getStats/getBest"
+import { getWorst } from "../reducers/getStats/getWorst"
+import { getFirstMiniStats } from "../reducers/getMiniStats/getFirstMiniStat"
+import { getSecondMiniStats } from "../reducers/getMiniStats/getSecondMiniStat"
 
 function AllSolves(props) {
 	const dispatch = useDispatch()
@@ -39,6 +44,28 @@ function AllSolves(props) {
 		} else {
 			return "0" + time
 		}
+	}
+	const handleDeleteSolve = (itemIndex) => {
+		const newSolveList = [...timeList]
+		const newScrambleList = [...localStorage.getItem("scramble").split(",")]
+		newSolveList.splice(itemIndex, 1)
+		newScrambleList.splice(itemIndex, 1)
+		setTimeList(newSolveList)
+		localStorage.setItem(`times${session}`, newSolveList)
+		localStorage.setItem("scramble", newScrambleList)
+		dispatch(getNumberOfSolves(newSolveList))
+		dispatch(getBest(newSolveList))
+		dispatch(getWorst(newSolveList))
+		dispatch(
+			getFirstMiniStats(
+				localStorage.getItem(`times${session}`).split(",")
+			)
+		)
+		dispatch(
+			getSecondMiniStats(
+				localStorage.getItem(`times${session}`).split(",")
+			)
+		)
 	}
 	return (
 		<div className={props.className}>
@@ -83,31 +110,40 @@ function AllSolves(props) {
 							{timeList[timeList.length - 1] !== "" &&
 								timeList.map((solve, index) => {
 									return (
-										<tr
-											key={timeList.length - index}
-											onClick={() =>
-												alert(
-													`Time: ${
-														localStorage
-															.getItem(
-																`times${session}`
-															)
-															.split(",")[index]
-													}\nScramble: ${
-														localStorage
-															.getItem(`scramble`)
-															.split(",")[index]
-													}`
-												)
-											}
-										>
+										<tr key={timeList.length - index}>
 											<td>{timeList.length - index}</td>
-											<td>
+											<td
+												onClick={() =>
+													alert(
+														`Time: ${
+															localStorage
+																.getItem(
+																	`times${session}`
+																)
+																.split(",")[
+																index
+															]
+														}\nScramble: ${
+															localStorage
+																.getItem(
+																	`scramble`
+																)
+																.split(",")[
+																index
+															]
+														}`
+													)
+												}
+											>
 												{props.formatTime(
 													formatTime(solve)
 												)}
 											</td>
-											<td>
+											<td
+												onClick={() => {
+													handleDeleteSolve(index)
+												}}
+											>
 												<FontAwesomeIcon
 													icon={faTimes}
 												/>

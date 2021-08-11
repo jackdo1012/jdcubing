@@ -17,7 +17,6 @@ export const submitTimeSlice = createSlice({
 					Number(time.split(":")[0]) * 60 +
 					Number(time.split(":")[1])
 				).toString()
-				console.log(time)
 			}
 			solvesArray = localStorage.getItem(`times${action.payload.session}`)
 			solvesArray = solvesArray ? solvesArray.split(",") : []

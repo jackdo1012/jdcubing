@@ -8,17 +8,21 @@
 .all-solves {
 	position: relative;
 	width: 100%;
+	.solves-table::-webkit-scrollbar {
+		display: none;
+	}
 	.solves-table {
 		background-color: colors.$light-navbar;
 		height: 100%;
 		border: 3px solid colors.$dark-navbar;
 		border-radius: 10px;
 		overflow: scroll;
+		-ms-overflow-style: none;
+		scrollbar-width: none;
 		table {
 			width: 100%;
 			height: fit-content;
 			border-collapse: collapse;
-			background-blend-mode: color-burn;
 			thead {
 				tr {
 					background-color: transparent;
@@ -51,6 +55,9 @@
 					td {
 						text-align: center;
 						padding: 5% 0;
+					}
+					td:first-child {
+						cursor: default;
 					}
 				}
 			}
