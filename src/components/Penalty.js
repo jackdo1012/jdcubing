@@ -17,6 +17,7 @@ function Penalty(props) {
 	const [runAvailable, setRunAvailable] = useState(true)
 	const run = useSelector((state) => state.startOrStop)
 	const session = useSelector((state) => state.session)
+	const numberOfSolves = useSelector((state) => state.numberOfSolves)
 	const resetMiniStats = () => {
 		dispatch(
 			getFirstMiniStats(
@@ -64,7 +65,7 @@ function Penalty(props) {
 
 	return (
 		<div className={props.className}>
-			{!run && (
+			{!run && numberOfSolves !== "0/0" && (
 				<div className="outer-penalty">
 					{renderCount > 3 && runAvailable && (
 						<button

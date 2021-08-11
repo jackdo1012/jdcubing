@@ -59,7 +59,7 @@ function Timer(props) {
 				document.removeEventListener("touchstart", touchstartFunction)
 			}
 		}
-	}, [running, dispatch])
+	}, [running])
 	return (
 		<div className={props.className}>
 			<p className="time">{timer}</p>

@@ -61,11 +61,13 @@
 	.solves-table {
 		background-color: colors.$dark-navbar;
 		border: 3px solid colors.$light-navbar;
-		table thead tr th select,
-		table tbody tr {
-			border-bottom: 1px solid colors.$light-navbar;
-			border-top: 1px solid colors.$light-navbar;
-			td {
+		table {
+			thead tr th select {
+				color: white;
+			}
+			tbody tr {
+				border-bottom: 1px solid colors.$light-navbar;
+				border-top: 1px solid colors.$light-navbar;
 				color: white;
 			}
 		}

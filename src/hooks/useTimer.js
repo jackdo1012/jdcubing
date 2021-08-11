@@ -4,13 +4,6 @@ import { getBest } from "../reducers/getStats/getBest"
 import { getWorst } from "../reducers/getStats/getWorst"
 import { submitTime } from "../reducers/submitTime"
 
-const reformatTime = (input) => {
-	if (input < 10) {
-		return "0" + input
-	}
-	return input
-}
-
 const useTimer = () => {
 	const [time, setTime] = useState("00.00")
 	const run = useSelector((state) => state.startOrStop)
@@ -19,6 +12,12 @@ const useTimer = () => {
 	const plusTwo = useSelector((state) => state.plusTwo)
 	const session = useSelector((state) => state.session)
 	const dispatch = useDispatch()
+	const reformatTime = (input) => {
+		if (input < 10) {
+			return "0" + input
+		}
+		return input
+	}
 
 	useEffect(() => {
 		var totalSecond = 0
@@ -69,4 +68,5 @@ const useTimer = () => {
 
 	return time
 }
+
 export default useTimer

@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react"
 import { useDispatch, useSelector } from "react-redux"
 import { changeSession } from "../reducers/changeSession"
 import "./AllSolves.scss"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { faTimes } from "@fortawesome/free-solid-svg-icons"
 
 function AllSolves(props) {
 	const dispatch = useDispatch()
@@ -26,6 +28,9 @@ function AllSolves(props) {
 		dispatch(changeSession(Number(session)))
 	}
 	const formatTime = (time) => {
+		if (time === "DNF") {
+			return "DNF"
+		}
 		if (time.split(".")[1].length < 2) {
 			time = `${time.split(".")[0]}.${time.split(".")[1]}0`
 		}
@@ -101,6 +106,11 @@ function AllSolves(props) {
 												{props.formatTime(
 													formatTime(solve)
 												)}
+											</td>
+											<td>
+												<FontAwesomeIcon
+													icon={faTimes}
+												/>
 											</td>
 										</tr>
 									)
