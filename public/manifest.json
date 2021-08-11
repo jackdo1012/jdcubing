@@ -1,0 +1,15 @@
+{
+	"short_name": "JD Timer",
+	"name": "JD Timer for timing solves",
+	"icons": [
+		{
+			"src": "favicon.ico",
+			"sizes": "32x32",
+			"type": "image/x-icon"
+		}
+	],
+	"start_url": ".",
+	"display": "standalone",
+	"theme_color": "#000000",
+	"background_color": "#ffffff"
+}
