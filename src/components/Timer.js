@@ -12,6 +12,7 @@ function Timer(props) {
 	const setting = useSelector((state) => state.settingStatus)
 	const keyupFunction = (e) => {
 		if (e.code === "Space") {
+			document.querySelector("#time-text").className = "running"
 			timePressing++
 			if (timePressing === 100) {
 				timePressing = 0
@@ -23,6 +24,9 @@ function Timer(props) {
 	}
 	const keypressFunction = (e) => {
 		if (e.code === "Space") {
+			if (!running) {
+				document.querySelector("#time-text").className = "ready"
+			}
 			if (running) {
 				dispatch(stopTimer())
 			}
@@ -62,7 +66,9 @@ function Timer(props) {
 	}, [running])
 	return (
 		<div className={props.className}>
-			<p className="time">{timer}</p>
+			<p className="time" id="time-text">
+				{timer}
+			</p>
 		</div>
 	)
 }

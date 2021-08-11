@@ -78,9 +78,23 @@ function Setting(props) {
 									<td>
 										<select
 											value={font}
-											onChange={(e) =>
+											onChange={(e) => {
 												setFont(e.target.value)
-											}
+												const localStorageList =
+													JSON.parse(
+														localStorage.getItem(
+															"function"
+														)
+													)
+												localStorageList.font =
+													e.target.value
+												localStorage.setItem(
+													"function",
+													JSON.stringify(
+														localStorageList
+													)
+												)
+											}}
 										>
 											<option value="1">1</option>
 											<option value="2">2</option>
