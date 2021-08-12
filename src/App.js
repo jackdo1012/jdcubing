@@ -12,6 +12,7 @@ import Scramble from "./components/Scramble"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faCog } from "@fortawesome/free-solid-svg-icons"
 import { faLightbulb, faMoon } from "@fortawesome/free-regular-svg-icons"
+import ScramblePic from "./components/ScramblePic"
 
 function App() {
 	const dispatch = useDispatch()
@@ -125,6 +126,7 @@ function App() {
 					/>
 					<AllSolves className="all-solves" formatTime={formatTime} />
 					<Scramble className="scramble" />
+					<ScramblePic className="scramble-pic" />
 				</div>
 				{/* {!run && (
 					<div className="footer">

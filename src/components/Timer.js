@@ -33,6 +33,7 @@ function Timer(props) {
 		}
 	}
 	const touchendFunction = () => {
+		document.querySelector("#time-text").className = "running"
 		timePressing++
 		if (timePressing === 100) {
 			timePressing = 0
@@ -46,6 +47,11 @@ function Timer(props) {
 			dispatch(stopTimer())
 		}
 	}
+	const touchstartReady = () => {
+		if (!running) {
+			document.querySelector("#time-text").className = "ready"
+		}
+	}
 	useEffect(() => {
 		if (!setting) {
 			document.addEventListener("keyup", keyupFunction)
@@ -54,6 +60,9 @@ function Timer(props) {
 				.querySelector(".timer")
 				.addEventListener("touchend", touchendFunction)
 			document.addEventListener("touchstart", touchstartFunction)
+			document
+				.querySelector(".timer")
+				.addEventListener("touchstart", touchstartReady)
 			return () => {
 				document.removeEventListener("keyup", keyupFunction)
 				document.removeEventListener("keypress", keypressFunction)
@@ -61,6 +70,9 @@ function Timer(props) {
 					.querySelector(".timer")
 					.removeEventListener("touchend", touchendFunction)
 				document.removeEventListener("touchstart", touchstartFunction)
+				document
+					.querySelector(".timer")
+					.removeEventListener("touchstart", touchstartReady)
 			}
 		}
 	}, [running])

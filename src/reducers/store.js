@@ -12,6 +12,7 @@ import dnfReducer from "./penalty/dnf"
 import plusTwoReducer from "./penalty/plusTwo"
 import changeSessionReducer from "./changeSession"
 import showHideSettingReducer from "./showHideSetting"
+import submitScramble from "./submitScramble"
 
 const store = configureStore({
 	reducer: {
@@ -28,6 +29,7 @@ const store = configureStore({
 		plusTwo: plusTwoReducer,
 		session: changeSessionReducer,
 		settingStatus: showHideSettingReducer,
+		scramble: submitScramble,
 	},
 })
 export default store

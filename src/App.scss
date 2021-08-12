@@ -182,19 +182,19 @@ body {
 
 	.timer {
 		grid-column: 3/11;
-		grid-row: 3/6;
+		grid-row: 3/4;
 	}
 	.mini-stats {
 		grid-column: 5/9;
-		grid-row: 6/8;
+		grid-row: 4/6;
 	}
 	.all-solves {
 		grid-column: 1/5;
-		grid-row: 6/10;
+		grid-row: 4/8;
 	}
 	.stats {
 		grid-column: 9/13;
-		grid-row: 6/10;
+		grid-row: 4/8;
 	}
 	.scramble {
 		grid-column: 1/13;
@@ -202,7 +202,11 @@ body {
 	}
 	.penalty {
 		grid-column: 5/9;
-		grid-row: 8/10;
+		grid-row: 6/8;
+	}
+	.scramble-pic {
+		grid-column: 1/13;
+		grid-row: 8/12;
 	}
 }
 

@@ -23,8 +23,13 @@
 	color: black;
 }
 
-#light-dark:checked ~ .App .main .timer .running {
-	color: white;
+#light-dark:checked ~ .App .main .timer {
+	.running {
+		color: white;
+	}
+	.time {
+		color: white;
+	}
 }
 
 @media screen and (min-width: 1024px) and (min-height: 600px) {
