@@ -1,11 +1,11 @@
-import React, { useEffect } from "react"
+import React, { useEffect, useRef } from "react"
 import { useDispatch, useSelector } from "react-redux"
 import { startTimer, stopTimer } from "../reducers/startStopTimer"
 import useTimer from "../hooks/useTimer"
 import "./Timer.scss"
 
-var timePressing = 0
 function Timer(props) {
+	const timePressing = useRef(0)
 	const dispatch = useDispatch()
 	const timer = useTimer()
 	const running = useSelector((state) => state.startOrStop)
@@ -13,11 +13,11 @@ function Timer(props) {
 	const keyupFunction = (e) => {
 		if (e.code === "Space") {
 			document.querySelector("#time-text").className = "running"
-			timePressing++
-			if (timePressing === 100) {
-				timePressing = 0
+			timePressing.current++
+			if (timePressing.current === 100) {
+				timePressing.current = 0
 			}
-			if (!running && timePressing % 2 === 1) {
+			if (!running && timePressing.current % 2 === 1) {
 				dispatch(startTimer())
 			}
 		}
@@ -34,11 +34,11 @@ function Timer(props) {
 	}
 	const touchendFunction = () => {
 		document.querySelector("#time-text").className = "running"
-		timePressing++
-		if (timePressing === 100) {
-			timePressing = 0
+		timePressing.current++
+		if (timePressing.current === 100) {
+			timePressing.current = 0
 		}
-		if (!running && timePressing % 2 === 1) {
+		if (!running && timePressing.current % 2 === 1) {
 			dispatch(startTimer())
 		}
 	}
