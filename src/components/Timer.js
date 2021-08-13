@@ -24,7 +24,7 @@ function Timer(props) {
 	}
 	const keypressFunction = (e) => {
 		if (e.code === "Space") {
-			if (!running) {
+			if (!running && timePressing.current % 2 === 0) {
 				document.querySelector("#time-text").className = "ready"
 			}
 			if (running) {
@@ -48,7 +48,7 @@ function Timer(props) {
 		}
 	}
 	const touchstartReady = () => {
-		if (!running) {
+		if (!running && timePressing.current % 2 === 0) {
 			document.querySelector("#time-text").className = "ready"
 		}
 	}
