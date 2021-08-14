@@ -1,7 +1,7 @@
-import { createSlice } from "@reduxjs/toolkit"
+import { createSlice } from '@reduxjs/toolkit'
 export const scrambleSlice = createSlice({
-	name: "scramble",
-	initialState: "",
+	name: 'scramble',
+	initialState: '',
 	reducers: {
 		submitScramble: (_state, action) => {
 			return {

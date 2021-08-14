@@ -1,18 +1,18 @@
-import React, { useEffect, useState } from "react"
-import Cubid from "cubid"
-import "./ScramblePic.scss"
-import { convertToText } from "number-to-text"
-import "number-to-text/converters/en-us"
-import { useSelector } from "react-redux"
+import React, { useEffect, useState } from 'react'
+import Cubid from 'cubid'
+import './ScramblePic.scss'
+import { convertToText } from 'number-to-text'
+import 'number-to-text/converters/en-us'
+import { useSelector } from 'react-redux'
 
 function ScramblePic(props) {
 	const scramble = useSelector((state) => state.scramble)
 	const run = useSelector((state) => state.startOrStop)
-	const [scrambleString, setScrambleString] = useState("")
+	const [scrambleString, setScrambleString] = useState('')
 	useEffect(() => {
 		if (
 			scramble.scramble !== undefined &&
-			(scramble.type === "2" || scramble.type === "3")
+			(scramble.type === '2' || scramble.type === '3')
 		) {
 			setScrambleString(scramble.scramble)
 		}
@@ -21,27 +21,27 @@ function ScramblePic(props) {
 
 	return (
 		<div className={props.className}>
-			{!run && (
+			{run === 'stop' && (
 				<div className="outer-scramble-pic">
-					{(scramble.type === "3" || scramble.type === "2") && (
+					{(scramble.type === '3' || scramble.type === '2') && (
 						<table className="diagram">
 							<tbody>
 								<tr>
 									<td></td>
-									{scramble.type === "3" && <td></td>}
+									{scramble.type === '3' && <td></td>}
 									<td></td>
 									<td
 										id={convertToText(
 											cube.contents[0]
-										).replace(" ", "-")}
+										).replace(' ', '-')}
 									>
 										00
 									</td>
-									{scramble.type === "3" && (
+									{scramble.type === '3' && (
 										<td
 											id={convertToText(
 												cube.contents[1]
-											).replace(" ", "-")}
+											).replace(' ', '-')}
 										>
 											00
 										</td>
@@ -49,18 +49,18 @@ function ScramblePic(props) {
 									<td
 										id={convertToText(
 											cube.contents[2]
-										).replace(" ", "-")}
+										).replace(' ', '-')}
 									>
 										00
 									</td>
 									<td></td>
-									{scramble.type === "3" && <td></td>}
+									{scramble.type === '3' && <td></td>}
 									<td></td>
 									<td></td>
-									{scramble.type === "3" && <td></td>}
+									{scramble.type === '3' && <td></td>}
 									<td></td>
 								</tr>
-								{scramble.type === "3" && (
+								{scramble.type === '3' && (
 									<tr>
 										<td></td>
 										<td></td>
@@ -68,17 +68,17 @@ function ScramblePic(props) {
 										<td
 											id={convertToText(
 												cube.contents[3]
-											).replace(" ", "-")}
+											).replace(' ', '-')}
 										>
 											00
 										</td>
 										<td
-											style={{ backgroundColor: "white" }}
+											style={{ backgroundColor: 'white' }}
 										></td>
 										<td
 											id={convertToText(
 												cube.contents[5]
-											).replace(" ", "-")}
+											).replace(' ', '-')}
 										>
 											00
 										</td>
@@ -89,20 +89,20 @@ function ScramblePic(props) {
 								)}
 								<tr>
 									<td></td>
-									{scramble.type === "3" && <td></td>}
+									{scramble.type === '3' && <td></td>}
 									<td></td>
 									<td
 										id={convertToText(
 											cube.contents[6]
-										).replace(" ", "-")}
+										).replace(' ', '-')}
 									>
 										00
 									</td>
-									{scramble.type === "3" && (
+									{scramble.type === '3' && (
 										<td
 											id={convertToText(
 												cube.contents[7]
-											).replace(" ", "-")}
+											).replace(' ', '-')}
 										>
 											00
 										</td>
@@ -110,30 +110,30 @@ function ScramblePic(props) {
 									<td
 										id={convertToText(
 											cube.contents[8]
-										).replace(" ", "-")}
+										).replace(' ', '-')}
 									>
 										00
 									</td>
 									<td></td>
-									{scramble.type === "3" && <td></td>}
+									{scramble.type === '3' && <td></td>}
 									<td></td>
 									<td></td>
-									{scramble.type === "3" && <td></td>}
+									{scramble.type === '3' && <td></td>}
 									<td></td>
 								</tr>
 								<tr>
 									<td
 										id={convertToText(
 											cube.contents[9]
-										).replace(" ", "-")}
+										).replace(' ', '-')}
 									>
 										00
 									</td>
-									{scramble.type === "3" && (
+									{scramble.type === '3' && (
 										<td
 											id={convertToText(
 												cube.contents[10]
-											).replace(" ", "-")}
+											).replace(' ', '-')}
 										>
 											00
 										</td>
@@ -141,22 +141,22 @@ function ScramblePic(props) {
 									<td
 										id={convertToText(
 											cube.contents[11]
-										).replace(" ", "-")}
+										).replace(' ', '-')}
 									>
 										00
 									</td>
 									<td
 										id={convertToText(
 											cube.contents[12]
-										).replace(" ", "-")}
+										).replace(' ', '-')}
 									>
 										00
 									</td>
-									{scramble.type === "3" && (
+									{scramble.type === '3' && (
 										<td
 											id={convertToText(
 												cube.contents[13]
-											).replace(" ", "-")}
+											).replace(' ', '-')}
 										>
 											00
 										</td>
@@ -164,22 +164,22 @@ function ScramblePic(props) {
 									<td
 										id={convertToText(
 											cube.contents[14]
-										).replace(" ", "-")}
+										).replace(' ', '-')}
 									>
 										00
 									</td>
 									<td
 										id={convertToText(
 											cube.contents[15]
-										).replace(" ", "-")}
+										).replace(' ', '-')}
 									>
 										00
 									</td>
-									{scramble.type === "3" && (
+									{scramble.type === '3' && (
 										<td
 											id={convertToText(
 												cube.contents[16]
-											).replace(" ", "-")}
+											).replace(' ', '-')}
 										>
 											00
 										</td>
@@ -187,22 +187,22 @@ function ScramblePic(props) {
 									<td
 										id={convertToText(
 											cube.contents[17]
-										).replace(" ", "-")}
+										).replace(' ', '-')}
 									>
 										00
 									</td>
 									<td
 										id={convertToText(
 											cube.contents[53]
-										).replace(" ", "-")}
+										).replace(' ', '-')}
 									>
 										00
 									</td>
-									{scramble.type === "3" && (
+									{scramble.type === '3' && (
 										<td
 											id={convertToText(
 												cube.contents[52]
-											).replace(" ", "-")}
+											).replace(' ', '-')}
 										>
 											00
 										</td>
@@ -210,82 +210,82 @@ function ScramblePic(props) {
 									<td
 										id={convertToText(
 											cube.contents[51]
-										).replace(" ", "-")}
+										).replace(' ', '-')}
 									>
 										00
 									</td>
 								</tr>
-								{scramble.type === "3" && (
+								{scramble.type === '3' && (
 									<tr>
 										<td
 											id={convertToText(
 												cube.contents[18]
-											).replace(" ", "-")}
+											).replace(' ', '-')}
 										>
 											00
 										</td>
 										<td
 											style={{
-												backgroundColor: "orange",
+												backgroundColor: 'orange',
 											}}
 										></td>
 										<td
 											id={convertToText(
 												cube.contents[20]
-											).replace(" ", "-")}
+											).replace(' ', '-')}
 										>
 											00
 										</td>
 										<td
 											id={convertToText(
 												cube.contents[21]
-											).replace(" ", "-")}
+											).replace(' ', '-')}
 										>
 											00
 										</td>
 										<td
 											style={{
-												backgroundColor: "lightgreen",
+												backgroundColor: 'lightgreen',
 											}}
 										></td>
 										<td
 											id={convertToText(
 												cube.contents[23]
-											).replace(" ", "-")}
+											).replace(' ', '-')}
 										>
 											00
 										</td>
 										<td
 											id={convertToText(
 												cube.contents[24]
-											).replace(" ", "-")}
+											).replace(' ', '-')}
 										>
 											00
 										</td>
 										<td
-											style={{ backgroundColor: "red" }}
+											style={{ backgroundColor: 'red' }}
 										></td>
 										<td
 											id={convertToText(
 												cube.contents[26]
-											).replace(" ", "-")}
+											).replace(' ', '-')}
 										>
 											00
 										</td>
 										<td
 											id={convertToText(
 												cube.contents[50]
-											).replace(" ", "-")}
+											).replace(' ', '-')}
 										>
 											00
 										</td>
 										<td
-											style={{ backgroundColor: "cyan" }}
+											style={{ backgroundColor: 'cyan' }}
 										></td>
 										<td
 											id={convertToText(
 												cube.contents[48]
-											).replace(" ", "-")}
+											).replace(' ', '-')}
 										>
 											00
 										</td>
@@ -295,15 +295,15 @@ function ScramblePic(props) {
 									<td
 										id={convertToText(
 											cube.contents[27]
-										).replace(" ", "-")}
+										).replace(' ', '-')}
 									>
 										00
 									</td>
-									{scramble.type === "3" && (
+									{scramble.type === '3' && (
 										<td
 											id={convertToText(
 												cube.contents[28]
-											).replace(" ", "-")}
+											).replace(' ', '-')}
 										>
 											00
 										</td>
@@ -311,22 +311,22 @@ function ScramblePic(props) {
 									<td
 										id={convertToText(
 											cube.contents[29]
-										).replace(" ", "-")}
+										).replace(' ', '-')}
 									>
 										00
 									</td>
 									<td
 										id={convertToText(
 											cube.contents[30]
-										).replace(" ", "-")}
+										).replace(' ', '-')}
 									>
 										00
 									</td>
-									{scramble.type === "3" && (
+									{scramble.type === '3' && (
 										<td
 											id={convertToText(
 												cube.contents[31]
-											).replace(" ", "-")}
+											).replace(' ', '-')}
 										>
 											00
 										</td>
@@ -334,22 +334,22 @@ function ScramblePic(props) {
 									<td
 										id={convertToText(
 											cube.contents[32]
-										).replace(" ", "-")}
+										).replace(' ', '-')}
 									>
 										00
 									</td>
 									<td
 										id={convertToText(
 											cube.contents[33]
-										).replace(" ", "-")}
+										).replace(' ', '-')}
 									>
 										00
 									</td>
-									{scramble.type === "3" && (
+									{scramble.type === '3' && (
 										<td
 											id={convertToText(
 												cube.contents[34]
-											).replace(" ", "-")}
+											).replace(' ', '-')}
 										>
 											00
 										</td>
@@ -357,22 +357,22 @@ function ScramblePic(props) {
 									<td
 										id={convertToText(
 											cube.contents[35]
-										).replace(" ", "-")}
+										).replace(' ', '-')}
 									>
 										00
 									</td>
 									<td
 										id={convertToText(
 											cube.contents[47]
-										).replace(" ", "-")}
+										).replace(' ', '-')}
 									>
 										00
 									</td>
-									{scramble.type === "3" && (
+									{scramble.type === '3' && (
 										<td
 											id={convertToText(
 												cube.contents[46]
-											).replace(" ", "-")}
+											).replace(' ', '-')}
 										>
 											00
 										</td>
@@ -380,27 +380,27 @@ function ScramblePic(props) {
 									<td
 										id={convertToText(
 											cube.contents[45]
-										).replace(" ", "-")}
+										).replace(' ', '-')}
 									>
 										00
 									</td>
 								</tr>
 								<tr>
 									<td></td>
-									{scramble.type === "3" && <td></td>}
+									{scramble.type === '3' && <td></td>}
 									<td></td>
 									<td
 										id={convertToText(
 											cube.contents[36]
-										).replace(" ", "-")}
+										).replace(' ', '-')}
 									>
 										00
 									</td>
-									{scramble.type === "3" && (
+									{scramble.type === '3' && (
 										<td
 											id={convertToText(
 												cube.contents[37]
-											).replace(" ", "-")}
+											).replace(' ', '-')}
 										>
 											00
 										</td>
@@ -408,18 +408,18 @@ function ScramblePic(props) {
 									<td
 										id={convertToText(
 											cube.contents[38]
-										).replace(" ", "-")}
+										).replace(' ', '-')}
 									>
 										00
 									</td>
 									<td></td>
-									{scramble.type === "3" && <td></td>}
+									{scramble.type === '3' && <td></td>}
 									<td></td>
 									<td></td>
-									{scramble.type === "3" && <td></td>}
+									{scramble.type === '3' && <td></td>}
 									<td></td>
 								</tr>
-								{scramble.type === "3" && (
+								{scramble.type === '3' && (
 									<tr>
 										<td></td>
 										<td></td>
@@ -427,19 +427,19 @@ function ScramblePic(props) {
 										<td
 											id={convertToText(
 												cube.contents[39]
-											).replace(" ", "-")}
+											).replace(' ', '-')}
 										>
 											00
 										</td>
 										<td
 											style={{
-												backgroundColor: "yellow",
+												backgroundColor: 'yellow',
 											}}
 										></td>
 										<td
 											id={convertToText(
 												cube.contents[41]
-											).replace(" ", "-")}
+											).replace(' ', '-')}
 										>
 											00
 										</td>
@@ -453,20 +453,20 @@ function ScramblePic(props) {
 								)}
 								<tr>
 									<td></td>
-									{scramble.type === "3" && <td></td>}
+									{scramble.type === '3' && <td></td>}
 									<td></td>
 									<td
 										id={convertToText(
 											cube.contents[42]
-										).replace(" ", "-")}
+										).replace(' ', '-')}
 									>
 										00
 									</td>
-									{scramble.type === "3" && (
+									{scramble.type === '3' && (
 										<td
 											id={convertToText(
 												cube.contents[43]
-											).replace(" ", "-")}
+											).replace(' ', '-')}
 										>
 											00
 										</td>
@@ -474,21 +474,21 @@ function ScramblePic(props) {
 									<td
 										id={convertToText(
 											cube.contents[44]
-										).replace(" ", "-")}
+										).replace(' ', '-')}
 									>
 										00
 									</td>
 									<td></td>
-									{scramble.type === "3" && <td></td>}
+									{scramble.type === '3' && <td></td>}
 									<td></td>
 									<td></td>
-									{scramble.type === "3" && <td></td>}
+									{scramble.type === '3' && <td></td>}
 									<td></td>
 								</tr>
 							</tbody>
 						</table>
 					)}
-					{scramble.type !== "3" && scramble.type !== "2" && (
+					{scramble.type !== '3' && scramble.type !== '2' && (
 						<p>No Support</p>
 					)}
 				</div>

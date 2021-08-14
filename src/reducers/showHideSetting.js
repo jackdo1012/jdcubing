@@ -1,6 +1,6 @@
-import { createSlice } from "@reduxjs/toolkit"
+import { createSlice } from '@reduxjs/toolkit'
 export const showHideSettingSlice = createSlice({
-	name: "settingStatus",
+	name: 'settingStatus',
 	initialState: false,
 	reducers: {
 		showSetting: () => true,

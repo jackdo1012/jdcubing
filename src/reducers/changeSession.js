@@ -1,7 +1,7 @@
-import { createSlice } from "@reduxjs/toolkit"
+import { createSlice } from '@reduxjs/toolkit'
 
 export const changeSessionSlice = createSlice({
-	name: "session",
+	name: 'session',
 	initialState: 1,
 	reducers: {
 		changeSession: (_state, action) => action.payload,

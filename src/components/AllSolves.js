@@ -1,14 +1,14 @@
-import React, { useEffect, useState } from "react"
-import { useDispatch, useSelector } from "react-redux"
-import { changeSession } from "../reducers/changeSession"
-import "./AllSolves.scss"
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { faTimes } from "@fortawesome/free-solid-svg-icons"
-import { getNumberOfSolves } from "../reducers/getStats/getNumberOfSolves"
-import { getBest } from "../reducers/getStats/getBest"
-import { getWorst } from "../reducers/getStats/getWorst"
-import { getFirstMiniStats } from "../reducers/getMiniStats/getFirstMiniStat"
-import { getSecondMiniStats } from "../reducers/getMiniStats/getSecondMiniStat"
+import React, { useEffect, useState } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
+import { changeSession } from '../reducers/changeSession'
+import './AllSolves.scss'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faTimes } from '@fortawesome/free-solid-svg-icons'
+import { getNumberOfSolves } from '../reducers/getStats/getNumberOfSolves'
+import { getBest } from '../reducers/getStats/getBest'
+import { getWorst } from '../reducers/getStats/getWorst'
+import { getFirstMiniStats } from '../reducers/getMiniStats/getFirstMiniStat'
+import { getSecondMiniStats } from '../reducers/getMiniStats/getSecondMiniStat'
 
 function AllSolves(props) {
 	const dispatch = useDispatch()
@@ -19,57 +19,57 @@ function AllSolves(props) {
 	const worst = useSelector((state) => state.getWorst)
 	const session = useSelector((state) => state.session)
 	const [timeList, setTimeList] = useState(
-		localStorage.getItem(`times${session}`).split(",")
+		localStorage.getItem(`times${session}`).split(',')
 	)
 	useEffect(() => {
-		if (worst === "0.00" && best === "0.00") {
+		if (worst === '0.00' && best === '0.00') {
 			setTimeList([])
 		}
-		if (!run) {
-			setTimeList(localStorage.getItem(`times${session}`).split(","))
+		if (run === 'stop') {
+			setTimeList(localStorage.getItem(`times${session}`).split(','))
 		}
 	}, [run, plusTwo, dnf, session, best, worst])
 	const handleSessionChange = (session) => {
 		dispatch(changeSession(Number(session)))
 	}
 	const formatTime = (time) => {
-		if (time === "DNF") {
-			return "DNF"
+		if (time === 'DNF') {
+			return 'DNF'
 		}
-		if (time.split(".")[1].length < 2) {
-			time = `${time.split(".")[0]}.${time.split(".")[1]}0`
+		if (time.split('.')[1].length < 2) {
+			time = `${time.split('.')[0]}.${time.split('.')[1]}0`
 		}
-		if (time.split(".")[0].length >= 2 || time.includes(":")) {
+		if (time.split('.')[0].length >= 2 || time.includes(':')) {
 			return time
 		} else {
-			return "0" + time
+			return '0' + time
 		}
 	}
 	const handleDeleteSolve = (itemIndex) => {
 		const newSolveList = [...timeList]
-		const newScrambleList = [...localStorage.getItem("scramble").split(",")]
+		const newScrambleList = [...localStorage.getItem('scramble').split(',')]
 		newSolveList.splice(itemIndex, 1)
 		newScrambleList.splice(itemIndex, 1)
 		setTimeList(newSolveList)
 		localStorage.setItem(`times${session}`, newSolveList)
-		localStorage.setItem("scramble", newScrambleList)
+		localStorage.setItem('scramble', newScrambleList)
 		dispatch(getNumberOfSolves(newSolveList))
 		dispatch(getBest(newSolveList))
 		dispatch(getWorst(newSolveList))
 		dispatch(
 			getFirstMiniStats(
-				localStorage.getItem(`times${session}`).split(",")
+				localStorage.getItem(`times${session}`).split(',')
 			)
 		)
 		dispatch(
 			getSecondMiniStats(
-				localStorage.getItem(`times${session}`).split(",")
+				localStorage.getItem(`times${session}`).split(',')
 			)
 		)
 	}
 	return (
 		<div className={props.className}>
-			{!run && (
+			{run === 'stop' && (
 				<div className="solves-table">
 					<table>
 						<thead>
@@ -83,11 +83,11 @@ function AllSolves(props) {
 										onFocus={() => {
 											if (
 												window.matchMedia(
-													"(min-width: 1024px)"
+													'(min-width: 1024px)'
 												).matches
 											) {
 												document
-													.querySelector("select")
+													.querySelector('select')
 													.blur()
 											}
 										}}
@@ -107,7 +107,7 @@ function AllSolves(props) {
 							</tr>
 						</thead>
 						<tbody>
-							{timeList[timeList.length - 1] !== "" &&
+							{timeList[timeList.length - 1] !== '' &&
 								timeList.map((solve, index) => {
 									return (
 										<tr key={timeList.length - index}>
@@ -120,7 +120,7 @@ function AllSolves(props) {
 																.getItem(
 																	`times${session}`
 																)
-																.split(",")[
+																.split(',')[
 																index
 															]
 														}\nScramble: ${
@@ -128,7 +128,7 @@ function AllSolves(props) {
 																.getItem(
 																	`scramble`
 																)
-																.split(",")[
+																.split(',')[
 																index
 															]
 														}`

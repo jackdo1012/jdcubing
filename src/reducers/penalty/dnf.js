@@ -1,16 +1,16 @@
-import { createSlice } from "@reduxjs/toolkit"
+import { createSlice } from '@reduxjs/toolkit'
 
 export const dnfSlice = createSlice({
-	name: "dnf",
-	initialState: "0.00",
+	name: 'dnf',
+	initialState: '0.00',
 	reducers: {
 		getDnf: (_state, action) => {
 			var solves = localStorage
 				.getItem(`times${action.payload}`)
-				.split(",")
+				.split(',')
 			solves.shift()
-			localStorage.setItem(`times${action.payload}`, ["DNF", ...solves])
-			return "DNF"
+			localStorage.setItem(`times${action.payload}`, ['DNF', ...solves])
+			return 'DNF'
 		},
 	},
 })

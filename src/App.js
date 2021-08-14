@@ -1,18 +1,18 @@
-import { useEffect, useState } from "react"
-import { useDispatch, useSelector } from "react-redux"
-import { hideSetting, showSetting } from "./reducers/showHideSetting"
-import "./App.scss"
-import AllSolves from "./components/AllSolves"
-import MiniStats from "./components/MiniStats"
-import Penalty from "./components/Penalty"
-import Setting from "./components/Setting"
-import Stats from "./components/Stats"
-import Timer from "./components/Timer"
-import Scramble from "./components/Scramble"
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { faCog } from "@fortawesome/free-solid-svg-icons"
-import { faLightbulb, faMoon } from "@fortawesome/free-regular-svg-icons"
-import ScramblePic from "./components/ScramblePic"
+import { useEffect, useState } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
+import { hideSetting, showSetting } from './reducers/showHideSetting'
+import './App.scss'
+import AllSolves from './components/AllSolves'
+import MiniStats from './components/MiniStats'
+import Penalty from './components/Penalty'
+import Setting from './components/Setting'
+import Stats from './components/Stats'
+import Timer from './components/Timer'
+import Scramble from './components/Scramble'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faCog } from '@fortawesome/free-solid-svg-icons'
+import { faLightbulb, faMoon } from '@fortawesome/free-regular-svg-icons'
+import ScramblePic from './components/ScramblePic'
 
 function App() {
 	const dispatch = useDispatch()
@@ -26,7 +26,7 @@ function App() {
 	const settingStatus = useSelector((state) => state.settingStatus.state)
 
 	useEffect(() => {
-		if (!run) {
+		if (run === 'stop') {
 			setSettingOn(false)
 		}
 	}, [run])
@@ -47,10 +47,10 @@ function App() {
 		if (Number(time) >= 60) {
 			time = time.toString()
 			return `${formatToTwoDigit(
-				Math.floor(Number(time.split(".")[0]) / 60).toString()
+				Math.floor(Number(time.split('.')[0]) / 60).toString()
 			)}:${formatToTwoDigit(
-				(Number(time.split(".")[0]) % 60).toString()
-			)}.${time.split(".")[1]}`
+				(Number(time.split('.')[0]) % 60).toString()
+			)}.${time.split('.')[1]}`
 		} else {
 			return time
 		}
@@ -69,10 +69,10 @@ function App() {
 			<input
 				type="checkbox"
 				id="light-dark"
-				style={{ visibility: "hidden", display: "none" }}
+				style={{ visibility: 'hidden', display: 'none' }}
 			/>
 			<div className="App">
-				{!run && (
+				{run === 'stop' && (
 					<div className="navbar">
 						<h1>JD Timer</h1>
 						<button
@@ -128,7 +128,7 @@ function App() {
 					<Scramble className="scramble" />
 					<ScramblePic className="scramble-pic" />
 				</div>
-				{/* {!run && (
+				{/* {run === "stop" && (
 					<div className="footer">
 						<a
 							href="https://ongdev.link/jdcubing"

@@ -1,24 +1,24 @@
-import React, { useEffect, useState } from "react"
-import { useDispatch, useSelector } from "react-redux"
-import { getFirstMiniStats } from "../reducers/getMiniStats/getFirstMiniStat"
-import { getSecondMiniStats } from "../reducers/getMiniStats/getSecondMiniStat"
+import React, { useEffect, useState } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
+import { getFirstMiniStats } from '../reducers/getMiniStats/getFirstMiniStat'
+import { getSecondMiniStats } from '../reducers/getMiniStats/getSecondMiniStat'
 
-import { hideSetting } from "../reducers/showHideSetting"
-import { updateFirstMiniStat } from "../reducers/updateMiniStats/updateFirstMiniStats"
-import { updateSecondMiniStat } from "../reducers/updateMiniStats/updateSecondMiniStats"
-import "./Setting.scss"
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { faTimes } from "@fortawesome/free-solid-svg-icons"
+import { hideSetting } from '../reducers/showHideSetting'
+import { updateFirstMiniStat } from '../reducers/updateMiniStats/updateFirstMiniStats'
+import { updateSecondMiniStat } from '../reducers/updateMiniStats/updateSecondMiniStats'
+import './Setting.scss'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faTimes } from '@fortawesome/free-solid-svg-icons'
 
 function Setting(props) {
-	if (localStorage.getItem("function") === null) {
+	if (localStorage.getItem('function') === null) {
 		localStorage.setItem(
-			"function",
+			'function',
 			JSON.stringify({
 				font: 1,
-				firstType: "ao",
+				firstType: 'ao',
 				firstLength: 5,
-				secondType: "mo",
+				secondType: 'mo',
 				secondLength: 5,
 			})
 		)
@@ -27,7 +27,7 @@ function Setting(props) {
 	const dispatch = useDispatch()
 	const run = useSelector((state) => state.startOrStop)
 	const settingStatus = useSelector((state) => state.settingStatus)
-	const functionStorage = JSON.parse(localStorage.getItem("function"))
+	const functionStorage = JSON.parse(localStorage.getItem('function'))
 	const [font, setFont] = useState(functionStorage.font)
 	const session = useSelector((state) => state.session)
 	const [firstType, setFirstType] = useState(functionStorage.firstType)
@@ -43,17 +43,17 @@ function Setting(props) {
 		)
 		dispatch(
 			getFirstMiniStats(
-				localStorage.getItem(`times${session}`).split(",")
+				localStorage.getItem(`times${session}`).split(',')
 			)
 		)
 		dispatch(
 			getSecondMiniStats(
-				localStorage.getItem(`times${session}`).split(",")
+				localStorage.getItem(`times${session}`).split(',')
 			)
 		)
 	}, [firstType, secondType, firstLength, secondLength, font, run, session])
 	useEffect(() => {
-		document.querySelector(".time").style.fontFamily = `lcd${font}`
+		document.querySelector('.time').style.fontFamily = `lcd${font}`
 	}, [font])
 	return (
 		<div className={props.className}>
@@ -83,13 +83,13 @@ function Setting(props) {
 												const localStorageList =
 													JSON.parse(
 														localStorage.getItem(
-															"function"
+															'function'
 														)
 													)
 												localStorageList.font =
 													e.target.value
 												localStorage.setItem(
-													"function",
+													'function',
 													JSON.stringify(
 														localStorageList
 													)

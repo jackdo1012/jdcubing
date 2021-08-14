@@ -1,13 +1,13 @@
-import React, { useEffect } from "react"
-import { useDispatch, useSelector } from "react-redux"
-import { getBest } from "../reducers/getStats/getBest"
-import { getWorst } from "../reducers/getStats/getWorst"
-import { getNumberOfSolves } from "../reducers/getStats/getNumberOfSolves"
-import "./Stats.scss"
-import { getSecondMiniStats } from "../reducers/getMiniStats/getSecondMiniStat"
-import { getFirstMiniStats } from "../reducers/getMiniStats/getFirstMiniStat"
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { faTimes } from "@fortawesome/free-solid-svg-icons"
+import React, { useEffect } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
+import { getBest } from '../reducers/getStats/getBest'
+import { getWorst } from '../reducers/getStats/getWorst'
+import { getNumberOfSolves } from '../reducers/getStats/getNumberOfSolves'
+import './Stats.scss'
+import { getSecondMiniStats } from '../reducers/getMiniStats/getSecondMiniStat'
+import { getFirstMiniStats } from '../reducers/getMiniStats/getFirstMiniStat'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faTimes } from '@fortawesome/free-solid-svg-icons'
 
 function Stats(props) {
 	const formatTime = props.formatTime
@@ -23,32 +23,32 @@ function Stats(props) {
 	useEffect(() => {
 		dispatch(
 			getNumberOfSolves(
-				localStorage.getItem(`times${session}`).split(",")
+				localStorage.getItem(`times${session}`).split(',')
 			)
 		)
-		dispatch(getBest(localStorage.getItem(`times${session}`).split(",")))
-		dispatch(getWorst(localStorage.getItem(`times${session}`).split(",")))
+		dispatch(getBest(localStorage.getItem(`times${session}`).split(',')))
+		dispatch(getWorst(localStorage.getItem(`times${session}`).split(',')))
 	}, [solves, session, plusTwo, dnf])
 	const handleResetSolves = () => {
 		localStorage.setItem(`times${session}`, [])
-		localStorage.setItem(`scramble`, "")
+		localStorage.setItem(`scramble`, '')
 		dispatch(getNumberOfSolves([]))
 		dispatch(getBest([0]))
 		dispatch(getWorst([0]))
 		dispatch(
 			getFirstMiniStats(
-				localStorage.getItem(`times${session}`).split(",")
+				localStorage.getItem(`times${session}`).split(',')
 			)
 		)
 		dispatch(
 			getSecondMiniStats(
-				localStorage.getItem(`times${session}`).split(",")
+				localStorage.getItem(`times${session}`).split(',')
 			)
 		)
 	}
 	return (
 		<div className={props.className}>
-			{!run && (
+			{run === 'stop' && (
 				<div className="stats-table">
 					<table>
 						<thead>
@@ -68,7 +68,7 @@ function Stats(props) {
 							</tr>
 							<tr>
 								<td>
-									Reset solves:{" "}
+									Reset solves:{' '}
 									<button onClick={handleResetSolves}>
 										<FontAwesomeIcon icon={faTimes} />
 									</button>

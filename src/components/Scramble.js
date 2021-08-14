@@ -1,64 +1,64 @@
-import React, { useEffect, useState } from "react"
-import { useDispatch, useSelector } from "react-redux"
-import "./Scramble.scss"
-import Scrambo from "scrambo"
-import { submitScramble } from "../reducers/submitScramble"
+import React, { useEffect, useState } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
+import './Scramble.scss'
+import Scrambo from 'scrambo'
+import { submitScramble } from '../reducers/submitScramble'
 
 function Scramble(props) {
-	if (localStorage.getItem("scramble-type") === null) {
-		localStorage.setItem("scramble-type", "2")
+	if (localStorage.getItem('scramble-type') === null) {
+		localStorage.setItem('scramble-type', '3')
 	}
 	const dispatch = useDispatch()
 	const run = useSelector((state) => state.startOrStop)
 	const [scrambleType, setScrambleType] = useState(
-		localStorage.getItem("scramble-type")
+		localStorage.getItem('scramble-type')
 	)
-	const [scramble, setScramble] = useState("")
+	const [scramble, setScramble] = useState('')
 	useEffect(() => {
-		const scrambleList = localStorage.getItem("scramble")
-		if (!run) {
+		const scrambleList = localStorage.getItem('scramble')
+		if (run === 'stop') {
 			if (scrambleList === null) {
-				localStorage.setItem("scramble", [scramble])
-			} else if (scramble !== "") {
+				localStorage.setItem('scramble', [scramble])
+			} else if (scramble !== '') {
 				localStorage.setItem(
-					"scramble",
+					'scramble',
 					[scramble].concat(scrambleList)
 				)
 			}
 		}
 	}, [run])
 	useEffect(() => {
-		if (!run) {
+		if (run === 'stop') {
 			switch (scrambleType) {
-				case "2": {
-					document.querySelector(".scramble-text").id = "two"
+				case '2': {
+					document.querySelector('.scramble-text').id = 'two'
 					let newScram = new Scrambo()
 						.type(`${scrambleType}${scrambleType}${scrambleType}`)
 						.length(9)
 						.get(1)
-						.join(" ")
-					dispatch(submitScramble({ type: "2", scramble: newScram }))
+						.join(' ')
+					dispatch(submitScramble({ type: '2', scramble: newScram }))
 					setScramble(newScram)
 					break
 				}
-				case "3": {
-					document.querySelector(".scramble-text").id = "three"
+				case '3': {
+					document.querySelector('.scramble-text').id = 'three'
 					let newScram = new Scrambo()
 						.type(`${scrambleType}${scrambleType}${scrambleType}`)
 						.length(21)
 						.get(1)
-						.join(" ")
-					dispatch(submitScramble({ type: "3", scramble: newScram }))
+						.join(' ')
+					dispatch(submitScramble({ type: '3', scramble: newScram }))
 					setScramble(newScram)
 					break
 				}
-				case "4": {
-					document.querySelector(".scramble-text").id = "four"
+				case '4': {
+					document.querySelector('.scramble-text').id = 'four'
 					const scrambleArray = new Scrambo()
 						.type(`${scrambleType}${scrambleType}${scrambleType}`)
 						.length(42)
 						.get(1)
-					const newFormatScramble = [...scrambleArray][0].split(" ")
+					const newFormatScramble = [...scrambleArray][0].split(' ')
 					for (let i = 0; i < newFormatScramble.length; i++) {
 						if (
 							newFormatScramble[i] ===
@@ -69,11 +69,11 @@ function Scramble(props) {
 									newFormatScramble[i]
 										.substring(0, 1)
 										.toUpperCase() + "w'"
-							} else if (newFormatScramble[i].includes("2")) {
+							} else if (newFormatScramble[i].includes('2')) {
 								newFormatScramble[i] =
 									newFormatScramble[i]
 										.substring(0, 1)
-										.toUpperCase() + "w2"
+										.toUpperCase() + 'w2'
 							} else {
 								newFormatScramble[i] =
 									newFormatScramble[i].toUpperCase()
@@ -83,48 +83,48 @@ function Scramble(props) {
 
 					dispatch(
 						submitScramble({
-							type: "4",
-							scramble: newFormatScramble.join(" "),
+							type: '4',
+							scramble: newFormatScramble.join(' '),
 						})
 					)
-					setScramble(newFormatScramble.join(" "))
+					setScramble(newFormatScramble.join(' '))
 					break
 				}
-				case "mega": {
-					document.querySelector(".scramble-text").id = "mega"
+				case 'mega': {
+					document.querySelector('.scramble-text').id = 'mega'
 					let newScram = new Scrambo()
 						.type(`minx`)
 						.length(77)
 						.get(1)
-						.join(" ")
+						.join(' ')
 					dispatch(
-						submitScramble({ type: "mega", scramble: newScram })
+						submitScramble({ type: 'mega', scramble: newScram })
 					)
 					setScramble(newScram)
 					break
 				}
-				case "pyra": {
-					document.querySelector(".scramble-text").id = "pyra"
+				case 'pyra': {
+					document.querySelector('.scramble-text').id = 'pyra'
 					let newScram = new Scrambo()
 						.type(`pyram`)
 						.length(11)
 						.get(1)
-						.join(" ")
+						.join(' ')
 					dispatch(
-						submitScramble({ type: "pyra", scramble: newScram })
+						submitScramble({ type: 'pyra', scramble: newScram })
 					)
 					setScramble(newScram)
 					break
 				}
-				case "ske": {
-					document.querySelector(".scramble-text").id = "ske"
+				case 'ske': {
+					document.querySelector('.scramble-text').id = 'ske'
 					let newScram = new Scrambo()
 						.type(`skewb`)
 						.length(8)
 						.get(1)
-						.join(" ")
+						.join(' ')
 					dispatch(
-						submitScramble({ type: "ske", scramble: newScram })
+						submitScramble({ type: 'ske', scramble: newScram })
 					)
 					setScramble(newScram)
 					break
@@ -134,7 +134,7 @@ function Scramble(props) {
 	}, [run, scrambleType])
 	return (
 		<div className={props.className}>
-			{!run && (
+			{run === 'stop' && (
 				<div className="outer">
 					<div className="selection">
 						<span>Scramble: </span>
@@ -143,17 +143,17 @@ function Scramble(props) {
 							onChange={(e) => {
 								setScrambleType(e.target.value)
 								localStorage.setItem(
-									"scramble-type",
+									'scramble-type',
 									e.target.value
 								)
 							}}
 							onFocus={() => {
 								if (
-									window.matchMedia("(min-width: 1024px)")
+									window.matchMedia('(min-width: 1024px)')
 										.matches
 								) {
 									document
-										.querySelector(".selection select")
+										.querySelector('.selection select')
 										.blur()
 								}
 							}}

@@ -1,11 +1,13 @@
-import { createSlice } from "@reduxjs/toolkit"
+import { createSlice } from '@reduxjs/toolkit'
 export const startStopTimerSlice = createSlice({
-	name: "startOrStop",
-	initialState: false,
+	name: 'startOrStop',
+	initialState: 'stop',
 	reducers: {
-		startTimer: () => true,
-		stopTimer: () => false,
+		startTimer: () => 'start',
+		stopTimer: () => 'stop',
+		inspectTimer: () => 'inspect',
 	},
 })
-export const { startTimer, stopTimer } = startStopTimerSlice.actions
+export const { startTimer, stopTimer, inspectTimer } =
+	startStopTimerSlice.actions
 export default startStopTimerSlice.reducer

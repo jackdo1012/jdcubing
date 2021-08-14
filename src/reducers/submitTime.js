@@ -1,25 +1,25 @@
-import { createSlice } from "@reduxjs/toolkit"
+import { createSlice } from '@reduxjs/toolkit'
 
 export const submitTimeSlice = createSlice({
-	name: "submit",
+	name: 'submit',
 	initialState: [],
 	reducers: {
 		submitTime: (state, action) => {
 			var solvesArray = localStorage
 				.getItem(`times${action.payload.session}`)
-				.split(",")
+				.split(',')
 
 			var time = action.payload.time
-			if (time === "00.00") {
+			if (time === '00.00') {
 				return state
-			} else if (time.includes(":")) {
+			} else if (time.includes(':')) {
 				time = (
-					Number(time.split(":")[0]) * 60 +
-					Number(time.split(":")[1])
+					Number(time.split(':')[0]) * 60 +
+					Number(time.split(':')[1])
 				).toString()
 			}
 			solvesArray = localStorage.getItem(`times${action.payload.session}`)
-			solvesArray = solvesArray ? solvesArray.split(",") : []
+			solvesArray = solvesArray ? solvesArray.split(',') : []
 			solvesArray.unshift(time.toString())
 			localStorage.setItem(
 				`times${action.payload.session}`,
