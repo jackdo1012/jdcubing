@@ -90,6 +90,54 @@ function Scramble(props) {
 					setScramble(newFormatScramble.join(' '))
 					break
 				}
+				case '5': {
+					document.querySelector('.scramble-text').id = 'five'
+					const scrambleArray = new Scrambo()
+						.type(`${scrambleType}${scrambleType}${scrambleType}`)
+						.length(60)
+						.get(1)
+					const newFormatScramble = [...scrambleArray][0].split(' ')
+					for (let i = 0; i < newFormatScramble.length; i++) {
+						if (
+							newFormatScramble[i] ===
+							newFormatScramble[i].toLowerCase()
+						) {
+							if (newFormatScramble[i].includes("'")) {
+								newFormatScramble[i] =
+									newFormatScramble[i]
+										.substring(0, 1)
+										.toUpperCase() + "w'"
+							} else if (newFormatScramble[i].includes('2')) {
+								newFormatScramble[i] =
+									newFormatScramble[i]
+										.substring(0, 1)
+										.toUpperCase() + 'w2'
+							} else {
+								newFormatScramble[i] =
+									newFormatScramble[i].toUpperCase()
+							}
+						}
+					}
+					dispatch(
+						submitScramble({
+							type: '5',
+							scramble: newFormatScramble.join(' '),
+						})
+					)
+					setScramble(newFormatScramble.join(' '))
+					break
+				}
+				case 'oh': {
+					document.querySelector('.scramble-text').id = 'oh'
+					let newScram = new Scrambo()
+						.type(`333`)
+						.length(20)
+						.get(1)
+						.join(' ')
+					dispatch(submitScramble({ type: 'oh', scramble: newScram }))
+					setScramble(newScram)
+					break
+				}
 				case 'mega': {
 					document.querySelector('.scramble-text').id = 'mega'
 					let newScram = new Scrambo()
@@ -161,6 +209,8 @@ function Scramble(props) {
 							<option value="2">2x2</option>
 							<option value="3">3x3</option>
 							<option value="4">4x4</option>
+							<option value="5">5x5</option>
+							<option value="oh">3x3 OH</option>
 							<option value="mega">Megaminx</option>
 							<option value="pyra">Pyraminx</option>
 							<option value="ske">Skewb</option>

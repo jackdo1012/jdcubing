@@ -41,9 +41,13 @@
 		text-align: center;
 		width: fit-content;
 		height: fit-content;
+		word-break: keep-all;
+	}
+	#five {
+		font-size: 0.7rem;
 	}
 	#mega {
-		font-size: 0.6rem;
+		font-size: 0.4rem;
 	}
 }
 #light-dark:checked ~ .App .main .scramble .outer {
@@ -73,7 +77,13 @@
 		#three {
 			font-size: 1.8rem;
 		}
+		#oh {
+			font-size: 1.8rem;
+		}
 		#four {
+			font-size: 1.3rem;
+		}
+		#five {
 			font-size: 1.3rem;
 		}
 		#mega {
