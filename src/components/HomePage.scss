@@ -9,6 +9,11 @@
 	height: 95vh;
 	background-color: colors.$dark-background;
 	overflow: scroll;
+	p {
+		color: white;
+		font-size: 2rem;
+		text-align: center;
+	}
 	h1 {
 		color: colors.$light-navbar;
 		text-align: center;

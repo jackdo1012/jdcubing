@@ -10,6 +10,11 @@
 	height: 100vh;
 	background-color: colors.$dark-background;
 	overflow: scroll;
+	p {
+		color: white;
+		text-align: center;
+		font-size: 2rem;
+	}
 	h1 {
 		color: colors.$light-navbar;
 		padding: 3%;

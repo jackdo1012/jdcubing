@@ -40,7 +40,8 @@ function CaseAlg(props) {
 	console.log(fetchedData)
 	return (
 		<div className={props.className}>
-			{fetchedData['alg'] === undefined && (
+			{isLoading && <p>Loading...</p>}
+			{!isLoading && fetchedData['alg'] === undefined && (
 				<NotFound className="not-found-no-nav" />
 			)}
 			{!isLoading && fetchedData['alg'] !== undefined && (

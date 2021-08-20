@@ -40,10 +40,10 @@ function AlgList(props) {
 
 	return (
 		<div className={props.className}>
-			{fetchedData === undefined && (
+			{!isLoading && fetchedData === undefined && (
 				<NotFound className="not-found-no-nav" />
 			)}
-			{fetchedData !== undefined && <p>{puzzle}</p>}
+			{!isLoading && fetchedData !== undefined && <p>{puzzle}</p>}
 			{isLoading && <p>Loading...</p>}
 			{fetchedData !== undefined &&
 				!isLoading &&

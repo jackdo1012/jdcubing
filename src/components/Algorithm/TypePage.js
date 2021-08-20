@@ -33,12 +33,12 @@ export default function TypePage(props) {
 	}, [])
 	return (
 		<div className={props.className}>
+			{isLoading && <p>Loading...</p>}
 			{fetchedData[puzzle] !== undefined && <h1>{puzzle}</h1>}
-			{fetchedData[puzzle] === undefined && (
+			{!isLoading && fetchedData[puzzle] === undefined && (
 				<NotFound className="not-found-no-nav" />
 			)}
 			<div className="type-list">
-				{isLoading && <p>Loading...</p>}
 				{!isLoading &&
 					fetchedData[puzzle] !== undefined &&
 					Object.entries(fetchedData[puzzle]).map((value, index) => {

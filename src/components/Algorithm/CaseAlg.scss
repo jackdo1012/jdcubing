@@ -11,6 +11,11 @@
 	background-color: colors.$dark-background;
 	color: white;
 	overflow: scroll;
+	p {
+		color: white;
+		font-size: 2rem;
+		text-align: center;
+	}
 	.case {
 		display: flex;
 		flex-direction: column;
