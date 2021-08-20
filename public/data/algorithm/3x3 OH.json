@@ -1,0 +1,396 @@
+{
+	"OLL": {
+		"1": {
+			"img": "/assets/img/3x3%20OH/oll/1.png",
+			"group": "Dot",
+			"alg": ["R U2 R2 F R F' U2 R' F R F'"]
+		},
+		"2": {
+			"img": "/assets/img/3x3%20OH/oll/2.png",
+			"group": "Dot",
+			"alg": ["r U r' U2 r U2 R' U2 R U' r'"]
+		},
+		"3": {
+			"img": "/assets/img/3x3%20OH/oll/3.png",
+			"group": "Dot",
+			"alg": ["r' R2 U R' U r U2 r' U R' r"]
+		},
+		"4": {
+			"img": "/assets/img/3x3%20OH/oll/4.png",
+			"group": "Dot",
+			"alg": ["r' R U' r U2 r' U' R U' R2 r"]
+		},
+		"5": {
+			"img": "/assets/img/3x3%20OH/oll/5.png",
+			"group": "Square Shape",
+			"alg": ["r' U2 R U R' U r"]
+		},
+		"6": {
+			"img": "/assets/img/3x3%20OH/oll/6.png",
+			"group": "Square Shape",
+			"alg": ["r U2 R' U' R U' r'"]
+		},
+		"7": {
+			"img": "/assets/img/3x3%20OH/oll/7.png",
+			"group": "Small Lightning Bolt",
+			"alg": ["r U R' U R U2 r'"]
+		},
+		"8": {
+			"img": "/assets/img/3x3%20OH/oll/8.png",
+			"group": "Small Lightning Bolt",
+			"alg": ["r' U' R U' R' U2 r"]
+		},
+		"9": {
+			"img": "/assets/img/3x3%20OH/oll/9.png",
+			"group": "Fish Shape",
+			"alg": ["R U R' U' R' F R2 U R' U' F'"]
+		},
+		"10": {
+			"img": "/assets/img/3x3%20OH/oll/10.png",
+			"group": "Fish Shape",
+			"alg": ["r U R' U R U' R' U' r' R U R U' R'"]
+		},
+		"11": {
+			"img": "/assets/img/3x3%20OH/oll/11.png",
+			"group": "Small Lightning Bolt",
+			"alg": ["r' R2 U R' U R U2 R' U R' r"]
+		},
+		"12": {
+			"img": "/assets/img/3x3%20OH/oll/12.png",
+			"group": "Small Lightning Bolt",
+			"alg": ["r R2 U' R U' R' U2 R U' r' R"]
+		},
+		"13": {
+			"img": "/assets/img/3x3%20OH/oll/13.png",
+			"group": "Knight Move Shape",
+			"alg": ["F U R U' R2 F' R U R U' R'"]
+		},
+		"14": {
+			"img": "/assets/img/3x3%20OH/oll/14.png",
+			"group": "Knight Move Shape",
+			"alg": ["R' F R U R' F' R F U' F'"]
+		},
+		"15": {
+			"img": "/assets/img/3x3%20OH/oll/15.png",
+			"group": "Knight Move Shape",
+			"alg": ["r' U' R' r U' R U r' U r"]
+		},
+		"16": {
+			"img": "/assets/img/3x3%20OH/oll/16.png",
+			"group": "Knight Move Shape",
+			"alg": ["r U r' R U R' U' r U' r'"]
+		},
+		"17": {
+			"img": "/assets/img/3x3%20OH/oll/17.png",
+			"group": "Dot",
+			"alg": ["F R' F' R2 r' U R U' R' U' R' r"]
+		},
+		"18": {
+			"img": "/assets/img/3x3%20OH/oll/18.png",
+			"group": "Dot",
+			"alg": ["r U R' U R U2 r2 U' R U' R' U2 r"]
+		},
+		"19": {
+			"img": "/assets/img/3x3%20OH/oll/19.png",
+			"group": "Dot",
+			"alg": ["r U2 R' U' R U' r2 U2 R U R' U r"]
+		},
+		"20": {
+			"img": "/assets/img/3x3%20OH/oll/20.png",
+			"group": "Dot",
+			"alg": ["r U R' U' r2 R2 U R U' R' U' R' r"]
+		},
+		"21": {
+			"img": "/assets/img/3x3%20OH/oll/21.png",
+			"group": "Cross",
+			"alg": ["R U2 R' U' R U R' U' R U' R'"]
+		},
+		"22": {
+			"img": "/assets/img/3x3%20OH/oll/22.png",
+			"group": "Cross",
+			"alg": ["R U2 R2 U' R2 U' R2 U2 R"]
+		},
+		"23": {
+			"img": "/assets/img/3x3%20OH/oll/23.png",
+			"group": "Cross",
+			"alg": ["R U R' U R U2 R2 U' R U' R' U2 R"]
+		},
+		"24": {
+			"img": "/assets/img/3x3%20OH/oll/24.png",
+			"group": "Cross",
+			"alg": ["r U R' U' r' F R F'"]
+		},
+		"25": {
+			"img": "/assets/img/3x3%20OH/oll/25.png",
+			"group": "Cross",
+			"alg": ["F' r U R' U' r' F R"]
+		},
+		"26": {
+			"img": "/assets/img/3x3%20OH/oll/26.png",
+			"group": "Cross",
+			"alg": ["R U2 R' U' R U' R'"]
+		},
+		"27": {
+			"img": "/assets/img/3x3%20OH/oll/27.png",
+			"group": "Cross",
+			"alg": ["R U R' U R U2 R'"]
+		},
+		"28": {
+			"img": "/assets/img/3x3%20OH/oll/28.png",
+			"group": "Corners Oriented",
+			"alg": ["r U R' U' r' R U R U' R'"]
+		},
+		"29": {
+			"img": "/assets/img/3x3%20OH/oll/29.png",
+			"group": "Awkward Shape",
+			"alg": ["R U R' U' R U' R' F' U' F R U R'"]
+		},
+		"30": {
+			"img": "/assets/img/3x3%20OH/oll/30.png",
+			"group": "Awkward Shape",
+			"alg": ["F U R U2 R' U' R U2 R' U' F'"]
+		},
+		"31": {
+			"img": "/assets/img/3x3%20OH/oll/31.png",
+			"group": "P Shape",
+			"alg": ["R' U' F U R U' R' F' R"]
+		},
+		"32": {
+			"img": "/assets/img/3x3%20OH/oll/32.png",
+			"group": "P Shape",
+			"alg": ["L U F' U' L' U L F L'"]
+		},
+		"33": {
+			"img": "/assets/img/3x3%20OH/oll/33.png",
+			"group": "T Shape",
+			"alg": ["R U R' U' R' F R F'"]
+		},
+		"34": {
+			"img": "/assets/img/3x3%20OH/oll/34.png",
+			"group": "C Shape",
+			"alg": ["R U R2 U' R' F R U R U' F'"]
+		},
+		"35": {
+			"img": "/assets/img/3x3%20OH/oll/35.png",
+			"group": "Fish Shape",
+			"alg": ["R U2 R2 F R F' R U2 R'"]
+		},
+		"36": {
+			"img": "/assets/img/3x3%20OH/oll/36.png",
+			"group": "W Shape",
+			"alg": ["R' U' R U' R' U R U x' R U' R' U"]
+		},
+		"37": {
+			"img": "/assets/img/3x3%20OH/oll/37.png",
+			"group": "Fish Shape",
+			"alg": ["F R' F' R U R U' R'"]
+		},
+		"38": {
+			"img": "/assets/img/3x3%20OH/oll/38.png",
+			"group": "W Shape",
+			"alg": ["R U R' U R U' R' U' R' F R F'"]
+		},
+		"39": {
+			"img": "/assets/img/3x3%20OH/oll/39.png",
+			"group": "Big Lightning Bolt",
+			"alg": ["r U' r' U' r y R U R' f'"]
+		},
+		"40": {
+			"img": "/assets/img/3x3%20OH/oll/40.png",
+			"group": "Big Lightning Bolt",
+			"alg": ["R' F R U R' U' F' U R"]
+		},
+		"41": {
+			"img": "/assets/img/3x3%20OH/oll/41.png",
+			"group": "Awkward Shape",
+			"alg": ["R U R' U R U2 R' F R U R' U' F'"]
+		},
+		"42": {
+			"img": "/assets/img/3x3%20OH/oll/42.png",
+			"group": "Awkward Shape",
+			"alg": ["R' U' R U' R' U2 R F R U R' U' F'"]
+		},
+		"43": {
+			"img": "/assets/img/3x3%20OH/oll/43.png",
+			"group": "P Shape",
+			"alg": ["F' U' L' U L F"]
+		},
+		"44": {
+			"img": "/assets/img/3x3%20OH/oll/44.png",
+			"group": "P Shape",
+			"alg": ["F U R U' R' F'"]
+		},
+		"45": {
+			"img": "/assets/img/3x3%20OH/oll/45.png",
+			"group": "T Shape",
+			"alg": ["F R U R' U' F'"]
+		},
+		"46": {
+			"img": "/assets/img/3x3%20OH/oll/46.png",
+			"group": "C Shape",
+			"alg": ["R' U' R' F R F' U R"]
+		},
+		"47": {
+			"img": "/assets/img/3x3%20OH/oll/47.png",
+			"group": "Small L Shape",
+			"alg": ["R' U' x R' U R U' R' U R U' x' U R"]
+		},
+		"48": {
+			"img": "/assets/img/3x3%20OH/oll/48.png",
+			"group": "Small L Shape",
+			"alg": ["F R U R' U' R U R' U' F'"]
+		},
+		"49": {
+			"img": "/assets/img/3x3%20OH/oll/49.png",
+			"group": "Small L Shape",
+			"alg": ["R x' U' z u2 R u2 R u2 R' u"]
+		},
+		"50": {
+			"img": "/assets/img/3x3%20OH/oll/50.png",
+			"group": "Small L Shape",
+			"alg": ["r' U r2 U' r2 U' r2 U r'"]
+		},
+		"51": {
+			"img": "/assets/img/3x3%20OH/oll/51.png",
+			"group": "I Shape",
+			"alg": ["F U R U' R' U R U' R' F'"]
+		},
+		"52": {
+			"img": "/assets/img/3x3%20OH/oll/52.png",
+			"group": "I Shape",
+			"alg": ["R U R' U R U' y R U' R' F'"]
+		},
+		"53": {
+			"img": "/assets/img/3x3%20OH/oll/53.png",
+			"group": "Small L Shape",
+			"alg": ["r' U2 R U R' U' R U R' U r"]
+		},
+		"54": {
+			"img": "/assets/img/3x3%20OH/oll/54.png",
+			"group": "Small L Shape",
+			"alg": ["r U2 R' U' R U R' U' R U' r'"]
+		},
+		"55": {
+			"img": "/assets/img/3x3%20OH/oll/55.png",
+			"group": "I Shape",
+			"alg": ["R U2 R2 U' R U' R' U2 F R F'"]
+		},
+		"56": {
+			"img": "/assets/img/3x3%20OH/oll/56.png",
+			"group": "I Shape",
+			"alg": ["r U r' U R U' R' U R U' R' r U' r'"]
+		},
+		"57": {
+			"img": "/assets/img/3x3%20OH/oll/57.png",
+			"group": "Corners Oriented",
+			"alg": ["R U R' U' M' U R U' r'"]
+		}
+	},
+	"PLL": {
+		"Aa": {
+			"img": "/assets/img/3x3%20OH/pll/Aa.png",
+			"group": "Adjacent Corner Swap",
+			"alg": ["x R' U R' D2 R U' R' D2 R2"]
+		},
+		"Ab": {
+			"img": "/assets/img/3x3%20OH/pll/Ab.png",
+			"group": "Adjacent Corner Swap",
+			"alg": ["x R2 D2 R U R' D2 R U' R"]
+		},
+		"F": {
+			"img": "/assets/img/3x3%20OH/pll/F.png",
+			"group": "Adjacent Corner Swap",
+			"alg": ["R U R' U' R' U R U2 R' L' U R U' L U' R U' R'"]
+		},
+		"Ga": {
+			"img": "/assets/img/3x3%20OH/pll/Ga.png",
+			"group": "Adjacent Corner Swap",
+			"alg": ["R2 U R' U R' U' R U' R2 U' D R' U R D'"]
+		},
+		"Gb": {
+			"img": "/assets/img/3x3%20OH/pll/Gb.png",
+			"group": "Adjacent Corner Swap",
+			"alg": ["R' U' R U D' R2 U R' U R U' R U' R2 D"]
+		},
+		"Gc": {
+			"img": "/assets/img/3x3%20OH/pll/Gc.png",
+			"group": "Adjacent Corner Swap",
+			"alg": ["R2 U' R U' R U R' U R2 U D' R U' R' D"]
+		},
+		"Gd": {
+			"img": "/assets/img/3x3%20OH/pll/Gd.png",
+			"group": "Adjacent Corner Swap",
+			"alg": ["R U R' U' D R2 U' R U' R' U R' U R2 D'"]
+		},
+		"Ja": {
+			"img": "/assets/img/3x3%20OH/pll/Ja.png",
+			"group": "Adjacent Corner Swap",
+			"alg": ["R' U2 R U R' U2 L U' R U L'"]
+		},
+		"Jb": {
+			"img": "/assets/img/3x3%20OH/pll/Jb.png",
+			"group": "Adjacent Corner Swap",
+			"alg": ["R U2 R' U' R U2 L' U R' U' r"]
+		},
+		"Ra": {
+			"img": "/assets/img/3x3%20OH/pll/Ra.png",
+			"group": "Adjacent Corner Swap",
+			"alg": ["R U' R' U' R U R D R' U' R D' R' U2 R'"]
+		},
+		"Rb": {
+			"img": "/assets/img/3x3%20OH/pll/Rb.png",
+			"group": "Adjacent Corner Swap",
+			"alg": ["R' U2 R' D' R U' R' D R U R U' R' U' R"]
+		},
+		"T": {
+			"img": "/assets/img/3x3%20OH/pll/T.png",
+			"group": "Adjacent Corner Swap",
+			"alg": ["R U R' U' R' F R2 U' R' U' R U R' F'"]
+		},
+		"E": {
+			"img": "/assets/img/3x3%20OH/pll/E.png",
+			"group": "Diagonal Corner Swap",
+			"alg": ["x' L' U L D' L' U' L D L' U' L D' L' U L D"]
+		},
+		"Na": {
+			"img": "/assets/img/3x3%20OH/pll/Na.png",
+			"group": "Diagonal Corner Swap",
+			"alg": ["R U R' U R U R' F' R U R' U' R' F R2 U' R' U2 R U' R'"]
+		},
+		"Nb": {
+			"img": "/assets/img/3x3%20OH/pll/Nb.png",
+			"group": "Diagonal Corner Swap",
+			"alg": ["R' U R U' R' F' U' F R U R' F R' F' R U' R"]
+		},
+		"V": {
+			"img": "/assets/img/3x3%20OH/pll/V.png",
+			"group": "Diagonal Corner Swap",
+			"alg": ["R' U R U' x' U R U2 R' U' R U' R' U2 R U R' U'"]
+		},
+		"Y": {
+			"img": "/assets/img/3x3%20OH/pll/Y.png",
+			"group": "Diagonal Corner Swap",
+			"alg": ["R2 U' R' U R U' x' U' z' U' R U' R' U' r B"]
+		},
+		"H": {
+			"img": "/assets/img/3x3%20OH/pll/H.png",
+			"group": "Edges Only",
+			"alg": ["R2 U2 R U2 R2 U2 R2 U2 R U2 R2"]
+		},
+		"Ua": {
+			"img": "/assets/img/3x3%20OH/pll/Ua.png",
+			"group": "Edges Only",
+			"alg": ["R U' R U R U R U' R' U' R2"]
+		},
+		"Ub": {
+			"img": "/assets/img/3x3%20OH/pll/Ub.png",
+			"group": "Edges Only",
+			"alg": ["L' U L' U' L' U' L' U L U L2"]
+		},
+		"Z": {
+			"img": "/assets/img/3x3%20OH/pll/Z.png",
+			"group": "Edges Only",
+			"alg": ["R' U' R U' R U R U' R' U R U R2 U' R'"]
+		}
+	}
+}

@@ -110,7 +110,7 @@
 		"H3": {
 			"img": "/assets/img/2x2/cll/h3.png",
 			"group": "H",
-			"alg": ["R U R' U R U L' U R' U' L"]
+			"alg": ["R U R' U R U L' U R' U' L", "R U R' U R U R' F R' F' R"]
 		},
 		"H4": {
 			"img": "/assets/img/2x2/cll/h4.png",
@@ -150,7 +150,10 @@
 		"Adjacent": {
 			"img": "/assets/img/2x2/cll/adj.png",
 			"group": "PLL",
-			"alg": ["R U R' F' R U R' U' R' F R2 U' R'"]
+			"alg": [
+				"R U R' F' R U R' U' R' F R2 U' R'",
+				"R U R' U' R' F R2 U' R' U' R U R' F'"
+			]
 		},
 		"Diagonal": {
 			"img": "/assets/img/2x2/cll/diag.png",
@@ -255,7 +258,7 @@
 		"U2": {
 			"img": "/assets/img/2x2/cll/u2.png",
 			"group": "U",
-			"alg": ["R U2 R U' R' F R' F2 U' F"]
+			"alg": ["R U2 R U' R' F R' F2 U' F", "F R U R' U2 F' L F' L' F"]
 		},
 		"U3": {
 			"img": "/assets/img/2x2/cll/u3.png",

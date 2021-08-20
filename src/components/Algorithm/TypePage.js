@@ -52,7 +52,10 @@ export default function TypePage(props) {
 									<img
 										src={`${
 											process.env.PUBLIC_URL
-										}/assets/img/${puzzle}/${value[0].toLowerCase()}.png`}
+										}/assets/img/${puzzle.replace(
+											' ',
+											'%20'
+										)}/${value[0].toLowerCase()}.png`}
 										alt="logo"
 									/>
 								</Link>

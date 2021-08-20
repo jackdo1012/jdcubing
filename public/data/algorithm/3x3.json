@@ -305,22 +305,34 @@
 		"Ga": {
 			"img": "/assets/img/3x3/pll/Ga.png",
 			"group": "Adjacent Corner Swap",
-			"alg": ["R2 U R' U R' U' R U' R2 U' D R' U R D'"]
+			"alg": [
+				"R2 U R' U R' U' R U' R2 U' D R' U R D'",
+				"R2 u R' U R' U' R u' R2 y' R' U R"
+			]
 		},
 		"Gb": {
 			"img": "/assets/img/3x3/pll/Gb.png",
 			"group": "Adjacent Corner Swap",
-			"alg": ["R' U' R U D' R2 U R' U R U' R U' R2 D"]
+			"alg": [
+				"R' U' R U D' R2 U R' U R U' R U' R2 D",
+				"y F' U' F R2 u R' U R U' R u' R2"
+			]
 		},
 		"Gc": {
 			"img": "/assets/img/3x3/pll/Gc.png",
 			"group": "Adjacent Corner Swap",
-			"alg": ["R2 U' R U' R U R' U R2 U D' R U' R' D"]
+			"alg": [
+				"R2 U' R U' R U R' U R2 U D' R U' R' D",
+				"R2 u' R U' R U R' u R2 y R U' R'"
+			]
 		},
 		"Gd": {
 			"img": "/assets/img/3x3/pll/Gd.png",
 			"group": "Adjacent Corner Swap",
-			"alg": ["R U R' U' D R2 U' R U' R' U R' U R2 D'"]
+			"alg": [
+				"R U R' U' D R2 U' R U' R' U R' U R2 D'",
+				"R U R' y' R2 u' R U' R' U R' u R2"
+			]
 		},
 		"Ja": {
 			"img": "/assets/img/3x3/pll/Ja.png",

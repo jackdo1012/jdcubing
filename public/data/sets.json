@@ -11,6 +11,11 @@
 		"CLL": 42,
 		"EG-1": 43
 	},
+	"3x3 OH": {
+		"class": "three-by-three-oh",
+		"OLL": 57,
+		"PLL": 21
+	},
 	"4x4": {
 		"class": "four-by-four",
 		"OLL": 27,
