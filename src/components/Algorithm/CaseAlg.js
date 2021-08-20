@@ -52,6 +52,9 @@ function CaseAlg(props) {
 						alt="case-img"
 						className="case__img"
 					/>
+					<p className="author">
+						Author: {fetchedData['author'].join(', ')}
+					</p>
 					<ul className="case__alg-list">
 						{fetchedData['alg'].map((value) => {
 							return <li>{value}</li>

@@ -7,7 +7,7 @@ import {
 import './App.scss'
 import AlgList from './components/Algorithm/AlgList'
 import CaseAlg from './components/Algorithm/CaseAlg'
-import MainPage from './components/Algorithm/MainPage'
+import SubmitAlg from './components/Algorithm/SubmitAlg'
 import TypePage from './components/Algorithm/TypePage'
 import HomePage from './components/HomePage'
 import NavBar from './components/NavBar'
@@ -40,9 +40,6 @@ function App() {
 				<Route exact path="/timer">
 					<MainTimer />
 				</Route>
-				<Route exact path="/algorithm">
-					<MainPage className="main-algorithm" />
-				</Route>
 				<Route exact path="/algorithm/:puzzle">
 					<TypePage className="type-page" />
 				</Route>
@@ -52,6 +49,12 @@ function App() {
 				<Route exact path="/algorithm/:puzzle/:type/:cases">
 					<CaseAlg className="case-algorithm" />
 				</Route>
+				{!document.cookie.includes('submit=true') && (
+					<Route>
+						<NavBar className="nav" generateKey={generateKey()} />
+						<SubmitAlg className="submit-alg" />
+					</Route>
+				)}
 				<Route path="*">
 					<NotFound className="not-found" />
 				</Route>

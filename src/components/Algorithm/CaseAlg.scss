@@ -16,6 +16,9 @@
 		font-size: 2rem;
 		text-align: center;
 	}
+	.author {
+		margin: 2%;
+	}
 	.case {
 		display: flex;
 		flex-direction: column;
@@ -43,6 +46,15 @@
 			li:not(:last-child) {
 				border-bottom: 1px solid white;
 			}
+		}
+	}
+}
+
+@media screen and (max-width: 800px) {
+	.case-algorithm {
+		.author {
+			font-size: 1rem;
+			margin: 5%;
 		}
 	}
 }

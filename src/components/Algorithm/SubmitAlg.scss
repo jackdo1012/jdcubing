@@ -1,0 +1,54 @@
+@use "../../scss/colors";
+.submit-alg {
+	top: 5vh;
+	height: 95vh;
+	color: white;
+	background-color: colors.$dark-background;
+	overflow: scroll;
+	h1 {
+		padding: 5%;
+		text-align: center;
+		font-size: 3rem;
+	}
+	form {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		font-size: 2rem;
+		select,
+		input,
+		button {
+			-webkit-appearance: none;
+			-moz-appearance: none;
+			appearance: none;
+			font-size: 2rem;
+			background-color: colors.$dark-button;
+			color: white;
+			border: none;
+			border: 3px solid colors.$light-button;
+			border-radius: 10px;
+			margin: 0.5%;
+			padding: 0.5% 2%;
+		}
+		select,
+		button {
+			cursor: pointer;
+		}
+	}
+}
+@media screen and (max-width: 800px) {
+	.submit-alg {
+		h1 {
+			font-size: 2rem;
+		}
+		form {
+			font-size: 1.3rem;
+			select,
+			input,
+			button {
+				font-size: 1.3rem;
+			}
+		}
+	}
+}

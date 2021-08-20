@@ -3,304 +3,364 @@
 		"1": {
 			"img": "/assets/img/3x3/oll/1.png",
 			"group": "Dot",
-			"alg": ["R U2 R2 F R F' U2 R' F R F'"]
+			"alg": ["R U2 R2 F R F' U2 R' F R F'"],
+			"author": ["JD"]
 		},
 		"2": {
 			"img": "/assets/img/3x3/oll/2.png",
 			"group": "Dot",
-			"alg": ["F R U R' U' F' f R U R' U' f'"]
+			"alg": ["F R U R' U' F' f R U R' U' f'"],
+			"author": ["JD"]
 		},
 		"3": {
 			"img": "/assets/img/3x3/oll/3.png",
 			"group": "Dot",
-			"alg": ["f R U R' U' f' U' F R U R' U' F'"]
+			"alg": ["f R U R' U' f' U' F R U R' U' F'"],
+			"author": ["JD"]
 		},
 		"4": {
 			"img": "/assets/img/3x3/oll/4.png",
 			"group": "Dot",
-			"alg": ["f R U R' U' f' U F R U R' U' F'"]
+			"alg": ["f R U R' U' f' U F R U R' U' F'"],
+			"author": ["JD"]
 		},
 		"5": {
 			"img": "/assets/img/3x3/oll/5.png",
 			"group": "Square Shape",
-			"alg": ["l' U2 L U L' U l"]
+			"alg": ["l' U2 L U L' U l"],
+			"author": ["JD"]
 		},
 		"6": {
 			"img": "/assets/img/3x3/oll/6.png",
 			"group": "Square Shape",
-			"alg": ["r U2 R' U' R U' r'"]
+			"alg": ["r U2 R' U' R U' r'"],
+			"author": ["JD"]
 		},
 		"7": {
 			"img": "/assets/img/3x3/oll/7.png",
 			"group": "Small Lightning Bolt",
-			"alg": ["r U R' U R U2 r'"]
+			"alg": ["r U R' U R U2 r'"],
+			"author": ["JD"]
 		},
 		"8": {
 			"img": "/assets/img/3x3/oll/8.png",
 			"group": "Small Lightning Bolt",
-			"alg": ["l' U' L U' L' U2 l"]
+			"alg": ["l' U' L U' L' U2 l"],
+			"author": ["JD"]
 		},
 		"9": {
 			"img": "/assets/img/3x3/oll/9.png",
 			"group": "Fish Shape",
-			"alg": ["R U R' U' R' F R2 U R' U' F'"]
+			"alg": ["R U R' U' R' F R2 U R' U' F'"],
+			"author": ["JD"]
 		},
 		"10": {
 			"img": "/assets/img/3x3/oll/10.png",
 			"group": "Fish Shape",
-			"alg": ["R U R' U R' F R F' R U2 R'"]
+			"alg": ["R U R' U R' F R F' R U2 R'"],
+			"author": ["JD"]
 		},
 		"11": {
 			"img": "/assets/img/3x3/oll/11.png",
 			"group": "Small Lightning Bolt",
-			"alg": ["r U R' U R' F R F' R U2 r'"]
+			"alg": ["r U R' U R' F R F' R U2 r'"],
+			"author": ["JD"]
 		},
 		"12": {
 			"img": "/assets/img/3x3/oll/12.png",
 			"group": "Small Lightning Bolt",
-			"alg": ["M' R' U' R U' R' U2 R U' R r'"]
+			"alg": ["M' R' U' R U' R' U2 R U' R r'"],
+			"author": ["JD"]
 		},
 		"13": {
 			"img": "/assets/img/3x3/oll/13.png",
 			"group": "Knight Move Shape",
-			"alg": ["F U R U' R2 F' R U R U' R'"]
+			"alg": ["F U R U' R2 F' R U R U' R'"],
+			"author": ["JD"]
 		},
 		"14": {
 			"img": "/assets/img/3x3/oll/14.png",
 			"group": "Knight Move Shape",
-			"alg": ["R' F R U R' F' R F U' F'"]
+			"alg": ["R' F R U R' F' R F U' F'"],
+			"author": ["JD"]
 		},
 		"15": {
 			"img": "/assets/img/3x3/oll/15.png",
 			"group": "Knight Move Shape",
-			"alg": ["l' U' l L' U' L U l' U l"]
+			"alg": ["l' U' l L' U' L U l' U l"],
+			"author": ["JD"]
 		},
 		"16": {
 			"img": "/assets/img/3x3/oll/16.png",
 			"group": "Knight Move Shape",
-			"alg": ["r U r' R U R' U' r U' r'"]
+			"alg": ["r U r' R U R' U' r U' r'"],
+			"author": ["JD"]
 		},
 		"17": {
 			"img": "/assets/img/3x3/oll/17.png",
 			"group": "Dot",
-			"alg": ["R U R' U R' F R F' U2 R' F R F'"]
+			"alg": ["R U R' U R' F R F' U2 R' F R F'"],
+			"author": ["JD"]
 		},
 		"18": {
 			"img": "/assets/img/3x3/oll/18.png",
 			"group": "Dot",
-			"alg": ["r U R' U R U2 r2 U' R U' R' U2 r"]
+			"alg": ["r U R' U R U2 r2 U' R U' R' U2 r"],
+			"author": ["JD"]
 		},
 		"19": {
 			"img": "/assets/img/3x3/oll/19.png",
 			"group": "Dot",
-			"alg": ["M U R U R' U' M' R' F R F'"]
+			"alg": ["M U R U R' U' M' R' F R F'"],
+			"author": ["JD"]
 		},
 		"20": {
 			"img": "/assets/img/3x3/oll/20.png",
 			"group": "Dot",
-			"alg": ["r U R' U' M2 U R U' R' U' M'"]
+			"alg": ["r U R' U' M2 U R U' R' U' M'"],
+			"author": ["JD"]
 		},
 		"21": {
 			"img": "/assets/img/3x3/oll/21.png",
 			"group": "Cross",
-			"alg": ["R U2 R' U' R U R' U' R U' R'"]
+			"alg": ["R U2 R' U' R U R' U' R U' R'"],
+			"author": ["JD"]
 		},
 		"22": {
 			"img": "/assets/img/3x3/oll/22.png",
 			"group": "Cross",
-			"alg": ["R U2 R2 U' R2 U' R2 U2 R"]
+			"alg": ["R U2 R2 U' R2 U' R2 U2 R"],
+			"author": ["JD"]
 		},
 		"23": {
 			"img": "/assets/img/3x3/oll/23.png",
 			"group": "Cross",
-			"alg": ["R2 D R' U2 R D' R' U2 R'"]
+			"alg": ["R2 D R' U2 R D' R' U2 R'"],
+			"author": ["JD"]
 		},
 		"24": {
 			"img": "/assets/img/3x3/oll/24.png",
 			"group": "Cross",
-			"alg": ["r U R' U' r' F R F'"]
+			"alg": ["r U R' U' r' F R F'"],
+			"author": ["JD"]
 		},
 		"25": {
 			"img": "/assets/img/3x3/oll/25.png",
 			"group": "Cross",
-			"alg": ["F' r U R' U' r' F R"]
+			"alg": ["F' r U R' U' r' F R"],
+			"author": ["JD"]
 		},
 		"26": {
 			"img": "/assets/img/3x3/oll/26.png",
 			"group": "Cross",
-			"alg": ["R U2 R' U' R U' R'"]
+			"alg": ["R U2 R' U' R U' R'"],
+			"author": ["JD"]
 		},
 		"27": {
 			"img": "/assets/img/3x3/oll/27.png",
 			"group": "Cross",
-			"alg": ["R U R' U R U2 R'"]
+			"alg": ["R U R' U R U2 R'"],
+			"author": ["JD"]
 		},
 		"28": {
 			"img": "/assets/img/3x3/oll/28.png",
 			"group": "Corners Oriented",
-			"alg": ["r U R' U' r' R U R U' R'"]
+			"alg": ["r U R' U' r' R U R U' R'"],
+			"author": ["JD"]
 		},
 		"29": {
 			"img": "/assets/img/3x3/oll/19.png",
 			"group": "Awkward Shape",
-			"alg": ["R U R' U' R U' R' F' U' F R U R'"]
+			"alg": ["R U R' U' R U' R' F' U' F R U R'"],
+			"author": ["JD"]
 		},
 		"30": {
 			"img": "/assets/img/3x3/oll/30.png",
 			"group": "Awkward Shape",
-			"alg": ["F R' F R2 U' R' U' R U R' F2"]
+			"alg": ["F R' F R2 U' R' U' R U R' F2"],
+			"author": ["JD"]
 		},
 		"31": {
 			"img": "/assets/img/3x3/oll/31.png",
 			"group": "P Shape",
-			"alg": ["R' U' F U R U' R' F' R"]
+			"alg": ["R' U' F U R U' R' F' R"],
+			"author": ["JD"]
 		},
 		"32": {
 			"img": "/assets/img/3x3/oll/32.png",
 			"group": "P Shape",
-			"alg": ["S R U R' U' R' F R f'"]
+			"alg": ["S R U R' U' R' F R f'"],
+			"author": ["JD"]
 		},
 		"33": {
 			"img": "/assets/img/3x3/oll/33.png",
 			"group": "T Shape",
-			"alg": ["R U R' U' R' F R F'"]
+			"alg": ["R U R' U' R' F R F'"],
+			"author": ["JD"]
 		},
 		"34": {
 			"img": "/assets/img/3x3/oll/34.png",
 			"group": "C Shape",
-			"alg": ["R U R2 U' R' F R U R U' F'"]
+			"alg": ["R U R2 U' R' F R U R U' F'"],
+			"author": ["JD"]
 		},
 		"35": {
 			"img": "/assets/img/3x3/oll/35.png",
 			"group": "Fish Shape",
-			"alg": ["R U2 R2 F R F' R U2 R'"]
+			"alg": ["R U2 R2 F R F' R U2 R'"],
+			"author": ["JD"]
 		},
 		"36": {
 			"img": "/assets/img/3x3/oll/36.png",
 			"group": "W Shape",
-			"alg": ["L' U' L U' L' U L U L F' L' F"]
+			"alg": ["L' U' L U' L' U L U L F' L' F"],
+			"author": ["JD"]
 		},
 		"37": {
 			"img": "/assets/img/3x3/oll/37.png",
 			"group": "Fish Shape",
-			"alg": ["F R' F' R U R U' R'"]
+			"alg": ["F R' F' R U R U' R'"],
+			"author": ["JD"]
 		},
 		"38": {
 			"img": "/assets/img/3x3/oll/38.png",
 			"group": "W Shape",
-			"alg": ["R U R' U R U' R' U' R' F R F'"]
+			"alg": ["R U R' U R U' R' U' R' F R F'"],
+			"author": ["JD"]
 		},
 		"39": {
 			"img": "/assets/img/3x3/oll/39.png",
 			"group": "Big Lightning Bolt",
-			"alg": ["L F' L' U' L U F U' L'"]
+			"alg": ["L F' L' U' L U F U' L'"],
+			"author": ["JD"]
 		},
 		"40": {
 			"img": "/assets/img/3x3/oll/40.png",
 			"group": "Big Lightning Bolt",
-			"alg": ["R' F R U R' U' F' U R"]
+			"alg": ["R' F R U R' U' F' U R"],
+			"author": ["JD"]
 		},
 		"41": {
 			"img": "/assets/img/3x3/oll/41.png",
 			"group": "Awkward Shape",
-			"alg": ["R U R' U R U2 R' F R U R' U' F'"]
+			"alg": ["R U R' U R U2 R' F R U R' U' F'"],
+			"author": ["JD"]
 		},
 		"42": {
 			"img": "/assets/img/3x3/oll/42.png",
 			"group": "Awkward Shape",
-			"alg": ["R' U' R U' R' U2 R F R U R' U' F'"]
+			"alg": ["R' U' R U' R' U2 R F R U R' U' F'"],
+			"author": ["JD"]
 		},
 		"43": {
 			"img": "/assets/img/3x3/oll/43.png",
 			"group": "P Shape",
-			"alg": ["F' U' L' U L F"]
+			"alg": ["F' U' L' U L F"],
+			"author": ["JD"]
 		},
 		"44": {
 			"img": "/assets/img/3x3/oll/44.png",
 			"group": "P Shape",
-			"alg": ["F U R U' R' F'"]
+			"alg": ["F U R U' R' F'"],
+			"author": ["JD"]
 		},
 		"45": {
 			"img": "/assets/img/3x3/oll/45.png",
 			"group": "T Shape",
-			"alg": ["F R U R' U' F'"]
+			"alg": ["F R U R' U' F'"],
+			"author": ["JD"]
 		},
 		"46": {
 			"img": "/assets/img/3x3/oll/46.png",
 			"group": "C Shape",
-			"alg": ["R' U' R' F R F' U R"]
+			"alg": ["R' U' R' F R F' U R"],
+			"author": ["JD"]
 		},
 		"47": {
 			"img": "/assets/img/3x3/oll/47.png",
 			"group": "Small L Shape",
-			"alg": ["F' L' U' L U L' U' L U F"]
+			"alg": ["F' L' U' L U L' U' L U F"],
+			"author": ["JD"]
 		},
 		"48": {
 			"img": "/assets/img/3x3/oll/48.png",
 			"group": "Small L Shape",
-			"alg": ["F R U R' U' R U R' U' F'"]
+			"alg": ["F R U R' U' R U R' U' F'"],
+			"author": ["JD"]
 		},
 		"49": {
 			"img": "/assets/img/3x3/oll/49.png",
 			"group": "Small L Shape",
-			"alg": ["r U' r2 U r2 U r2 U' r"]
+			"alg": ["r U' r2 U r2 U r2 U' r"],
+			"author": ["JD"]
 		},
 		"50": {
 			"img": "/assets/img/3x3/oll/50.png",
 			"group": "Small L Shape",
-			"alg": ["r' U r2 U' r2 U' r2 U r'"]
+			"alg": ["r' U r2 U' r2 U' r2 U r'"],
+			"author": ["JD"]
 		},
 		"51": {
 			"img": "/assets/img/3x3/oll/51.png",
 			"group": "I Shape",
-			"alg": ["f R U R' U' R U R' U' f'"]
+			"alg": ["f R U R' U' R U R' U' f'"],
+			"author": ["JD"]
 		},
 		"52": {
 			"img": "/assets/img/3x3/oll/52.png",
 			"group": "I Shape",
-			"alg": ["R U R' U R U' B U' B' R'"]
+			"alg": ["R U R' U R U' B U' B' R'"],
+			"author": ["JD"]
 		},
 		"53": {
 			"img": "/assets/img/3x3/oll/53.png",
 			"group": "Small L Shape",
-			"alg": ["l' U2 L U L' U' L U L' U l"]
+			"alg": ["l' U2 L U L' U' L U L' U l"],
+			"author": ["JD"]
 		},
 		"54": {
 			"img": "/assets/img/3x3/oll/54.png",
 			"group": "Small L Shape",
-			"alg": ["r U2 R' U' R U R' U' R U' r'"]
+			"alg": ["r U2 R' U' R U R' U' R U' r'"],
+			"author": ["JD"]
 		},
 		"55": {
 			"img": "/assets/img/3x3/oll/55.png",
 			"group": "I Shape",
-			"alg": ["R' F R U R U' R2 F' R2 U' R' U R U R'"]
+			"alg": ["R' F R U R U' R2 F' R2 U' R' U R U R'"],
+			"author": ["JD"]
 		},
 		"56": {
 			"img": "/assets/img/3x3/oll/56.png",
 			"group": "I Shape",
-			"alg": ["r' U' r U' R' U R U' R' U R r' U r"]
+			"alg": ["r' U' r U' R' U R U' R' U R r' U r"],
+			"author": ["JD"]
 		},
 		"57": {
 			"img": "/assets/img/3x3/oll/57.png",
 			"group": "Corners Oriented",
-			"alg": ["R U R' U' M' U R U' r'"]
+			"alg": ["R U R' U' M' U R U' r'"],
+			"author": ["JD"]
 		}
 	},
 	"PLL": {
 		"Aa": {
 			"img": "/assets/img/3x3/pll/Aa.png",
 			"group": "Adjacent Corner Swap",
-			"alg": ["x R' U R' D2 R U' R' D2 R2"]
+			"alg": ["x R' U R' D2 R U' R' D2 R2"],
+			"author": ["JD"]
 		},
 		"Ab": {
 			"img": "/assets/img/3x3/pll/Ab.png",
 			"group": "Adjacent Corner Swap",
-			"alg": ["x R2 D2 R U R' D2 R U' R"]
+			"alg": ["x R2 D2 R U R' D2 R U' R"],
+			"author": ["JD"]
 		},
 		"F": {
 			"img": "/assets/img/3x3/pll/F.png",
 			"group": "Adjacent Corner Swap",
-			"alg": ["R' U' F' R U R' U' R' F R2 U' R' U' R U R' U R"]
+			"alg": ["R' U' F' R U R' U' R' F R2 U' R' U' R U R' U R"],
+			"author": ["JD"]
 		},
 		"Ga": {
 			"img": "/assets/img/3x3/pll/Ga.png",
@@ -308,7 +368,8 @@
 			"alg": [
 				"R2 U R' U R' U' R U' R2 U' D R' U R D'",
 				"R2 u R' U R' U' R u' R2 y' R' U R"
-			]
+			],
+			"author": ["JD"]
 		},
 		"Gb": {
 			"img": "/assets/img/3x3/pll/Gb.png",
@@ -316,7 +377,8 @@
 			"alg": [
 				"R' U' R U D' R2 U R' U R U' R U' R2 D",
 				"y F' U' F R2 u R' U R U' R u' R2"
-			]
+			],
+			"author": ["JD"]
 		},
 		"Gc": {
 			"img": "/assets/img/3x3/pll/Gc.png",
@@ -324,7 +386,8 @@
 			"alg": [
 				"R2 U' R U' R U R' U R2 U D' R U' R' D",
 				"R2 u' R U' R U R' u R2 y R U' R'"
-			]
+			],
+			"author": ["JD"]
 		},
 		"Gd": {
 			"img": "/assets/img/3x3/pll/Gd.png",
@@ -332,77 +395,105 @@
 			"alg": [
 				"R U R' U' D R2 U' R U' R' U R' U R2 D'",
 				"R U R' y' R2 u' R U' R' U R' u R2"
-			]
+			],
+			"author": ["JD"]
 		},
 		"Ja": {
 			"img": "/assets/img/3x3/pll/Ja.png",
 			"group": "Adjacent Corner Swap",
-			"alg": ["x R2 F R F' R U2 r' U r U2"]
+			"alg": ["x R2 F R F' R U2 r' U r U2"],
+			"author": ["JD"]
 		},
 		"Jb": {
 			"img": "/assets/img/3x3/pll/Jb.png",
 			"group": "Adjacent Corner Swap",
-			"alg": ["R U R' F' R U R' U' R' F R2 U' R'"]
+			"alg": ["R U R' F' R U R' U' R' F R2 U' R'"],
+			"author": ["JD"]
 		},
 		"Ra": {
 			"img": "/assets/img/3x3/pll/Ra.png",
 			"group": "Adjacent Corner Swap",
-			"alg": ["R U' R' U' R U R D R' U' R D' R' U2 R'"]
+			"alg": ["R U' R' U' R U R D R' U' R D' R' U2 R'"],
+			"author": ["JD"]
 		},
 		"Rb": {
 			"img": "/assets/img/3x3/pll/Rb.png",
 			"group": "Adjacent Corner Swap",
-			"alg": ["R2 F R U R U' R' F' R U2 R' U2 R"]
+			"alg": ["R2 F R U R U' R' F' R U2 R' U2 R"],
+			"author": ["JD"]
 		},
 		"T": {
 			"img": "/assets/img/3x3/pll/T.png",
 			"group": "Adjacent Corner Swap",
-			"alg": ["R U R' U' R' F R2 U' R' U' R U R' F'"]
+			"alg": ["R U R' U' R' F R2 U' R' U' R U R' F'"],
+			"author": ["JD"]
 		},
 		"E": {
 			"img": "/assets/img/3x3/pll/E.png",
 			"group": "Diagonal Corner Swap",
-			"alg": ["x' L' U L D' L' U' L D L' U' L D' L' U L D"]
+			"alg": ["x' L' U L D' L' U' L D L' U' L D' L' U L D"],
+			"author": ["JD"]
 		},
 		"Na": {
 			"img": "/assets/img/3x3/pll/Na.png",
 			"group": "Diagonal Corner Swap",
-			"alg": ["R U R' U R U R' F' R U R' U' R' F R2 U' R' U2 R U' R'"]
+			"alg": ["R U R' U R U R' F' R U R' U' R' F R2 U' R' U2 R U' R'"],
+			"author": ["JD"]
 		},
 		"Nb": {
 			"img": "/assets/img/3x3/pll/Nb.png",
 			"group": "Diagonal Corner Swap",
-			"alg": ["R' U R U' R' F' U' F R U R' F R' F' R U' R"]
+			"alg": ["R' U R U' R' F' U' F R U R' F R' F' R U' R"],
+			"author": ["JD"]
 		},
 		"V": {
 			"img": "/assets/img/3x3/pll/V.png",
 			"group": "Diagonal Corner Swap",
-			"alg": ["R' U R' U' y R' F' R2 U' R' U R' F R F"]
+			"alg": [
+				"R' U R' U' y R' F' R2 U' R' U R' F R F",
+				"R U2 R' D R U' R U' R U R2 D R' U' R D2",
+				"R' U R U' R' f' U' R U2 R' U' R U' R' f R",
+				"y R U' R U R' D R D' R U' D R2' U R2 D' R2'"
+			],
+			"author": ["JD"]
 		},
 		"Y": {
 			"img": "/assets/img/3x3/pll/Y.png",
 			"group": "Diagonal Corner Swap",
-			"alg": ["F R U' R' U' R U R' F' R U R' U' R' F R F'"]
+			"alg": ["F R U' R' U' R U R' F' R U R' U' R' F R F'"],
+			"author": ["JD"]
 		},
 		"H": {
 			"img": "/assets/img/3x3/pll/H.png",
 			"group": "Edges Only",
-			"alg": ["M2 U M2 U2 M2 U M2"]
+			"alg": ["M2 U M2 U2 M2 U M2"],
+			"author": ["JD"]
 		},
 		"Ua": {
 			"img": "/assets/img/3x3/pll/Ua.png",
 			"group": "Edges Only",
-			"alg": ["M2 U M U2 M' U M2", "R U' R U R U R U' R' U' R2"]
+			"alg": [
+				"M2 U M U2 M' U M2",
+				"R U' R U R U R U' R' U' R2",
+				"y2 R2 U' R' U' R U R U R U' R"
+			],
+			"author": ["JD"]
 		},
 		"Ub": {
 			"img": "/assets/img/3x3/pll/Ub.png",
 			"group": "Edges Only",
-			"alg": ["M2 U' M U2 M' U' M2", "R2 U R U R' U' R' U' R' U R'"]
+			"alg": [
+				"M2 U' M U2 M' U' M2",
+				"R2 U R U R' U' R' U' R' U R'",
+				"y2 R' U R' U' R3 U' R' U R U R2"
+			],
+			"author": ["JD"]
 		},
 		"Z": {
 			"img": "/assets/img/3x3/pll/Z.png",
 			"group": "Edges Only",
-			"alg": ["M' U M2 U M2 U M' U2 M2"]
+			"alg": ["M' U M2 U M2 U M' U2 M2"],
+			"author": ["JD"]
 		}
 	}
 }
