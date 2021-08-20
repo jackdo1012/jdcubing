@@ -1,0 +1,66 @@
+{
+	"EO": {
+		"1-1": {
+			"img": "/assets/img/Square-1/eo/1-1.png",
+			"alg": ["1,0 / U / U / -1,-1 / -2,1 / U' / -1,0"]
+		},
+		"I-I": {
+			"img": "/assets/img/Square-1/eo/i-i.png",
+			"alg": ["1,0 / -1,-1 / 0,1"]
+		},
+		"L-L": {
+			"img": "/assets/img/Square-1/eo/l-l.png",
+			"alg": ["1,0 / -4,-1 / 1,1 / U / -1,0"]
+		},
+		"L-I": {
+			"img": "/assets/img/Square-1/eo/l-i.png",
+			"alg": ["1,0 / U / U / -1,-1 / -2,1 / -4,-1 / 0,1"]
+		},
+		"I-L": {
+			"img": "/assets/img/Square-1/eo/i-l.png",
+			"alg": ["1,0 / U' / U / -1,-1 / U' / U / 0,1"]
+		},
+		"3-3": {
+			"img": "/assets/img/Square-1/eo/3-3.png",
+			"alg": ["1,0 / U / U / -1,-1 / U' / U' / 0,1"]
+		},
+		"4-4": {
+			"img": "/assets/img/Square-1/eo/4-4.png",
+			"alg": ["1,0 / -1,-1 / 0,1 UD' 1,0 / -1,-1 / 0,1"]
+		}
+	},
+	"CP": {
+		"J/J": {
+			"img": "/assets/img/Square-1/cp/j-j.png",
+			"alg": ["/ U' / UD / D' /"]
+		},
+		"N/N": {
+			"img": "/assets/img/Square-1/cp/n-n.png",
+			"alg": ["/ UD' / U'D /"]
+		},
+		"N/J": {
+			"img": "/assets/img/Square-1/cp/n-j.png",
+			"alg": ["/ U / U' / U / U' /"]
+		},
+		"J/N": {
+			"img": "/assets/img/Square-1/cp/j-n.png",
+			"alg": ["/ D' / D / D' / D /"]
+		},
+		"J/O": {
+			"img": "/assets/img/Square-1/cp/j-o.png",
+			"alg": ["/ UD' / U / U' / D / U' /"]
+		},
+		"O/J": {
+			"img": "/assets/img/Square-1/cp/o-j.png",
+			"alg": ["/ UD' / D / U' / U / U' /"]
+		},
+		"N/O": {
+			"img": "/assets/img/Square-1/cp/n-o.png",
+			"alg": ["/ U'D' / U / U'D' / U / U'D' /"]
+		},
+		"O/N": {
+			"img": "/assets/img/Square-1/cp/o-n.png",
+			"alg": ["/ U'D' / D / U'D' / D / U'D' /"]
+		}
+	}
+}

@@ -1,0 +1,65 @@
+@use "../../scss/colors";
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+.stats {
+	position: relative;
+	width: 100%;
+	.stats-table {
+		background-color: colors.$light-navbar;
+		height: 100%;
+		border: 3px solid colors.$dark-navbar;
+		border-radius: 10px;
+		overflow: scroll;
+		table {
+			width: 100%;
+			height: fit-content;
+			border-collapse: collapse;
+			background-blend-mode: color-burn;
+			thead {
+				tr {
+					background-color: transparent;
+					th {
+						padding: 5% 0;
+						font-size: 1.5rem;
+						font-weight: 400;
+					}
+				}
+			}
+			tbody {
+				position: relative;
+				top: 0;
+				height: fit-content;
+				tr {
+					td {
+						text-align: left;
+						padding-bottom: 5%;
+						padding-left: 5%;
+						button {
+							background-color: transparent;
+							border: none;
+							cursor: pointer;
+							font-size: 1.25rem;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+#light-dark:checked ~ .App .main .stats {
+	.stats-table {
+		background-color: colors.$dark-navbar;
+		border: 3px solid colors.$light-navbar;
+		table thead tr th,
+		table tbody tr td {
+			color: white;
+			button {
+				color: white;
+			}
+		}
+	}
+}

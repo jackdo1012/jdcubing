@@ -1,0 +1,43 @@
+@use "../../scss/colors";
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+.case-algorithm {
+	width: 100vw;
+	height: 95vh;
+	background-color: colors.$dark-background;
+	color: white;
+	overflow: scroll;
+	.case {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		.case__title {
+			color: colors.$light-navbar;
+			font-size: 2rem;
+			text-align: center;
+			padding: 3%;
+		}
+		.case__img {
+			text-align: center;
+			max-width: 200px;
+		}
+		.case__alg-list {
+			width: 80vw;
+			background-color: colors.$dark-navbar;
+			list-style-type: none;
+			text-align: center;
+			border-radius: 10px;
+			li {
+				padding: 2%;
+				font-size: 1.4rem;
+			}
+			li:not(:last-child) {
+				border-bottom: 1px solid white;
+			}
+		}
+	}
+}

@@ -1,10 +1,10 @@
 import { useEffect, useRef, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { getBest } from '../reducers/getStats/getBest'
-import { getWorst } from '../reducers/getStats/getWorst'
-import { submitTime } from '../reducers/submitTime'
-import { getDnf } from '../reducers/penalty/dnf'
-import { getPlusTwo } from '../reducers/penalty/plusTwo'
+import { getBest } from '../reducers/Timer/getStats/getBest'
+import { getWorst } from '../reducers/Timer/getStats/getWorst'
+import { submitTime } from '../reducers/Timer/submitTime'
+import { getDnf } from '../reducers/Timer/penalty/dnf'
+import { getPlusTwo } from '../reducers/Timer/penalty/plusTwo'
 
 const useTimer = () => {
 	const inspectionInterval = useRef(0)

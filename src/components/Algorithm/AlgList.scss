@@ -1,0 +1,70 @@
+@use "../../scss/colors";
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+.alg-list {
+	color: white;
+	width: 100vw;
+	height: 95vh;
+	overflow: scroll;
+	background-color: colors.$dark-background;
+	display: flex;
+	flex-direction: column;
+	align-content: center;
+	-moz-user-select: text;
+	-khtml-user-select: text;
+	-webkit-user-select: text;
+	-ms-user-select: text;
+	user-select: text;
+	p {
+		text-align: center;
+		font-size: 2rem;
+		margin: 3%;
+	}
+	p.note {
+		font-size: 1.3rem;
+	}
+	table {
+		width: 80vw;
+		margin-left: 10vw;
+		border-radius: 5px;
+		border-collapse: collapse;
+		tbody {
+			tr {
+				th,
+				td {
+					padding: 0.5rem;
+					font-size: 1.4rem;
+					border: 3px solid colors.$light-navbar;
+					text-align: center;
+					img {
+						max-width: 200px;
+					}
+					a {
+						color: white;
+						text-decoration: none;
+					}
+				}
+			}
+		}
+	}
+}
+@media screen and (max-width: 800px) {
+	.alg-list {
+		table {
+			tbody {
+				tr {
+					display: flex;
+					flex-direction: column;
+					margin-bottom: 5%;
+					th {
+						display: none;
+					}
+				}
+			}
+		}
+	}
+}

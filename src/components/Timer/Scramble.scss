@@ -1,0 +1,99 @@
+@use "../../scss/colors";
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+.scramble {
+	min-height: 60px;
+}
+.outer {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	border: 3px solid black;
+	border-radius: 10px;
+	background-color: colors.$light-navbar;
+	.selection {
+		select {
+			background: none;
+			border: none;
+			border-radius: 6px;
+			-webkit-appearance: none;
+			-moz-appearance: none;
+		}
+		position: absolute;
+		left: 50%;
+		transform: translateX(-50%);
+		width: fit-content;
+	}
+	.selection:hover {
+		select {
+			background-color: rgba(255, 255, 255, 0.5);
+			cursor: pointer;
+		}
+	}
+	.scramble-text {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		text-align: center;
+		width: fit-content;
+		height: fit-content;
+		word-break: keep-all;
+	}
+	#five {
+		font-size: 0.7rem;
+	}
+	#mega {
+		font-size: 0.4rem;
+	}
+}
+#light-dark:checked ~ .App .main .scramble .outer {
+	background-color: colors.$dark-navbar;
+	border-color: colors.$light-navbar;
+	.selection {
+		color: white;
+		select {
+			color: white;
+		}
+	}
+	.scramble-text {
+		color: white;
+	}
+}
+@media screen and (min-width: 1024px) and (min-height: 600px) {
+	.outer {
+		.selection {
+			font-size: 1.3rem;
+			select {
+				font-size: 1.3rem;
+			}
+		}
+		#two {
+			font-size: 2rem;
+		}
+		#three {
+			font-size: 1.8rem;
+		}
+		#oh {
+			font-size: 1.8rem;
+		}
+		#four {
+			font-size: 1.3rem;
+		}
+		#five {
+			font-size: 1.3rem;
+		}
+		#mega {
+			font-size: 1.3rem;
+		}
+		#pyra {
+			font-size: 2rem;
+		}
+		#ske {
+			font-size: 2rem;
+		}
+	}
+}

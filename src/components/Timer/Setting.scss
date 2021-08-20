@@ -1,0 +1,152 @@
+@use "../../scss/colors";
+@mixin input-style() {
+	appearance: none;
+	font-size: 1.25rem;
+	border: none;
+	border-radius: 5px;
+
+	border: 1px solid black;
+	width: 90%;
+	padding: 5% 0;
+	padding-left: 5px;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+.setting {
+	z-index: 9999;
+	.blur {
+		position: fixed;
+		background-color: rgba(0, 0, 0, 0.5);
+		width: 100vw;
+		height: 100vh;
+
+		top: 0;
+		right: 0;
+		border: none;
+		cursor: pointer;
+	}
+
+	.setting-table::-webkit-scrollbar {
+		display: none;
+	}
+
+	.setting-table {
+		position: fixed;
+		width: 80vw;
+		height: 80vh;
+		background-color: colors.$light-primary;
+
+		top: 10vh;
+		bottom: 10vh;
+		left: 10vw;
+		right: 10vw;
+
+		border-radius: 10px;
+		overflow: scroll;
+		-ms-overflow-style: none;
+		scrollbar-width: none;
+
+		table {
+			border-collapse: collapse;
+			width: 100%;
+			font-size: 1.5rem;
+
+			.title {
+				border-top-left-radius: 10px;
+				border-top-right-radius: 10px;
+				height: 5vh;
+				font-size: 1.75rem;
+			}
+
+			tr {
+				td {
+					padding-top: 5px;
+					padding-bottom: 5px;
+					padding-left: 5px;
+				}
+			}
+
+			tr:nth-child(even) {
+				background-color: colors.$light-secondary;
+
+				td:nth-child(2) {
+					input,
+					select {
+						@include input-style;
+						background-color: colors.$light-primary;
+					}
+				}
+			}
+
+			tr:nth-child(odd) {
+				background-color: colors.$light-primary;
+
+				td:nth-child(2) {
+					input,
+					select {
+						@include input-style;
+						background-color: colors.$light-secondary;
+					}
+				}
+			}
+		}
+
+		.close-button {
+			position: absolute;
+			width: height;
+			top: 2.5vh;
+			right: 0;
+
+			height: 5vh;
+			width: 5vh;
+			transform: translateY(-50%);
+			background-color: transparent;
+
+			border: none;
+			cursor: pointer;
+
+			svg {
+				position: absolute;
+				width: 100%;
+				height: 100%;
+				left: 0;
+
+				top: 0;
+			}
+		}
+	}
+}
+#light-dark:checked ~ .App .main .setting .setting-table {
+	background-color: colors.$dark-secondary;
+	table {
+		color: white;
+
+		tr:nth-child(even) {
+			background-color: colors.$dark-secondary;
+
+			td:nth-child(2) {
+				input,
+				select {
+					background-color: colors.$dark-primary;
+					color: white;
+				}
+			}
+		}
+
+		tr:nth-child(odd) {
+			background-color: colors.$dark-primary;
+			td:nth-child(2) {
+				input,
+				select {
+					background-color: colors.$dark-secondary;
+					color: white;
+				}
+			}
+		}
+	}
+}

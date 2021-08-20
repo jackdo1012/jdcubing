@@ -1,0 +1,259 @@
+@use "../../scss/colors";
+@use "../../scss/fonts";
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+.App {
+	background-color: colors.$light-background;
+	height: 100vh;
+	width: 100vw;
+	transition: all 0.5s ease;
+}
+
+.navbar {
+	position: fixed;
+	bottom: 0;
+	right: 0;
+	left: 0;
+
+	height: max(5vh, 40px);
+	background-color: colors.$light-navbar;
+	display: grid;
+	grid-template-columns: repeat(12, 7.875vw);
+
+	grid-column-gap: 0.5vw;
+	align-items: center;
+
+	.navbar__title {
+		font-size: 2rem;
+		grid-column: 4/10;
+		justify-self: center;
+		transition: all 0.5s ease;
+		text-decoration: none;
+	}
+
+	.navbar__title:visited {
+		color: black;
+	}
+
+	.navbar__setting {
+		position: absolute;
+		height: max(80%, 26px);
+		width: max(4vh, 26px);
+		grid-column: 1/4;
+
+		justify-self: center;
+		align-self: center;
+		background-color: transparent;
+		border: none;
+
+		cursor: pointer;
+		transition: all 0.5s ease;
+
+		svg {
+			position: absolute;
+			width: 100%;
+			height: 100%;
+			top: 0;
+
+			left: 0;
+			right: 0;
+			bottom: 0;
+		}
+	}
+
+	.navbar__setting:hover {
+		transform: rotate(180deg);
+	}
+
+	label {
+		grid-column: 10/13;
+		justify-self: center;
+		align-self: center;
+		position: absolute;
+
+		width: 20vw;
+		height: max(4vh, 26px);
+	}
+}
+
+#light-dark:checked ~ .App {
+	background-color: colors.$dark-background;
+
+	.navbar {
+		background-color: colors.$dark-navbar;
+
+		.navbar__title {
+			color: white;
+		}
+
+		.navbar__setting {
+			color: white;
+		}
+
+		.light-dark__button {
+			border: 3px solid colors.$light-button;
+		}
+
+		.light-dark__button--inside {
+			left: 50%;
+			background-color: colors.$light-button;
+		}
+
+		.moon {
+			visibility: visible;
+		}
+
+		.son {
+			visibility: hidden;
+		}
+	}
+}
+
+.light-dark__button {
+	position: absolute;
+	border: 3px solid colors.$dark-button;
+	width: 100%;
+	height: 100%;
+
+	border-radius: 40px;
+	cursor: pointer;
+	max-width: 100px;
+	top: 0;
+
+	left: 50%;
+	transform: translateX(-50%);
+	transition: all 0.5s ease;
+
+	.light-dark__button--inside {
+		position: absolute;
+		background-color: colors.$dark-button;
+		width: min(calc(50% - 0.238vh), calc(50% - 1.95px));
+		height: 85%;
+
+		left: max(0.238vh, 1.95px);
+		top: 7.5%;
+		bottom: 7.5%;
+		border-radius: 40px;
+		transition: all 0.5s ease;
+	}
+
+	.light-dark__icon {
+		position: absolute;
+		width: auto;
+		height: 80%;
+		top: 10%;
+
+		bottom: 10%;
+	}
+
+	.moon {
+		left: 25%;
+		transform: translateX(-50%);
+		color: colors.$light-button;
+		visibility: hidden;
+	}
+
+	.sun {
+		right: 25%;
+		transform: translateX(50%);
+		color: colors.$dark-button;
+		visibility: visible;
+	}
+}
+
+.main {
+	height: min(95vh, calc(100vh - 40px));
+	display: grid;
+	grid-template-columns: repeat(12, 7.875vw);
+	grid-template-rows: repeat(12, min(7vh, calc((100vh - 40px) / 95 * 7)));
+	grid-column-gap: 0.5vw;
+	grid-row-gap: min(1vh, calc((100vh - 40px) / 95));
+
+	.timer {
+		grid-column: 3/11;
+		grid-row: 3/4;
+	}
+	.mini-stats {
+		grid-column: 5/9;
+		grid-row: 4/6;
+	}
+	.all-solves {
+		grid-column: 1/5;
+		grid-row: 4/8;
+	}
+	.stats {
+		grid-column: 9/13;
+		grid-row: 4/8;
+	}
+	.scramble {
+		grid-column: 1/13;
+		grid-row: 1/3;
+	}
+	.penalty {
+		grid-column: 5/9;
+		grid-row: 6/8;
+	}
+	.scramble-pic {
+		grid-column: 1/13;
+		grid-row: 8/12;
+	}
+}
+
+@media screen and (min-width: 1024px) {
+	.navbar {
+		top: 0;
+		bottom: none;
+		min-height: fit-content;
+		align-items: center;
+
+		.navbar__title {
+			font-size: 2.4rem;
+			grid-column: 1/9;
+			margin-left: 1rem;
+			justify-self: left;
+		}
+		.navbar__title:visited {
+			color: black;
+		}
+		.navbar__setting {
+			grid-column: 9/11;
+		}
+		label {
+			grid-column: 11/13;
+			.light-dark__button {
+				width: max(8vh, 80px);
+			}
+		}
+	}
+
+	.main {
+		padding-top: max(5vh, 40px);
+		.timer {
+			grid-row: 6/8;
+		}
+		.mini-stats {
+			grid-row: 8/10;
+		}
+		.all-solves {
+			grid-column: 1/3;
+			grid-row: 1/5;
+		}
+		.stats {
+			grid-column: 11/13;
+			grid-row: 1/5;
+		}
+		.scramble {
+			grid-column: 3/11;
+			grid-row: 1/4;
+		}
+		.penalty {
+			grid-column: 5/9;
+			grid-row: 10/11;
+		}
+	}
+}

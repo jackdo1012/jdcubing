@@ -1,0 +1,24 @@
+{
+	"3x3": {
+		"class": "three-by-three",
+		"OLL": 57,
+		"PLL": 21
+	},
+	"2x2": {
+		"class": "two-by-two",
+		"OLL": 7,
+		"PBL": 5,
+		"CLL": 42,
+		"EG-1": 43
+	},
+	"4x4": {
+		"class": "four-by-four",
+		"OLL": 27,
+		"PLL": 22
+	},
+	"Square-1": {
+		"class": "square-one",
+		"EO": 7,
+		"CP": 8
+	}
+}
