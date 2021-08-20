@@ -167,7 +167,6 @@
 			display: none;
 		}
 		.nav-item {
-			display: flex;
 			transform: translateX(-100%);
 			background-color: colors.$dark-background;
 			position: absolute;
@@ -175,24 +174,15 @@
 			width: 100vw;
 			height: fit-content;
 			flex-direction: column;
-			align-items: center;
 			transition: all 0.5s ease;
 			overflow: scroll;
 			div {
-				color: white;
 				position: relative;
 				justify-content: center;
 				font-size: 1.3rem;
 				padding: 5%;
-				a {
-					color: white;
-					text-decoration: none;
-				}
 				label {
 					text-align: center;
-				}
-				#open-sub-nav {
-					display: none;
 				}
 				#open-sub-nav:checked ~ .sub-nav {
 					display: flex;
@@ -205,7 +195,6 @@
 					display: none;
 					flex-direction: column;
 					align-items: center;
-					height: fit-content;
 					background-color: rgba(0, 0, 0, 0.2);
 					.sub-nav-title {
 						display: flex;

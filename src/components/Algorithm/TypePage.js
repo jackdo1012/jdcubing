@@ -3,6 +3,7 @@ import { useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 import './TypePage.scss'
 import { Link } from 'react-router-dom'
+import NotFound from '../NotFound'
 
 export default function TypePage(props) {
 	const { puzzle } = useParams()
@@ -32,10 +33,14 @@ export default function TypePage(props) {
 	}, [])
 	return (
 		<div className={props.className}>
-			<h1>{puzzle}</h1>
+			{fetchedData[puzzle] !== undefined && <h1>{puzzle}</h1>}
+			{fetchedData[puzzle] === undefined && (
+				<NotFound className="not-found-no-nav" />
+			)}
 			<div className="type-list">
 				{isLoading && <p>Loading...</p>}
 				{!isLoading &&
+					fetchedData[puzzle] !== undefined &&
 					Object.entries(fetchedData[puzzle]).map((value, index) => {
 						if (index !== 0) {
 							return (

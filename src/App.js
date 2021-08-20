@@ -53,7 +53,7 @@ function App() {
 					<CaseAlg className="case-algorithm" />
 				</Route>
 				<Route path="*">
-					<NotFound />
+					<NotFound className="not-found" />
 				</Route>
 			</Switch>
 		</Router>

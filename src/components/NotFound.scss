@@ -1,0 +1,61 @@
+@use "../scss/colors";
+
+$bg: #313942;
+$ghost: #528cce;
+$heading: #e7ebf2;
+.not-found {
+	position: relative;
+	width: 100vw;
+	height: 100vh;
+	background-color: colors.$dark-background;
+	color: white;
+}
+.not-found-page {
+	width: 100vw;
+	height: min(95vh, calc(100vh - 30px));
+	top: max(100vh, 30px);
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	p {
+		font-size: 2rem;
+		text-align: center;
+	}
+	p:first-child {
+		font-size: 10rem;
+		svg {
+			color: rgb(83, 164, 196);
+			animation: move-up-and-down 3s linear infinite;
+		}
+	}
+}
+@keyframes move-up-and-down {
+	0% {
+		transform: translateY(0);
+	}
+	25% {
+		transform: translateY(-25%);
+	}
+	50% {
+		transform: translateY(0);
+	}
+	75% {
+		transform: translateY(25%);
+	}
+	100% {
+		transform: translateY(0);
+	}
+}
+
+@media screen and (max-width: 800px) {
+	.not-found-page {
+		p {
+			font-size: 1.5rem;
+			margin: 5%;
+		}
+		p:first-child {
+			font-size: 5rem;
+		}
+	}
+}

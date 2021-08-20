@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { Link, useParams } from 'react-router-dom'
+import NotFound from '../NotFound'
 import './AlgList.scss'
 
 function AlgList(props) {
@@ -39,16 +40,20 @@ function AlgList(props) {
 
 	return (
 		<div className={props.className}>
-			<p>{puzzle}</p>
+			{fetchedData === undefined && (
+				<NotFound className="not-found-no-nav" />
+			)}
+			{fetchedData !== undefined && <p>{puzzle}</p>}
 			{isLoading && <p>Loading...</p>}
-			{!isLoading &&
+			{fetchedData !== undefined &&
+				!isLoading &&
 				Object.entries(fetchedData).map((value) => {
 					if (value[0] === 'note') {
 						console.log(value[0])
 						return <p className="note">{value[1]}</p>
 					}
 				})}
-			{!isLoading && (
+			{fetchedData !== undefined && !isLoading && (
 				<table>
 					<tbody>
 						<tr>

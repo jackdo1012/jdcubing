@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
+import NotFound from '../NotFound'
 import './CaseAlg.scss'
 
 function CaseAlg(props) {
@@ -39,7 +40,10 @@ function CaseAlg(props) {
 	console.log(fetchedData)
 	return (
 		<div className={props.className}>
-			{!isLoading && (
+			{fetchedData['alg'] === undefined && (
+				<NotFound className="not-found-no-nav" />
+			)}
+			{!isLoading && fetchedData['alg'] !== undefined && (
 				<div className="case">
 					<p className="case__title">{`${type.toUpperCase()} ${permutation}`}</p>
 					<img
