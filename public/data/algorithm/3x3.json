@@ -466,8 +466,8 @@
 		"H": {
 			"img": "/assets/img/3x3/pll/H.png",
 			"group": "Edges Only",
-			"alg": ["M2 U M2 U2 M2 U M2"],
-			"author": ["JD"]
+			"alg": ["M2 U M2 U2 M2 U M2", "M2 U' M2 U2 M2 U' M2"],
+			"author": ["JD", "KD"]
 		},
 		"Ua": {
 			"img": "/assets/img/3x3/pll/Ua.png",
