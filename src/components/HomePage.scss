@@ -5,6 +5,8 @@
 	box-sizing: border-box;
 }
 .home-page {
+	-ms-overflow-style: none;
+	scrollbar-width: none;
 	width: 100vw;
 	height: 95vh;
 	background-color: colors.$dark-background;
@@ -44,4 +46,7 @@
 			}
 		}
 	}
+}
+.home-page::-webkit-scrollbar {
+	display: none;
 }

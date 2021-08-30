@@ -9,11 +9,14 @@
 	position: relative;
 	width: 100%;
 	.stats-table {
+		-ms-overflow-style: none;
+		scrollbar-width: none;
 		background-color: colors.$light-navbar;
 		height: 100%;
 		border: 3px solid colors.$dark-navbar;
 		border-radius: 10px;
 		overflow: scroll;
+		overflow-x: hidden;
 		table {
 			width: 100%;
 			height: fit-content;
@@ -48,6 +51,9 @@
 				}
 			}
 		}
+	}
+	.stats-table::-webkit-scrollbar {
+		display: none;
 	}
 }
 #light-dark:checked ~ .App .main .stats {

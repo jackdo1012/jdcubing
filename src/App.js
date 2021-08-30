@@ -32,10 +32,7 @@ function App() {
 					<Redirect to="/home" />
 				</Route>
 				<Route exact path="/home">
-					<HomePage
-						className="home-page"
-						generateKey={generateKey()}
-					/>
+					<HomePage className="home-page" generateKey={generateKey()} />
 				</Route>
 				<Route exact path="/timer">
 					<MainTimer />

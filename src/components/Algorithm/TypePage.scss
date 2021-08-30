@@ -5,6 +5,8 @@
 	box-sizing: border-box;
 }
 .type-page {
+	-ms-overflow-style: none;
+	scrollbar-width: none;
 	color: white;
 	width: 100vw;
 	height: 100vh;
@@ -43,4 +45,7 @@
 			height: 200px;
 		}
 	}
+}
+.type-page::-webkit-scrollbar {
+	display: none;
 }
