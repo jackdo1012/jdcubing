@@ -95,7 +95,7 @@ function AlgList(props) {
                     <td>{firstValue[1].group}</td>
                   )}
                   <td>
-                    {firstValue[1].alg.forEach((thirdValue, index) => {
+                    {firstValue[1].alg.map((thirdValue, index) => {
                       if (index <= 1) {
                         return <div>{thirdValue}</div>
                       } else if (index === 2) {
