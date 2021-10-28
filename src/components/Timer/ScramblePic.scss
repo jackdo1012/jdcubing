@@ -1,32 +1,32 @@
 @use "../../scss/colors";
 * {
-	margin: 0;
-	padding: 0;
-	box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 .diagram {
-	table-layout: fixed;
-	border-collapse: collapse;
-	tbody {
-		width: fit-content;
-		height: fit-content;
-		tr td {
-			position: relative;
-			white-space: nowrap;
-			font-size: 0.75rem;
-		}
-	}
+    table-layout: fixed;
+    border-collapse: collapse;
+    tbody {
+        width: fit-content;
+        height: fit-content;
+        tr td {
+            position: relative;
+            white-space: nowrap;
+            font-size: 0.75rem;
+        }
+    }
 }
 .scramble-pic {
-	justify-self: center;
+    justify-self: center;
 }
 .outer-scramble-pic {
-	padding: 10px;
-	background-color: colors.$light-navbar;
-	border: 3px solid colors.$dark-navbar;
-	border-radius: 10px;
-	width: fit-content;
-	height: fit-content;
+    padding: 10px;
+    background-color: colors.$light-navbar;
+    border: 3px solid colors.$dark-navbar;
+    border-radius: 10px;
+    width: fit-content;
+    height: fit-content;
 }
 
 #Zero,
@@ -37,9 +37,9 @@
 #Six,
 #Seven,
 #Eight {
-	background-color: white;
-	border: 1px solid black;
-	color: white;
+    background-color: white;
+    border: 1px solid black;
+    color: white;
 }
 #Nine,
 #Ten,
@@ -49,9 +49,9 @@
 #Twenty-Seven,
 #Twenty-Eight,
 #Twenty-Nine {
-	background-color: orange;
-	border: 1px solid black;
-	color: orange;
+    background-color: #ffaa00;
+    border: 1px solid black;
+    color: #ffaa00;
 }
 #Twelve,
 #Thirteen,
@@ -61,9 +61,9 @@
 #Thirty,
 #Thirty-One,
 #Thirty-Two {
-	background-color: lightgreen;
-	border: 1px solid black;
-	color: lightgreen;
+    background-color: #00dd00;
+    border: 1px solid black;
+    color: #00dd00;
 }
 #Fifteen,
 #Sixteen,
@@ -74,9 +74,9 @@
 #Thirty-Three,
 #Thirty-Four,
 #Thirty-Five {
-	background-color: red;
-	border: 1px solid black;
-	color: red;
+    background-color: red;
+    border: 1px solid black;
+    color: red;
 }
 #Fifty-Three,
 #Fifty-Two,
@@ -86,9 +86,9 @@
 #Forty-Seven,
 #Forty-Six,
 #Forty-Five {
-	background-color: cyan;
-	border: 1px solid black;
-	color: cyan;
+    background-color: #0400fe;
+    border: 1px solid black;
+    color: #0400fe;
 }
 #Thirty-Six,
 #Thirty-Seven,
@@ -98,31 +98,31 @@
 #Forty-Two,
 #Forty-Three,
 #Forty-Four {
-	background-color: yellow;
-	border: 1px solid black;
-	color: yellow;
+    background-color: yellow;
+    border: 1px solid black;
+    color: yellow;
 }
 #light-dark:checked ~ .App .main .scramble-pic {
-	.outer-scramble-pic {
-		background-color: colors.$dark-navbar;
-		border: 5px solid colors.$light-navbar;
-	}
+    .outer-scramble-pic {
+        background-color: colors.$dark-navbar;
+        border: 5px solid colors.$light-navbar;
+    }
 }
 @media screen and (min-width: 1024px) and (min-height: 600px) {
-	.diagram {
-		tbody {
-			tr td {
-				font-size: 1.5rem;
-			}
-		}
-	}
-	.outer-scramble-pic {
-		position: fixed;
-		bottom: 0;
-		right: 0;
-		padding: 10px;
-		background-color: colors.$light-navbar;
-		border: 5px solid colors.$dark-navbar;
-		border-radius: 10px;
-	}
+    .diagram {
+        tbody {
+            tr td {
+                font-size: 1.5rem;
+            }
+        }
+    }
+    .outer-scramble-pic {
+        position: fixed;
+        bottom: 0;
+        right: 0;
+        padding: 10px;
+        background-color: colors.$light-navbar;
+        border: 5px solid colors.$dark-navbar;
+        border-radius: 10px;
+    }
 }
