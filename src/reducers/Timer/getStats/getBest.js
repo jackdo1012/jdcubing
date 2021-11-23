@@ -9,7 +9,7 @@ export const getBestSlice = createSlice({
             if (
                 Math.min(...solves.filter((solve) => solve !== "DNF")).toFixed(
                     2
-                ) === Infinity
+                ) === "Infinity"
             ) {
                 return "0.00"
             } else {

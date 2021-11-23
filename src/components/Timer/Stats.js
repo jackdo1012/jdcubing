@@ -46,7 +46,6 @@ function Stats(props) {
             )
         )
     }
-    console.log("rerender")
     return (
         <div className={props.className}>
             {run === "stop" && (
