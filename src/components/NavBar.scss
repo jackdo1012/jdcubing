@@ -86,20 +86,22 @@
             .sub-nav {
                 .sub-nav-title {
                     position: relative;
-                    display: flex;
-                    flex-direction: row;
-                    justify-content: space-between;
                     width: 100%;
                     padding: 1em;
                     label {
+                        display: flex;
+                        flex-direction: row;
+                        align-items: center;
+                        width: 100%;
                         p {
                             display: inline;
                         }
+                        svg {
+                            position: absolute;
+                            right: 2%;
+                        }
                     }
-                    svg {
-                        position: absolute;
-                        right: 2%;
-                    }
+
                     #open-sub-nav2 {
                         display: none;
                     }
@@ -200,6 +202,7 @@
                         display: flex;
                         align-items: center;
                         flex-direction: column;
+                        align-items: center;
                         label {
                             p {
                                 display: inline;
