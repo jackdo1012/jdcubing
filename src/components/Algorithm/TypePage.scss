@@ -1,51 +1,51 @@
 @use "../../scss/colors";
 * {
-	margin: 0;
-	padding: 0;
-	box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 .type-page {
-	-ms-overflow-style: none;
-	scrollbar-width: none;
-	color: white;
-	width: 100vw;
-	height: 100vh;
-	background-color: colors.$dark-background;
-	overflow: scroll;
-	p {
-		color: white;
-		text-align: center;
-		font-size: 2rem;
-	}
-	h1 {
-		color: colors.$light-navbar;
-		padding: 3%;
-		font-size: 3rem;
-		text-align: center;
-	}
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    color: white;
+    width: 100vw;
+    height: 100vh;
+    background-color: colors.$dark-background;
+    overflow: scroll;
+    p {
+        color: white;
+        text-align: center;
+        font-size: 2rem;
+    }
+    h1 {
+        color: colors.$light-navbar;
+        padding: 3%;
+        font-size: 3rem;
+        text-align: center;
+    }
 }
 .type-list {
-	display: flex;
-	flex-direction: row;
-	flex-wrap: wrap;
-	justify-content: space-evenly;
-	.type-list-row {
-		margin: 5px;
-		border: 5px solid black;
-		border-radius: 10px;
-		background-color: rgb(80, 80, 80);
-		color: white;
-		text-decoration: none;
-		p {
-			text-align: center;
-			font-size: 1.5rem;
-		}
-		img {
-			width: 200px;
-			height: 200px;
-		}
-	}
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    .type-list-row {
+        margin: 5px;
+        border: 5px solid black;
+        border-radius: 1rem;
+        background-color: rgb(80, 80, 80);
+        color: white;
+        text-decoration: none;
+        p {
+            text-align: center;
+            font-size: 1.5rem;
+        }
+        img {
+            width: 200px;
+            height: 200px;
+        }
+    }
 }
 .type-page::-webkit-scrollbar {
-	display: none;
+    display: none;
 }
