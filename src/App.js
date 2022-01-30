@@ -3,23 +3,22 @@ import {
     Redirect,
     Route,
     Switch,
-} from "react-router-dom"
-import "./App.scss"
-import AlgList from "./components/Algorithm/AlgList"
-import CaseAlg from "./components/Algorithm/CaseAlg"
-import SubmitAlg from "./components/Algorithm/SubmitAlg"
-import TypePage from "./components/Algorithm/TypePage"
-import HomePage from "./components/HomePage"
-import NavBar from "./components/NavBar"
-import NotFound from "./components/NotFound"
-import MainTimer from "./components/Timer"
+} from "react-router-dom";
+import "./App.scss";
+import AlgList from "./components/Algorithm/AlgList";
+import CaseAlg from "./components/Algorithm/CaseAlg";
+import TypePage from "./components/Algorithm/TypePage";
+import HomePage from "./components/HomePage";
+import NavBar from "./components/NavBar";
+import NotFound from "./components/NotFound";
+import MainTimer from "./components/Timer";
 
 function App() {
     function* generateKey() {
-        let i = 0
+        let i = 0;
         while (true) {
-            i++
-            yield i
+            i++;
+            yield i;
         }
     }
     return (
@@ -55,18 +54,12 @@ function App() {
                         generateKey={generateKey()}
                     />
                 </Route>
-                {!document.cookie.includes("submit=true") && (
-                    <Route>
-                        <NavBar className="nav" generateKey={generateKey()} />
-                        <SubmitAlg className="submit-alg" />
-                    </Route>
-                )}
                 <Route path="*">
                     <NotFound className="not-found" />
                 </Route>
             </Switch>
         </Router>
-    )
+    );
 }
 
-export default App
+export default App;
